@@ -1,5 +1,5 @@
 charset,UTF-8
 type,ghost
 
-name,Simplicity Template
-directory,simplicity_template
+name,Left Unattended
+directory,left_unattended_gz
