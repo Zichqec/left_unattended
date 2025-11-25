@@ -4,16 +4,15 @@ SakuraMenuGreetings : nonoverlap
 	"How can I help you?"
 }
 
-//Because there is an all modifier here, you don't need to write -- between menu options
 OnSakuraMenu : all
 {
 	"\0\s[0]\b[2]\![set,autoscroll,disable]"
-	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings
 	
 	"\n\n\_q"
 	
 	"\![*]\q[Talk to me,OnAiTalk]  "
-	switch LastTalk == "" //Uses top option if there is a dialogue to repeat
+	switch LastTalk == ""
 	{
 		"\![*]\q[Say that again,OnLastTalk]"
 		"\![*]\f[color,disable]Say that again\f[color,default]"
@@ -32,8 +31,7 @@ OnLastTalk
 }
 
 OnTalkRateMenu : all
-{	
-	//This is just setting up a label, you may need to add to it or tweak it if you change what rates are available
+{
 	_talkrate = "Off"
 	if aitalkinterval == 30; _talkrate = "30 seconds"
 	elseif aitalkinterval == 60; _talkrate = "1 minute"
