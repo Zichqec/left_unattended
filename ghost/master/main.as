@@ -3,7 +3,7 @@ function OnAosoraDefaultSaveData
 {
 	Save.Data.TalkInterval = 180;
 	Save.Data.Username = "friend";
-	Save.Data.ItemSpawnRate = 300;
+	Save.Data.ItemSpawnRate = 60;
 	Save.Data.PartyClutterLimit = 20;
 }
 
