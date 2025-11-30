@@ -3,7 +3,7 @@ charset,UTF-8
 name,Left Unattended
 type,ghost
 
-shiori,yaya.dll
+shiori,aosora.dll
 
 craftman,Galla & Zichqec
 craftmanw,Galla & Zichqec
