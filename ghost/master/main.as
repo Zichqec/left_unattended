@@ -3,6 +3,8 @@ function OnAosoraDefaultSaveData
 {
 	Save.Data.TalkInterval = 180;
 	Save.Data.Username = "friend";
+	Save.Data.ItemSpawnRate = 300;
+	Save.Data.PartyClutterLimit = 20;
 }
 
 //Values to be set upon loading
@@ -15,6 +17,7 @@ function OnAosoraLoad
 	
 	PartyClutter = {};
 	VisibleChars = {};
+	LastItemSpawn = Time.GetNowUnixEpoch();
 }
 
 //Call coming from menu, hotkey, or \a
@@ -171,7 +174,7 @@ function OnMainMenu
 	
 	m += "\n\n";
 	
-	m += "\![*]\__q[OnDebug@SpawnObject]Spawn object\__q\n\n";
+	m += "\![*]\__q[OnSpawnItem]Spawn object\__q\n\n";
 	
 	m += "\![*]\__q[OnBlank]Cancel\__q";
 	
@@ -189,7 +192,7 @@ function OnLastTalk
 	return LastTalk;
 }
 
-function OnDebug@SpawnObject
+function OnSpawnItem
 {
 	local clutter = new PartyDeco();
 	PartyClutter.Add("{clutter.p}", clutter);
@@ -290,4 +293,27 @@ function OnSurfaceChange
 	VisibleChars.Remove("{info[0]}");
 	if (info[1] != -1) VisibleChars.Add("{info[0]}", info[1]);
 	//Why do all the checks when I can just remove, and only add back if needed...
+}
+
+function OnSecondChange
+{
+	local since = Time.GetNowUnixEpoch() - LastItemSpawn;
+	
+	if (since >= Save.Data.ItemSpawnRate && PartyClutter.length < Save.Data.PartyClutterLimit && CanTalk())
+	{
+		LastItemSpawn = Time.GetNowUnixEpoch();
+		return OnSpawnItem();
+	}
+}
+
+function CanTalk
+{
+	if (Shiori["talking"] || Shiori["choosing"] || Shiori["minimizing"] || Shiori["timecritical"])
+	{
+		return 0;
+	}
+	else
+	{
+		return 1;
+	}
 }
