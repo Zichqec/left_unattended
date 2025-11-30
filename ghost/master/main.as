@@ -68,7 +68,7 @@ function OnBoot()
 
 function OnClose()
 {
-	return CloseTalk();
+	return CloseTalk() + "\_w[1000]\-";
 }
 
 function OnNotifyUserInfo
