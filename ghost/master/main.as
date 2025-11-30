@@ -217,11 +217,13 @@ class PartyThing
 			if (PartyClutter.Contains("{p}")) valid = 0;
 		}
 		this.p = p;
+		
+		this.alignment = "free";
 	}
 	
 	function SurfaceRestore
 	{
-		return "\p[{this.p}]\s[{this.surface}]";
+		return "\p[{this.p}]\s[{this.surface}]\![set,alignmenttodesktop,{this.alignment}]";
 	}
 	
 	function Vanish
@@ -238,6 +240,14 @@ class PartyDeco : PartyThing
 	init
 	{
 		this.flavortext = "\p[{this.p}]{flavortest}";
+		
+		local rand = Random.GetIndex(0,100);
+		
+		//They're jumping around the screen... how odd
+		if (rand >= 80) this.alignment = "bottom";
+		else if (rand >= 60) this.alignment = "top";
+		else if (rand >= 50) this.alignment = "left";
+		else if (rand >= 40) this.alignment = "right";
 	}
 	
 	function FlavorText
@@ -256,7 +266,7 @@ class PartyDeco : PartyThing
 		m += "\![*]\__q[OnBlank]Cancel\__q";
 		
 		return m;
-	}	
+	}
 }
 
 function OnDismissItem
