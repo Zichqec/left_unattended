@@ -1,0 +1,4 @@
+talk RandomTalk
+{
+	randomtalk
+}

@@ -17,6 +17,50 @@ function OnAosoraLoad
 	VisibleChars = {};
 }
 
+//Call coming from menu, hotkey, or \a
+function OnAITalk
+{
+	LastTalk = TalkTimer.CallRandomTalk();
+	return LastTalk;
+}
+
+//Call coming from TalkTimer
+function OnSendTalk
+{
+	LastTalk = Reflection.Get("RandomTalk")();
+	return LastTalk;
+}
+
+function OnAnchorSelect
+{
+	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://"))
+	{
+		return `\j["{Shiori.Reference[0]}"]`;
+	}
+}
+
+function otherghostname
+{
+	OpenGhosts = [];
+	for (local i = 0; i < Shiori.Reference.length; i++)
+	{
+		local split = Shiori.Reference[i].Split("{(1).ToAscii()}");
+		OpenGhosts.Add(split[0]);
+	}
+}
+
+function OnKeyPress
+{
+	if (Shiori.Reference[0] == "f1") { return "\![open,readme]"; }
+	else if (Shiori.Reference[0] == "t") { return OnAITalk; }
+	else if (Shiori.Reference[0] == "r") { return OnLastTalk; }
+}
+
+function OnWindowStateRestore
+{
+	return OnSurfaceRestore;
+}
+
 function OnBoot()
 {
 	return BootTalk();
@@ -120,7 +164,15 @@ function OnMainMenu
 	m += "\0\b[0]\![no-autopause]\![quicksection,1]";
 	m += "{OnSurfaceRestore}";
 	m += "Hello!\n\n";
+	m += "\![*]\__q[OnAITalk]Talk\__q  ";
+	
+	if (LastTalk == "") m += "\f[color,disable]\![*]Repeat\f[color,default]";
+	else m += "\![*]\__q[OnLastTalk]Repeat\__q";
+	
+	m += "\n\n";
+	
 	m += "\![*]\__q[OnDebug@SpawnObject]Spawn object\__q\n\n";
+	
 	m += "\![*]\__q[OnBlank]Cancel\__q";
 	
 	m += "\n{PartyClutter.length}\n\n";
@@ -130,6 +182,11 @@ function OnMainMenu
 	}
 	
 	return m;
+}
+
+function OnLastTalk
+{
+	return LastTalk;
 }
 
 function OnDebug@SpawnObject
