@@ -91,6 +91,7 @@ THE PLAN:
 
 - Every X minutes, Jes spawns either party decor or a guest
 	- Max cap of how many things can be open and how many ghosts can be summoned?
+		- Do we want these to be adjustable?
 	
 - Guests can either be silhouette people? lil guys? or, they can be other ghosts
 	- Toggleable option for it to be just silhouette guys, other ghosts, or both
@@ -242,12 +243,29 @@ class PartyDeco : PartyThing
 		this.flavortext = "\p[{this.p}]{flavortest}";
 		
 		local rand = Random.GetIndex(0,100);
+		this.surface = "1000";
 		
 		//They're jumping around the screen... how odd
-		if (rand >= 80) this.alignment = "bottom";
-		else if (rand >= 60) this.alignment = "top";
-		else if (rand >= 50) this.alignment = "left";
-		else if (rand >= 40) this.alignment = "right";
+		if (rand >= 80)
+		{
+			this.alignment = "bottom";
+			this.surface = "2000";
+		}
+		else if (rand >= 60)
+		{
+			this.alignment = "top";
+			this.surface = "3000";
+		}
+		else if (rand >= 50)
+		{
+			this.alignment = "left";
+			this.surface = "4000";
+		}
+		else if (rand >= 40)
+		{
+			this.alignment = "right";
+			this.surface = "5000";
+		}
 	}
 	
 	function FlavorText
