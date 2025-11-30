@@ -51,9 +51,9 @@ function otherghostname
 
 function OnKeyPress
 {
-	if (Shiori.Reference[0] == "f1") { return "\![open,readme]"; }
-	else if (Shiori.Reference[0] == "t") { return OnAITalk; }
-	else if (Shiori.Reference[0] == "r") { return OnLastTalk; }
+	if (Shiori.Reference[0] == "f1") return "\![open,readme]";
+	else if (Shiori.Reference[0] == "t") return OnAITalk;
+	else if (Shiori.Reference[0] == "r") return OnLastTalk;
 }
 
 function OnWindowStateRestore
