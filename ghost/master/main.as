@@ -231,7 +231,6 @@ function flavortest
 	]);
 }
 
-//Adapted from YAYA as SHIORI's SHIORI3EV.OnSurfaceChange and SHIORI3FW.IsVisible
 function OnSurfaceChange
 {
 	//SSP only, sorry
@@ -241,15 +240,4 @@ function OnSurfaceChange
 	VisibleChars.Remove("{info[0]}");
 	if (info[1] != -1) VisibleChars.Add("{info[0]}", info[1]);
 	//Why do all the checks when I can just remove, and only add back if needed...
-	
-	// if (info[1] == -1) VisibleChars.Remove("p{info[0]}");
-	// else
-	// {
-		// if (VisibleChars.Contains("p{info[0]}"))
-		// {
-			// //VisibleChars["p{info[0]}"] = {"p{info[0]}": info[1]};
-			// VisibleChars.Remove("p{info[0]}");
-		// }
-		// VisibleChars.Add("p{info[0]}", info[0], info[1]);
-	// }
 }
