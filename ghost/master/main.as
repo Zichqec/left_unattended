@@ -13,7 +13,7 @@ function OnAosoraLoad
 	
 	LastTalk = "";
 	
-	PartyClutter = [];
+	PartyClutter = {};
 	VisibleChars = {};
 }
 
@@ -107,10 +107,8 @@ function OnMouseDoubleClick
 		else
 		{
 			local index = Shiori.Reference[3];
-			foreach (local thing in PartyClutter)
-			{
-				if (thing.p == index) return thing.Menu;
-			}
+			
+			return PartyClutter["{index}"].Menu;
 		}
 	}
 }
@@ -137,7 +135,7 @@ function OnMainMenu
 function OnDebug@SpawnObject
 {
 	local clutter = new PartyDeco();
-	PartyClutter.Add(clutter);
+	PartyClutter.Add("{clutter.p}", clutter);
 	return OnSurfaceRestore();
 }
 
@@ -156,10 +154,7 @@ class PartyThing
 			
 			//Assume it's valid unless proven otherwise
 			valid = 1;
-			foreach (local thing in PartyClutter)
-			{
-				if (thing.p == p) valid = 0;
-			}
+			if (PartyClutter.Contains("{p}")) valid = 0;
 		}
 		this.p = p;
 	}
@@ -167,6 +162,13 @@ class PartyThing
 	function SurfaceRestore
 	{
 		return "\p[{this.p}]\s[{this.surface}]";
+	}
+	
+	function Vanish
+	{
+		local dialogue = "\p[{this.p}]\s[-1]Shoo,\w4 out of here...";
+		PartyClutter.Remove("{this.p}");
+		return dialogue;
 	}
 }
 
@@ -200,17 +202,8 @@ class PartyDeco : PartyThing
 function OnDismissItem
 {
 	local p = Shiori.Reference[0].ToNumber();
-	local to_remove = -1;
-	foreach (local thing, i in PartyClutter)
-	{
-		if (thing.p == p)
-		{
-			to_remove = i;
-			break;
-		}
-	}
-	PartyClutter.Remove(to_remove);
-	return OnSurfaceRestore();
+	
+	return PartyClutter["{p}"].Vanish() + OnSurfaceRestore();
 }
 
 //Common to all party guests (ghosts excluded)
