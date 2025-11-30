@@ -1,0 +1,255 @@
+//Default save data
+function OnAosoraDefaultSaveData
+{
+	Save.Data.TalkInterval = 180;
+	Save.Data.Username = "friend";
+}
+
+//Values to be set upon loading
+function OnAosoraLoad
+{
+	TalkTimer.RandomTalk = OnSendTalk;
+	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
+	
+	LastTalk = "";
+	
+	PartyClutter = [];
+	VisibleChars = {};
+}
+
+function OnBoot()
+{
+	return BootTalk();
+}
+
+function OnClose()
+{
+	return CloseTalk();
+}
+
+function OnNotifyUserInfo
+{
+	Save.Data.Username = Shiori.Reference[0];
+}
+
+function username
+{
+	return Save.Data.Username;
+}
+
+
+/*
+
+THE PLAN:
+
+- Every X minutes, Jes spawns either party decor or a guest
+	- Max cap of how many things can be open and how many ghosts can be summoned?
+	
+- Guests can either be silhouette people? lil guys? or, they can be other ghosts
+	- Toggleable option for it to be just silhouette guys, other ghosts, or both
+	
+- If you close everything, it becomes possible to close her normally
+	- Possibly a chance for her to refuse to go and pull out another item or three
+	- If you pet everything too much, she closes herself
+	
+- Double click items to dismiss them
+	- Possibly flavor text when you click them? If it's a guest that isn't a ghost, a comment? Would like said text to be assigned when the item is created
+
+- Pet items and she comments about you messing it up or being gross
+	- Do it enough and she takes the item down herself
+
+- Could be funny if she notices and comments (minimally) on special dates like the user's birthday and various holidays
+
+
+Item ideas:
+- Tables with different kinds of refreshments
+- Streamers that stick to the top
+- Disco balls that stick to the top
+- Lanterns that stick to the top
+- Bunches of balloons with one of those weighted things to keep them down
+
+*/
+
+function OnSurfaceRestore
+{
+	local output = "";
+	local usedwindows = [];
+	
+	foreach (local thing in PartyClutter)
+	{
+		output += thing.SurfaceRestore();
+		usedwindows.Add(thing.p);
+	}
+	
+	foreach (local surface, p in VisibleChars)
+	{
+		local found = 0;
+		foreach (local window in usedwindows)
+		{
+			if (window == p)
+			{
+				found = 1;
+				break;
+			}
+		}
+		if (!found) output += "\p[{p}]\s[-1]";
+	}
+	
+	output += "\0\s[0]";
+	return output;
+}
+
+function OnMouseDoubleClick
+{
+	if (Shiori.Reference[5] == 0)
+	{
+		if (Shiori.Reference[3] == 0) return OnMainMenu();
+		else
+		{
+			local index = Shiori.Reference[3];
+			foreach (local thing in PartyClutter)
+			{
+				if (thing.p == index) return thing.Menu;
+			}
+		}
+	}
+}
+
+function OnMainMenu
+{
+	local m = "";
+	
+	m += "\0\b[0]\![no-autopause]\![quicksection,1]";
+	m += "{OnSurfaceRestore}";
+	m += "Hello!\n\n";
+	m += "\![*]\__q[OnDebug@SpawnObject]Spawn object\__q\n\n";
+	m += "\![*]\__q[OnBlank]Cancel\__q";
+	
+	m += "\n{PartyClutter.length}\n\n";
+	foreach (item in PartyClutter)
+	{
+		m += "{item.p}\n";
+	}
+	
+	return m;
+}
+
+function OnDebug@SpawnObject
+{
+	local clutter = new PartyDeco();
+	PartyClutter.Add(clutter);
+	return OnSurfaceRestore();
+}
+
+//Common to all party things
+class PartyThing
+{
+	init
+	{
+		this.surface = "10";
+		
+		local valid = 0;
+		local p = 0;
+		while (!valid)
+		{
+			p++; //This is ONE INDEXED because character 0 is the sakura
+			
+			//Assume it's valid unless proven otherwise
+			valid = 1;
+			foreach (local thing in PartyClutter)
+			{
+				if (thing.p == p) valid = 0;
+			}
+		}
+		this.p = p;
+	}
+	
+	function SurfaceRestore
+	{
+		return "\p[{this.p}]\s[{this.surface}]";
+	}
+}
+
+//Common to all party decorative objects
+class PartyDeco : PartyThing
+{
+	init
+	{
+		this.flavortext = "\p[{this.p}]{flavortest}";
+	}
+	
+	function FlavorText
+	{
+		return this.flavortext;
+	}
+	
+	function Menu
+	{
+		local m = "";
+		
+		m += "\p[{this.p}]\b[0]\![no-autopause]\![quicksection,1]";
+		m += this.flavortext;
+		m += "\n\n";
+		m += "\![*]\__q[OnDismissItem,{this.p}]Remove item\__q\n\n";
+		m += "\![*]\__q[OnBlank]Cancel\__q";
+		
+		return m;
+	}	
+}
+
+function OnDismissItem
+{
+	local p = Shiori.Reference[0].ToNumber();
+	local to_remove = -1;
+	foreach (local thing, i in PartyClutter)
+	{
+		if (thing.p == p)
+		{
+			to_remove = i;
+			break;
+		}
+	}
+	PartyClutter.Remove(to_remove);
+	return OnSurfaceRestore();
+}
+
+//Common to all party guests (ghosts excluded)
+class PartyGuest : PartyThing
+{
+	
+}
+
+function flavortest
+{
+	return Random.Select([
+		"flavor 0",
+		"flavor 1",
+		"flavor 2",
+		"flavor 3",
+		"flavor 4",
+		"flavor 5",
+	]);
+}
+
+//Adapted from YAYA as SHIORI's SHIORI3EV.OnSurfaceChange and SHIORI3FW.IsVisible
+function OnSurfaceChange
+{
+	//SSP only, sorry
+	//ID, Surface number, width, height
+	local info = Shiori.Reference[2].Split(",");
+	
+	VisibleChars.Remove("{info[0]}");
+	if (info[1] != -1) VisibleChars.Add("{info[0]}", info[1]);
+	//Why do all the checks when I can just remove, and only add back if needed...
+	
+	// if (info[1] == -1) VisibleChars.Remove("p{info[0]}");
+	// else
+	// {
+		// if (VisibleChars.Contains("p{info[0]}"))
+		// {
+			// //VisibleChars["p{info[0]}"] = {"p{info[0]}": info[1]};
+			// VisibleChars.Remove("p{info[0]}");
+		// }
+		// VisibleChars.Add("p{info[0]}", info[0], info[1]);
+	// }
+}
