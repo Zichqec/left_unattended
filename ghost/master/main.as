@@ -92,6 +92,7 @@ THE PLAN:
 - Every X minutes, Jes spawns either party decor or a guest
 	- Max cap of how many things can be open and how many ghosts can be summoned?
 		- Do we want these to be adjustable?
+			- Items spawn at a slower rate the more there are. natural soft cap. no adjustment allowed
 	
 - Guests can either be silhouette people? lil guys? or, they can be other ghosts
 	- Toggleable option for it to be just silhouette guys, other ghosts, or both
@@ -107,6 +108,10 @@ THE PLAN:
 	- Do it enough and she takes the item down herself
 
 - Could be funny if she notices and comments (minimally) on special dates like the user's birthday and various holidays
+
+- If you pet-close her last item, she leaves in disgust
+- If you menu-close her last item, it becomes possible to close her with the "close" option
+- She needs a special reaction for the "quit" option, see if i can determine this even when she is the only open ghost
 
 
 Item ideas:
