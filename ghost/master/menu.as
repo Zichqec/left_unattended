@@ -30,11 +30,11 @@ function OnMainMenu
 	
 	m += "\![*]\__q[OnBlank]Cancel\__q";
 	
-	m += "\n{PartyClutter.length} | {DecoCount} | {GuestCount} | (Can spawn? {CanSpawnGuest} - rate: {ItemSpawnTime})\n\n";
-	foreach (item in PartyClutter)
-	{
-		m += "{item.p}\n";
-	}
+m += "\n{PartyClutter.length} | {DecoCount} | {GuestCount}\n(Can spawn? {CanSpawnGuest}\n Too many? {TooManyGuests})\n\n";
+	// foreach (item in PartyClutter)
+	// {
+		// m += "{item.p}\n";
+	// }
 	
 	return m;
 }

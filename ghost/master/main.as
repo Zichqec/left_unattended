@@ -19,6 +19,14 @@ function OnAosoraLoad
 	
 	//This one is the other way around so we can have a little randomness to it...
 	NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
+	ActionBufferTime = Time.GetNowUnixEpoch();
+	
+	LastX = 0;
+	LastY = 0;
+	
+	OnSpawnItem();
+	OnSpawnItem();
+	OnSpawnItem();
 }
 
 //Call coming from menu, hotkey, or \a
@@ -132,6 +140,17 @@ function OnSpawnGuest
 	return OnSurfaceRestore();
 }
 
+function OnDespawnGuest
+{
+	local guestlist = [];
+	foreach (thing in PartyClutter)
+	{
+		if (thing.type == "guest") guestlist.Add(thing.p);
+	}
+	local pick = Random.Select(guestlist);
+	return PartyClutter[pick].Vanish();
+}
+
 //Common to all party things
 class PartyThing
 {
@@ -156,13 +175,6 @@ class PartyThing
 	
 	function SurfaceRestore
 	{
-	}
-	
-	function Vanish
-	{
-		local dialogue = "\p[{this.p}]\s[-1]Shoo,\w4 out of here...";
-		PartyClutter.Remove("{this.p}");
-		return dialogue;
 		return "\p[{this.p}]\s[{this.surface}]\![get,property,OnGetPosition,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnReturnToPosition]";
 	}
 }
@@ -229,6 +241,13 @@ class PartyDeco : PartyThing
 		
 		return m;
 	}
+	
+	function Vanish
+	{
+		local dialogue = "\p[{this.p}]\s[-1]Shoo,\w4 out of here...";
+		PartyClutter.Remove("{this.p}");
+		return dialogue;
+	}
 }
 
 //Common to all party guests
@@ -254,6 +273,13 @@ class PartyGuest : PartyThing
 		m += "\p[{this.p}]\b[0]{this.flavortext}";
 		
 		return m;
+	}
+	
+	function Vanish
+	{
+		local dialogue = "\p[{this.p}]\s[-1]I'm outta here lol";
+		PartyClutter.Remove("{this.p}");
+		return dialogue;
 	}
 }
 
@@ -283,27 +309,35 @@ function guestflavortest
 
 function OnSecondChange
 {
-	if (CanTalk())
+	local epoch = Time.GetNowUnixEpoch();
+	if (CanTalk() && epoch - ActionBufferTime >= 10) //I could use reference3 instead of CanTalk, but...
 	{
-		local since = Time.GetNowUnixEpoch() - LastItemSpawn;
+		local since = epoch - LastItemSpawn;
 		local nextitem = LastItemSpawn + ItemSpawnTime();
 		
-		if (Time.GetNowUnixEpoch() >= nextitem)
+		if (epoch >= nextitem)
 		{
 			//TODO something to think about: this will trigger if you dismiss items and the time until next item goes down... might be a nuisance but oh well! the alternative seems worse? maybe add a cooldown variable...
-			LastItemSpawn = Time.GetNowUnixEpoch();
+			LastItemSpawn = epoch;
+			ActionBufferTime = epoch;
 			return OnSpawnItem();
 		}
 		
 		if (CanSpawnGuest())
 		{
-			if (Time.GetNowUnixEpoch() >= NextGuestSpawn)
+			if (epoch >= NextGuestSpawn)
 			{
-				NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
+				NextGuestSpawn = epoch + GuestSpawnTime();
+				ActionBufferTime = epoch;
 				return OnSpawnGuest();
 			}
 		}
-		//TODO make guests go away if not enough items
+		
+		if (TooManyGuests())
+		{
+			ActionBufferTime = epoch;
+			return OnDespawnGuest();
+		}
 	}
 }
 
@@ -319,10 +353,18 @@ function CanSpawnGuest
 	{
 		//1.5 guests for every deco (after the first 3)
 		decocount -= 3;
-		if ((GuestCount()) < (decocount * 1.5).Floor()) return true;
+		if (GuestCount() < (decocount * 1.5).Floor()) return true;
 	}
 	
 	return false;
+}
+
+function TooManyGuests
+{
+	local decocount = DecoCount() - 3;
+	
+	if (GuestCount() > (decocount * 1.5).Floor() && GuestCount() > 0) return true;
+	else return false;
 }
 
 function ItemSpawnTime(test)
