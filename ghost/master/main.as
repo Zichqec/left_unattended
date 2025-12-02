@@ -156,7 +156,6 @@ class PartyThing
 	
 	function SurfaceRestore
 	{
-		return "\p[{this.p}]\s[{this.surface}]\![set,alignmenttodesktop,{this.alignment}]";
 	}
 	
 	function Vanish
@@ -164,7 +163,21 @@ class PartyThing
 		local dialogue = "\p[{this.p}]\s[-1]Shoo,\w4 out of here...";
 		PartyClutter.Remove("{this.p}");
 		return dialogue;
+		return "\p[{this.p}]\s[{this.surface}]\![get,property,OnGetPosition,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnReturnToPosition]";
 	}
+}
+
+//This is a patch for an SSP issue where the alignment commands make the characters jump all over the place if they are aligned differently... it still jumps a bit but at least now they return to their original positions
+function OnGetPosition
+{
+	local coords = Shiori.Reference[0].Split(",");
+	LastX = coords[0];
+	LastY = coords[1];
+}
+
+function OnReturnToPosition
+{
+	return "\![move,--x={LastX},--y={LastY},--time=0,--base=primaryscreen]";
 }
 
 //Common to all party decorative objects
