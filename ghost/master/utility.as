@@ -55,3 +55,23 @@ function OnKeyPress
 	else if (Shiori.Reference[0] == "t") return OnAITalk;
 	else if (Shiori.Reference[0] == "r") return OnLastTalk;
 }
+
+function CountPartyClutter(type)
+{
+	local count = 0;
+	foreach (thing in PartyClutter)
+	{
+		if (thing.type == type) count++;
+	}
+	return count;
+}
+
+function DecoCount
+{
+	return CountPartyClutter("deco");
+}
+
+function GuestCount
+{
+	return CountPartyClutter("guest");
+}

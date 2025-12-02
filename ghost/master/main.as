@@ -18,6 +18,8 @@ function OnAosoraLoad
 	PartyClutter = {};
 	VisibleChars = {};
 	LastItemSpawn = Time.GetNowUnixEpoch();
+	
+	NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
 }
 
 //Call coming from menu, hotkey, or \a
@@ -124,6 +126,13 @@ function OnSpawnItem
 	return OnSurfaceRestore();
 }
 
+function OnSpawnGuest
+{
+	local clutter = new PartyGuest();
+	PartyClutter.Add("{clutter.p}", clutter);
+	return OnSurfaceRestore();
+}
+
 //Common to all party things
 class PartyThing
 {
@@ -164,7 +173,10 @@ class PartyDeco : PartyThing
 {
 	init
 	{
-		this.flavortext = "\p[{this.p}]{flavortest}";
+		//For determining the difference between deco and guests...
+		this.type = "deco";
+		
+		this.flavortext = "{flavortest}";
 		
 		local rand = Random.GetIndex(0,100);
 		this.surface = "1000";
@@ -192,11 +204,6 @@ class PartyDeco : PartyThing
 		}
 	}
 	
-	function FlavorText
-	{
-		return this.flavortext;
-	}
-	
 	function Menu
 	{
 		local m = "";
@@ -211,10 +218,30 @@ class PartyDeco : PartyThing
 	}
 }
 
-//Common to all party guests (ghosts excluded)
+//Common to all party guests
 class PartyGuest : PartyThing
 {
+	init
+	{
+		//For determining the difference between deco and guests...
+		this.type = "guest";
+		
+		this.surface = "10";
+		
+		this.alignment = "free";
+		
+		this.flavortext = "{guestflavortest}";
+	}
 	
+	//Not really a menu, probably should rename...
+	function Menu
+	{
+		local m = "";
+		
+		m += "\p[{this.p}]\b[0]{this.flavortext}";
+		
+		return m;
+	}
 }
 
 function flavortest
@@ -229,6 +256,18 @@ function flavortest
 	]);
 }
 
+function guestflavortest
+{
+	return Random.Select([
+		"what's all this",
+		"so weird",
+		"party time yay!",
+		"where's the cake?",
+		"who are you?",
+		"is this supposed to be a party?",
+	]);
+}
+
 function OnSecondChange
 {
 	local since = Time.GetNowUnixEpoch() - LastItemSpawn;
@@ -238,4 +277,32 @@ function OnSecondChange
 		LastItemSpawn = Time.GetNowUnixEpoch();
 		return OnSpawnItem();
 	}
+	
+	if (CanSpawnGuest)
+	{
+		if (Time.GetNowUnixEpoch() >= NextGuestSpawn)
+		{
+			NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
+			return OnSpawnGuest();
+		}
+	}
+}
+
+function GuestSpawnTime
+{
+	//1-3 minutes?
+	return Random.GetIndex(6,19) * 10; //60-180
+}
+
+function CanSpawnGuest
+{
+	local decocount = DecoCount();
+	if (decocount > 3)
+	{
+		//1.5 guests for every deco (after the first 3)
+		decocount -= 3;
+		if ((GuestCount()) < (decocount * 1.5).Floor()) return 1;
+	}
+	
+	return 0;
 }
