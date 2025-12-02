@@ -319,7 +319,7 @@ function OnSecondChange
 		{
 			//TODO something to think about: this will trigger if you dismiss items and the time until next item goes down... might be a nuisance but oh well! the alternative seems worse? maybe add a cooldown variable...
 			LastItemSpawn = epoch;
-			ActionBufferTime = epoch;
+			ActionBufferTime = epoch; //TODO these cooldown things (that's what i should have called it lol) probably need to be moved so that if you manually dismiss stuff that also resets the cooldown
 			return OnSpawnItem();
 		}
 		
