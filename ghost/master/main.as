@@ -343,7 +343,7 @@ function OnSecondChange
 
 function GuestSpawnTime
 {
-	return Random.GetIndex(3,13) * 10; //30-120
+	return Random.GetIndex(3,7) * 10; //30-60
 }
 
 function CanSpawnGuest
