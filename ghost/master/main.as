@@ -48,9 +48,15 @@ function OnBoot()
 	return BootTalk();
 }
 
-function OnClose()
+function OnCloseAll, OnGhostChanging
 {
-	return CloseTalk() + "\_w[1000]\-";
+	return CloseDefeatTalk() + "\_w[1000]\-";
+}
+
+function OnClose
+{
+	if (DecoCount() == 0) return CloseCleanedUpTalk() + "\_w[1000]\-";
+	else return CloseStillPartyingTalk() + "\e";
 }
 
 
