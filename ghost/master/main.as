@@ -34,36 +34,6 @@ function OnSendTalk
 	return LastTalk;
 }
 
-function OnAnchorSelect
-{
-	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://"))
-	{
-		return `\j["{Shiori.Reference[0]}"]`;
-	}
-}
-
-function otherghostname
-{
-	OpenGhosts = [];
-	for (local i = 0; i < Shiori.Reference.length; i++)
-	{
-		local split = Shiori.Reference[i].Split("{(1).ToAscii()}");
-		OpenGhosts.Add(split[0]);
-	}
-}
-
-function OnKeyPress
-{
-	if (Shiori.Reference[0] == "f1") return "\![open,readme]";
-	else if (Shiori.Reference[0] == "t") return OnAITalk;
-	else if (Shiori.Reference[0] == "r") return OnLastTalk;
-}
-
-function OnWindowStateRestore
-{
-	return OnSurfaceRestore;
-}
-
 function OnBoot()
 {
 	return BootTalk();
@@ -72,16 +42,6 @@ function OnBoot()
 function OnClose()
 {
 	return CloseTalk() + "\_w[1000]\-";
-}
-
-function OnNotifyUserInfo
-{
-	Save.Data.Username = Shiori.Reference[0];
-}
-
-function username
-{
-	return Save.Data.Username;
 }
 
 
@@ -93,14 +53,19 @@ THE PLAN:
 	- Max cap of how many things can be open and how many ghosts can be summoned?
 		- Do we want these to be adjustable?
 			- Items spawn at a slower rate the more there are. natural soft cap. no adjustment allowed
+			- 60s * 1.25 for each item? possibly starting at 3 items, and when you're at less than that it's a lower rate?
 	
 - Guests can either be silhouette people? lil guys? or, they can be other ghosts
 	- Toggleable option for it to be just silhouette guys, other ghosts, or both
+	- Other ghosts are VIPs and work separately
+		- Should she maybe be able to close despite them if you close all her items...? That'd probably be for the best... otherwise this ghost will be my personal hell lol
+	- Silhouette people appear and disappear based on how much deco is present. They are for flavor text only
+		- Current planned rate is 1.5 people per 1 deco, starting after at least 3 deco
 	
 - If you close everything, it becomes possible to close her normally
 	- Possibly a chance for her to refuse to go and pull out another item or three
 	- If you pet everything too much, she closes herself
-	
+
 - Double click items to dismiss them
 	- Possibly flavor text when you click them? If it's a guest that isn't a ghost, a comment? Would like said text to be assigned when the item is created
 
@@ -123,7 +88,7 @@ Item ideas:
 
 */
 
-function OnSurfaceRestore
+function OnSurfaceRestore, OnWindowStateRestore
 {
 	local output = "";
 	local usedwindows = [];
@@ -150,52 +115,6 @@ function OnSurfaceRestore
 	
 	output += "\0\s[0]";
 	return output;
-}
-
-function OnMouseDoubleClick
-{
-	if (Shiori.Reference[5] == 0)
-	{
-		if (Shiori.Reference[3] == 0) return OnMainMenu();
-		else
-		{
-			local index = Shiori.Reference[3];
-			
-			return PartyClutter["{index}"].Menu;
-		}
-	}
-}
-
-function OnMainMenu
-{
-	local m = "";
-	
-	m += "\0\b[0]\![no-autopause]\![quicksection,1]";
-	m += "{OnSurfaceRestore}";
-	m += "Hello!\n\n";
-	m += "\![*]\__q[OnAITalk]Talk\__q  ";
-	
-	if (LastTalk == "") m += "\f[color,disable]\![*]Repeat\f[color,default]";
-	else m += "\![*]\__q[OnLastTalk]Repeat\__q";
-	
-	m += "\n\n";
-	
-	m += "\![*]\__q[OnSpawnItem]Spawn object\__q\n\n";
-	
-	m += "\![*]\__q[OnBlank]Cancel\__q";
-	
-	m += "\n{PartyClutter.length}\n\n";
-	foreach (item in PartyClutter)
-	{
-		m += "{item.p}\n";
-	}
-	
-	return m;
-}
-
-function OnLastTalk
-{
-	return LastTalk;
 }
 
 function OnSpawnItem
@@ -292,13 +211,6 @@ class PartyDeco : PartyThing
 	}
 }
 
-function OnDismissItem
-{
-	local p = Shiori.Reference[0].ToNumber();
-	
-	return PartyClutter["{p}"].Vanish() + OnSurfaceRestore();
-}
-
 //Common to all party guests (ghosts excluded)
 class PartyGuest : PartyThing
 {
@@ -317,17 +229,6 @@ function flavortest
 	]);
 }
 
-function OnSurfaceChange
-{
-	//SSP only, sorry
-	//ID, Surface number, width, height
-	local info = Shiori.Reference[2].Split(",");
-	
-	VisibleChars.Remove("{info[0]}");
-	if (info[1] != -1) VisibleChars.Add("{info[0]}", info[1]);
-	//Why do all the checks when I can just remove, and only add back if needed...
-}
-
 function OnSecondChange
 {
 	local since = Time.GetNowUnixEpoch() - LastItemSpawn;
@@ -336,17 +237,5 @@ function OnSecondChange
 	{
 		LastItemSpawn = Time.GetNowUnixEpoch();
 		return OnSpawnItem();
-	}
-}
-
-function CanTalk
-{
-	if (Shiori["talking"] || Shiori["choosing"] || Shiori["minimizing"] || Shiori["timecritical"])
-	{
-		return 0;
-	}
-	else
-	{
-		return 1;
 	}
 }
