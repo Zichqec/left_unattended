@@ -3,8 +3,6 @@ function OnAosoraDefaultSaveData
 {
 	Save.Data.TalkInterval = 180;
 	Save.Data.Username = "friend";
-	Save.Data.ItemSpawnRate = 60;
-	Save.Data.PartyClutterLimit = 20;
 }
 
 //Values to be set upon loading
@@ -19,6 +17,7 @@ function OnAosoraLoad
 	VisibleChars = {};
 	LastItemSpawn = Time.GetNowUnixEpoch();
 	
+	//This one is the other way around so we can have a little randomness to it...
 	NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
 }
 
@@ -182,6 +181,7 @@ class PartyDeco : PartyThing
 		this.surface = "1000";
 		
 		//They're jumping around the screen... how odd
+		//Maybe I can accomodate for it by making each one grab its own coords and jump back to its proper position after the align command?
 		if (rand >= 80)
 		{
 			this.alignment = "bottom";
@@ -270,28 +270,33 @@ function guestflavortest
 
 function OnSecondChange
 {
-	local since = Time.GetNowUnixEpoch() - LastItemSpawn;
-	
-	if (since >= Save.Data.ItemSpawnRate && PartyClutter.length < Save.Data.PartyClutterLimit && CanTalk())
+	if (CanTalk())
 	{
-		LastItemSpawn = Time.GetNowUnixEpoch();
-		return OnSpawnItem();
-	}
-	
-	if (CanSpawnGuest)
-	{
-		if (Time.GetNowUnixEpoch() >= NextGuestSpawn)
+		local since = Time.GetNowUnixEpoch() - LastItemSpawn;
+		local nextitem = LastItemSpawn + ItemSpawnTime();
+		
+		if (Time.GetNowUnixEpoch() >= nextitem)
 		{
-			NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
-			return OnSpawnGuest();
+			//TODO something to think about: this will trigger if you dismiss items and the time until next item goes down... might be a nuisance but oh well! the alternative seems worse? maybe add a cooldown variable...
+			LastItemSpawn = Time.GetNowUnixEpoch();
+			return OnSpawnItem();
 		}
+		
+		if (CanSpawnGuest())
+		{
+			if (Time.GetNowUnixEpoch() >= NextGuestSpawn)
+			{
+				NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
+				return OnSpawnGuest();
+			}
+		}
+		//TODO make guests go away if not enough items
 	}
 }
 
 function GuestSpawnTime
 {
-	//1-3 minutes?
-	return Random.GetIndex(6,19) * 10; //60-180
+	return Random.GetIndex(3,13) * 10; //30-120
 }
 
 function CanSpawnGuest
@@ -301,8 +306,55 @@ function CanSpawnGuest
 	{
 		//1.5 guests for every deco (after the first 3)
 		decocount -= 3;
-		if ((GuestCount()) < (decocount * 1.5).Floor()) return 1;
+		if ((GuestCount()) < (decocount * 1.5).Floor()) return true;
 	}
 	
-	return 0;
+	return false;
+}
+
+function ItemSpawnTime(test)
+{
+	local decocount = DecoCount();
+	if (!test.IsNull()) decocount = test;
+	if (decocount < 3) return 30;
+	else
+	{
+		//OH GOD I'M SO BAD AT MATH WHAT AM I DOING
+		
+		//I would like to thank Balatro for guiding me towards the solution, truly this would not have been possible without your support
+		local decomult = (decocount / 75) + 1;
+		local output = 30;
+		for (local i = 0; i < decocount; i++)
+		{
+			output *= decomult;
+		}
+		return output.Floor();
+	}
+}
+
+function TestCurve, On
+{
+	local output = "\b[2]\![set,autoscroll,disable]\_q";
+	for (local i = 0; i < 50; i++)
+	{
+		local spawntime = ItemSpawnTime(i);
+		output += "{i}: {TimeDisplay(spawntime)} \f[color,disable]({spawntime})\f[color,default]\n";
+	}
+	output += "\x";
+	return output;
+}
+
+function TimeDisplay(input)
+{
+	local output = "";
+	
+	local hours = (input / 3600).Floor();
+	input = input % 3600;
+	local minutes = (input / 60).Floor();
+	local seconds = (input % 60).Floor();
+	
+	if (hours > 0) output += "{hours}h ";
+	output += "{minutes}m ";
+	output += "{seconds}s";
+	return output;
 }

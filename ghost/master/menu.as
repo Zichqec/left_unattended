@@ -30,7 +30,7 @@ function OnMainMenu
 	
 	m += "\![*]\__q[OnBlank]Cancel\__q";
 	
-	m += "\n{PartyClutter.length} | {DecoCount} | {GuestCount} | (Can spawn? {CanSpawnGuest})\n\n";
+	m += "\n{PartyClutter.length} | {DecoCount} | {GuestCount} | (Can spawn? {CanSpawnGuest} - rate: {ItemSpawnTime})\n\n";
 	foreach (item in PartyClutter)
 	{
 		m += "{item.p}\n";
