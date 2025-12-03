@@ -19,7 +19,7 @@ function OnAosoraLoad
 	
 	//This one is the other way around so we can have a little randomness to it...
 	NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
-	ActionBufferTime = Time.GetNowUnixEpoch();
+	CooldownTime = Time.GetNowUnixEpoch();
 	
 	LastX = 0;
 	LastY = 0;
@@ -135,7 +135,7 @@ function OnSurfaceRestore, OnWindowStateRestore
 function OnSecondChange
 {
 	local epoch = Time.GetNowUnixEpoch();
-	if (CanTalk() && epoch - ActionBufferTime >= 10) //I could use reference3 instead of CanTalk, but...
+	if (CanTalk() && epoch - CooldownTime >= 10) //I could use reference3 instead of CanTalk, but...
 	{
 		local since = epoch - LastItemSpawn;
 		local nextitem = LastItemSpawn + ItemSpawnTime();
@@ -144,7 +144,7 @@ function OnSecondChange
 		{
 			//TODO something to think about: this will trigger if you dismiss items and the time until next item goes down... might be a nuisance but oh well! the alternative seems worse? maybe add a cooldown variable...
 			LastItemSpawn = epoch;
-			ActionBufferTime = epoch; //TODO these cooldown things (that's what i should have called it lol) probably need to be moved so that if you manually dismiss stuff that also resets the cooldown
+			CooldownTime = epoch; //TODO these cooldown things (that's what i should have called it lol) probably need to be moved so that if you manually dismiss stuff that also resets the cooldown
 			return OnSpawnItem();
 		}
 		
@@ -153,14 +153,14 @@ function OnSecondChange
 			if (epoch >= NextGuestSpawn)
 			{
 				NextGuestSpawn = epoch + GuestSpawnTime();
-				ActionBufferTime = epoch;
+				CooldownTime = epoch;
 				return OnSpawnGuest();
 			}
 		}
 		
 		if (TooManyGuests())
 		{
-			ActionBufferTime = epoch;
+			CooldownTime = epoch;
 			return OnDespawnGuest();
 		}
 	}
