@@ -28,8 +28,8 @@ THE PLAN:
 //- Could be funny if she notices and comments (minimally) on special dates like the user's birthday and various holidays
 
 - If you pet-close her last item, she leaves in disgust
-- If you menu-close her last item, it becomes possible to close her with the "close" option
-- She needs a special reaction for the "quit" option, see if i can determine this even when she is the only open ghost
+//- If you menu-close her last item, it becomes possible to close her with the "close" option
+//- She needs a special reaction for the "quit" option, see if i can determine this even when she is the only open ghost
 
 
 Item ideas:
@@ -39,6 +39,12 @@ Item ideas:
 - Lanterns that stick to the top
 - Bunches of balloons with one of those weighted things to keep them down
 
+
+Still to do:
+- Close herself when you pet close the last item
+- Pull out more items when you try to close her
+- Open ghosts as VIPs now and then
+- VIPs are toggleable
 */
 
 //Default save data
