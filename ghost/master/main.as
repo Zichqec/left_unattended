@@ -45,6 +45,7 @@ Still to do:
 - Pull out more items when you try to close her
 - Open ghosts as VIPs now and then
 - VIPs are toggleable
+- Use move commands to place objects on spawn
 */
 
 //Default save data
