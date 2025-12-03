@@ -49,6 +49,7 @@ class PartyDeco : PartyThing
 		this.type = "deco";
 		
 		this.flavortext = "{flavortest}";
+		this.pets = 0;
 		
 		local rand = Random.GetIndex(0,100);
 		this.surface = "1000";
@@ -95,6 +96,21 @@ class PartyDeco : PartyThing
 		local dialogue = "\p[{this.p}]\s[-1]Shoo,\w4 out of here...";
 		PartyClutter.Remove("{this.p}");
 		return dialogue;
+	}
+	
+	function Pet
+	{
+		this.pets++;
+		
+		if (this.pets >= 3)
+		{
+			PartyClutter.Remove("{this.p}");
+			return "\0Stop being weird, omg!!! \p[{this.p}]\s[-1]\0I'll have to fix this up, ugh.";
+		}
+		else
+		{
+			return "\0Stop messing up my stuff!!";
+		}
 	}
 }
 

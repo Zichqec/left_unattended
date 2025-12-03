@@ -10,6 +10,7 @@ function OnAosoraLoad
 {
 	TalkTimer.RandomTalk = OnSendTalk;
 	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
+	//TalkTimer.NadenadeTalk = OnStroked; //TODO I don't know how to determine which character...
 	
 	LastTalk = "";
 	
@@ -23,6 +24,8 @@ function OnAosoraLoad
 	
 	LastX = 0;
 	LastY = 0;
+	
+	Stroke = 0;
 	
 	OnSpawnItem();
 	OnSpawnItem();
@@ -41,6 +44,26 @@ function OnSendTalk
 {
 	LastTalk = Reflection.Get("RandomTalk")();
 	return LastTalk;
+}
+
+function OnMouseMove
+{
+	local scope = Shiori.Reference[3];
+	if (scope == 0) return;
+	
+	if (PartyClutter[scope].type == "deco")
+	{
+		Stroke++;
+		if (Stroke % 75 == 0)
+		{
+			return PartyClutter[scope].Pet();
+		}
+	}
+}
+
+function OnMouseLeave
+{
+	Stroke = 0;
 }
 
 function OnBoot()
