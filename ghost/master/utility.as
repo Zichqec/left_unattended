@@ -24,6 +24,8 @@ function OnSurfaceChange
 function OnNotifyUserInfo
 {
 	Save.Data.Username = Shiori.Reference[0];
+	local birthdate = Shiori.Reference[2].Split(",");
+	Birthday = {month: birthdate[1].ToNumber(), day: birthdate[2].ToNumber()};
 }
 
 function username

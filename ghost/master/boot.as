@@ -1,6 +1,11 @@
 talk BootTalk
 {
-	Greetings
+	\0\s[0]Greetings
+}
+
+talk BootHolidayTalk(holiday)
+{
+	\0\s[0]Yeah yeah yeah it's {holiday}, whatever, what's more important is my party
 }
 
 talk CloseDefeatTalk
