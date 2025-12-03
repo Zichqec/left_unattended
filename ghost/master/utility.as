@@ -75,3 +75,77 @@ function GuestCount
 {
 	return CountPartyClutter("guest");
 }
+
+
+function GuestSpawnTime
+{
+	return Random.GetIndex(2,7) * 10; //20-60
+}
+
+function CanSpawnGuest
+{
+	local decocount = DecoCount();
+	if (decocount > 3)
+	{
+		//1.5 guests for every deco (after the first 3)
+		decocount -= 3;
+		if (GuestCount() < (decocount * 1.5).Floor()) return true;
+	}
+	
+	return false;
+}
+
+function TooManyGuests
+{
+	local decocount = DecoCount() - 3;
+	
+	if (GuestCount() > (decocount * 1.5).Floor() && GuestCount() > 0) return true;
+	else return false;
+}
+
+function ItemSpawnTime(test)
+{
+	local decocount = DecoCount();
+	if (!test.IsNull()) decocount = test;
+	if (decocount < 3) return 30;
+	else
+	{
+		//OH GOD I'M SO BAD AT MATH WHAT AM I DOING
+		
+		//I would like to thank Balatro for guiding me towards the solution, truly this would not have been possible without your support
+		local decomult = (decocount / 75) + 1;
+		local output = 30;
+		for (local i = 0; i < decocount; i++)
+		{
+			output *= decomult;
+		}
+		return output.Floor();
+	}
+}
+
+function TestCurve, On
+{
+	local output = "\b[2]\![set,autoscroll,disable]\_q";
+	for (local i = 0; i < 50; i++)
+	{
+		local spawntime = ItemSpawnTime(i);
+		output += "{i}: {TimeDisplay(spawntime)} \f[color,disable]({spawntime})\f[color,default]\n";
+	}
+	output += "\x";
+	return output;
+}
+
+function TimeDisplay(input)
+{
+	local output = "";
+	
+	local hours = (input / 3600).Floor();
+	input = input % 3600;
+	local minutes = (input / 60).Floor();
+	local seconds = (input % 60).Floor();
+	
+	if (hours > 0) output += "{hours}h ";
+	output += "{minutes}m ";
+	output += "{seconds}s";
+	return output;
+}
