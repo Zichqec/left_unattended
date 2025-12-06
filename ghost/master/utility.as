@@ -125,7 +125,7 @@ function ItemSpawnTime(test)
 	}
 }
 
-function TestCurve, On
+function OnTestCurve
 {
 	local output = "\b[2]\![set,autoscroll,disable]\_q";
 	for (local i = 0; i < 50; i++)

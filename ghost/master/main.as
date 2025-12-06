@@ -77,11 +77,10 @@ function OnAosoraLoad
 	LastX = 0;
 	LastY = 0;
 	
-	Stroke = 0;
+	//As in monitor...
+	Display = {};
 	
-	OnSpawnItem();
-	OnSpawnItem();
-	OnSpawnItem();
+	Stroke = 0;
 }
 
 //Call coming from menu, hotkey, or \a
@@ -118,8 +117,27 @@ function OnMouseLeave
 	Stroke = 0;
 }
 
-function OnBoot()
+function OnInitialize
 {
+	//I want it to initialize some of them for me on reloading, but I can't do that without it not knowing what coords to put them at... do I care? hm
+	//It seems like it places them at the coordinates where they were last...? in which case, shrug. Debug annoyance but whatever...
+	//I'm getting some weirdness though... test more perhaps
+	Debug.WriteLine("Shiori.Reference[0]: {Shiori.Reference[0]}");
+	if (Shiori.Reference[0] == "reload")
+	{
+		Debug.WriteLine("Doing a reload...");
+		InitializeItem();
+		InitializeItem();
+		InitializeItem();
+	}
+}
+
+function OnBoot
+{
+	InitializeItem();
+	InitializeItem();
+	InitializeItem();
+	
 	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";
 	local holiday = null;
 	
@@ -132,8 +150,8 @@ function OnBoot()
 	else if (date == "12/24") holiday = "Christmas Eve";
 	else if (date == "12/25") holiday = "Christmas";
 	
-	if (!holiday.IsNull()) return BootHolidayTalk(holiday);
-	else return BootTalk();
+	if (!holiday.IsNull()) return SurfaceRefresh() + BootHolidayTalk(holiday);
+	else return SurfaceRefresh() + BootTalk();
 }
 
 function OnCloseAll, OnGhostChanging
@@ -147,8 +165,9 @@ function OnClose
 	else return CloseStillPartyingTalk() + "\e";
 }
 
-function OnSurfaceRestore, OnWindowStateRestore
+function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 {
+	Debug.WriteLine("SURFACE RESTORE------------");
 	local output = "";
 	local usedwindows = [];
 	
@@ -176,7 +195,7 @@ function OnSurfaceRestore, OnWindowStateRestore
 	return output;
 }
 
-function OnSecondChange
+function OnSecondChangeS //TODO fix later i just can't deal with this right now lol
 {
 	local epoch = Time.GetNowUnixEpoch();
 	if (CanTalk() && epoch - CooldownTime >= 10) //I could use reference3 instead of CanTalk, but...
@@ -212,9 +231,14 @@ function OnSecondChange
 
 function OnSpawnItem
 {
+	InitializeItem();
+	return OnSurfaceRestore();
+}
+
+function InitializeItem
+{
 	local clutter = new PartyDeco();
 	PartyClutter.Add("{clutter.p}", clutter);
-	return OnSurfaceRestore();
 }
 
 function OnSpawnGuest
@@ -233,4 +257,43 @@ function OnDespawnGuest
 	}
 	local pick = Random.Select(guestlist);
 	return PartyClutter[pick].Vanish();
+}
+
+function OnDisplayChangeEx
+{
+	Debug.WriteLine("!!!!!!!!!!!!!!!!!!GET DISPLAY!!!!!!!!!!!!!");
+	Display.Clear();
+	local reference = Shiori.Reference;
+	reference.Remove(0); //First reference is "init" or "update"
+	foreach (ref, i in reference)
+	{
+		//Left, up, right, down, bit depth, primary monitor or otherwise (0/1), the taskbar position (left,top,right,bottom,unknown), the coordinates of where the taskbar is separated from the rest of the screen
+		//Ex: 0,0,1600,900,32,1,bottom,1560
+		local ref = ref.Split(",");
+		local left = ref[0].ToNumber();
+		local top = ref[1].ToNumber();
+		local right = ref[2].ToNumber();
+		local bottom = ref[3].ToNumber();
+		local taskpos = ref[6];
+		local taskbar = ref[7].ToNumber();
+		
+		if (taskpos == "left") left = taskbar;
+		else if (taskpos == "top") top = taskbar;
+		else if (taskpos == "right") right = taskbar;
+		else if (taskpos == "bottom") bottom = taskbar;
+		
+		local width = abs(right) - abs(left);
+		width = abs(width);
+		
+		local height = abs(bottom) - abs(top);
+		height = abs(height);
+		
+		Display["{i}"] = {left: left, top: top, right: right, bottom: bottom, width: width, height: height};
+	}
+}
+
+function abs(num)
+{
+	if (num < 0) return num *= -1;
+	else return num;
 }

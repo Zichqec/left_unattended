@@ -12,18 +12,29 @@ class PartyThing
 		{
 			p++; //This is ONE INDEXED because character 0 is the sakura
 			
-			//Assume it's valid unless proven otherwise
-			valid = 1;
-			if (PartyClutter.Contains("{p}")) valid = 0;
+			if (!PartyClutter.Contains("{p}")) valid = 1;
 		}
 		this.p = p;
 		
 		this.alignment = "free";
+		
+		this.pos_init = false;
+		this.width = 300; //temp... i guess i'm going to have to account for different sizes regardless due to scaling
+		this.height = 300; //temp ↑
 	}
 	
 	function SurfaceRestore
 	{
-		return "\p[{this.p}]\s[{this.surface}]\![get,property,OnGetPosition,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnReturnToPosition]";
+		if (!this.pos_init)
+		{
+			this.pos_init = true;
+			local script = "\![!!!!!]\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\![set,alignmenttodesktop,{this.alignment}]\![move,--x={this.initX},--y={this.initY},--time=0,--base=primaryscreen]\![set,alpha,100]";
+			return script + script;
+		}
+		else
+		{
+			return "\p[{this.p}]\s[{this.surface}]\![get,property,OnGetPosition,currentghost.scope({this.p}).rect]\![set,alpha,0]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnReturnToPosition]\![set,alpha,100]";
+		}
 	}
 }
 
@@ -37,7 +48,9 @@ function OnGetPosition
 
 function OnReturnToPosition
 {
-	return "\![move,--x={LastX},--y={LastY},--time=0,--base=primaryscreen]";
+	//I've never pinned down why doing it twice makes it work better...
+	local script = "\![move,--x={LastX},--y={LastY},--time=0,--base=primaryscreen]";
+	return script + script;
 }
 
 //Common to all party decorative objects
@@ -76,6 +89,24 @@ class PartyDeco : PartyThing
 			this.alignment = "right";
 			this.surface = "5000";
 		}
+		
+		local len = Display.length;
+		local display = Display["{Random.GetIndex(0,len)}"];
+		Debug.WriteLine("len: {len}");
+		Debug.WriteLine("display: {display}");
+		Debug.WriteLine("display.width: {display.width}");
+		Debug.WriteLine("display.height: {display.height}");
+		
+		local rightbound = display.width - this.width;
+		
+		this.initX = Random.GetIndex(0,rightbound) - display.left;
+		
+		local lowerbound = display.height - this.height;
+		this.initY = Random.GetIndex(0,lowerbound) - display.top;
+		
+		//Maybe adjust later, i just don't want to duplicate code, blagh. maybe a function within the PartyThing class??
+		//i guess really i will have to wait to see what items we get, because the level they should be placed at may change based on what they are... perhaps they should get their own classes? ugh but how would i make that happen...
+		if (this.alignment == "free") this.initY = lowerbound;
 	}
 	
 	function Menu
@@ -127,6 +158,19 @@ class PartyGuest : PartyThing
 		this.alignment = "free";
 		
 		this.flavortext = "{guestflavortest}";
+		
+		local len = Display.length;
+		local display = Display["{Random.GetIndex(0,len)}"];
+		
+		local rightbound = display.width - this.width;
+		
+		this.initX = Random.GetIndex(0,rightbound) - display.left;
+		
+		local upperbound = ((display.height / 6) * 5).Floor() - this.height;
+		local lowerbound = display.height - this.height;
+		this.initY = lowerbound;
+		
+		if (upperbound < lowerbound) this.initY = Random.GetIndex(upperbound,lowerbound);
 	}
 	
 	//Not really a menu, probably should rename...
