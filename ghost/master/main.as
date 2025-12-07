@@ -103,7 +103,7 @@ function OnSendTalk
 	return LastTalk;
 }
 
-function OnMouseMove
+function OnMouseMove, OnMouseWheel
 {
 	local scope = Shiori.Reference[3];
 	if (scope == 0) return;
