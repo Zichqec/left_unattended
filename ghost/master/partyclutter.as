@@ -90,7 +90,7 @@ class PartyDeco : PartyThing
 			this.alignment = "right";
 			pick = Random.Select(RightDeco());
 		}
-		this.itemtype = pick.name;
+		this.specifictype = pick.name;
 		this.surface = pick.surface;
 		
 		local len = Display.length;
@@ -194,7 +194,9 @@ class PartyGuest : PartyThing
 		//For determining the difference between deco and guests...
 		this.type = "guest";
 		
-		this.surface = "10";
+		local pick = Random.Select(GuestTypes());
+		this.specifictype = pick.name;
+		this.surface = pick.surface;
 		
 		this.alignment = "free";
 		
@@ -233,6 +235,14 @@ class PartyGuest : PartyThing
 		PartyClutter.Remove("{this.p}");
 		return dialogue;
 	}
+}
+
+function GuestTypes
+{
+	return [
+		{surface: "10", name: "regular"},
+		{surface: "11", name: "hornsears"},
+	];
 }
 
 function flavortest
