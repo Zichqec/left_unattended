@@ -44,7 +44,7 @@ Still to do:
 //- Close herself when you pet close the last item
 //- Pull out more items when you try to close her
 
-- Open ghosts as VIPs now and then
+//- Open ghosts as VIPs now and then
 //- VIPs are toggleable
 
 //- Use move commands to place objects on spawn
@@ -77,6 +77,7 @@ function OnAosoraLoad
 	
 	//This one is the other way around so we can have a little randomness to it...
 	NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
+	NextVIPSpawn = Time.GetNowUnixEpoch() + VIPSpawnTime();
 	CooldownTime = Time.GetNowUnixEpoch();
 	
 	LastX = 0;
@@ -127,10 +128,8 @@ function OnInitialize
 	//I want it to initialize some of them for me on reloading, but I can't do that without it not knowing what coords to put them at... do I care? hm
 	//It seems like it places them at the coordinates where they were last...? in which case, shrug. Debug annoyance but whatever...
 	//I'm getting some weirdness though... test more perhaps
-	Debug.WriteLine("Shiori.Reference[0]: {Shiori.Reference[0]}");
 	if (Shiori.Reference[0] == "reload")
 	{
-		Debug.WriteLine("Doing a reload...");
 		InitializeItem(3);
 	}
 }
@@ -177,7 +176,6 @@ function OnClose
 
 function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 {
-	Debug.WriteLine("SURFACE RESTORE------------");
 	local output = "";
 	local usedwindows = [];
 	
@@ -236,7 +234,22 @@ function OnSecondChange
 			CooldownTime = epoch;
 			return OnDespawnGuest();
 		}
+		
+		if (CanSpawnVIP())
+		{
+			if (epoch >= NextVIPSpawn)
+			{
+				NextVIPSpawn = epoch + VIPSpawnTime();
+				CooldownTime = epoch;
+				return OnSpawnVIP();
+			}
+		}
 	}
+}
+
+function OnOtherGhostClosed
+{
+	CooldownTime = Time.GetNowUnixEpoch();
 }
 
 function OnSpawnItem
@@ -263,6 +276,16 @@ function OnSpawnGuest
 	return OnSurfaceRestore();
 }
 
+function OnSpawnVIP
+{
+	return "\![call,ghost,random]";
+}
+
+function OnGhostCallComplete, OnOtherGhostBooted
+{
+	return VIPArriveTalk(Shiori.Reference[0],Shiori.Reference[2]);
+}
+
 function OnDespawnGuest
 {
 	local guestlist = [];
@@ -276,7 +299,6 @@ function OnDespawnGuest
 
 function OnDisplayChangeEx
 {
-	Debug.WriteLine("!!!!!!!!!!!!!!!!!!GET DISPLAY!!!!!!!!!!!!!");
 	Display.Clear();
 	local reference = Shiori.Reference;
 	reference.Remove(0); //First reference is "init" or "update"

@@ -32,3 +32,8 @@ talk CloseStopTouchingThingsTalk(p)
 {
 	Ew??? Stop messing up my stuff! Weirdo!!!\p[{p}]\s[-1]\0 Fine, whatever, if you're just gonna mess stuff up then I'm outta here!!!
 }
+
+talk VIPArriveTalk(sakura)
+{
+	Yooo what's up {sakura}, welcome to the party
+}

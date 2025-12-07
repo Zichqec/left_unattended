@@ -27,16 +27,17 @@ function OnMainMenu
 	m += "\n\n";
 	m += "\![*]\__q[OnSettings]Settings\__q\n\n";
 	
-	m += "\![*]\__q[OnSpawnItem]Spawn object\__q\n";
+	m += "\![*]\__q[OnSpawnItem]Spawn object\__q  ";
 	m += "\![*]\__q[OnSpawnGuest]Spawn guest\__q\n\n";
 	
 	m += "\![*]\__q[OnBlank]Cancel\__q";
 	
-	m += "\n{PartyClutter.length} | {DecoCount} | {GuestCount}\n(Can spawn? {CanSpawnGuest}\n Too many? {TooManyGuests})\n\n";
-	foreach (item in Display)
-	{
-		m += "{item.width}x{item.height} - {item.bottom}\n";
-	}
+	m += "\nVIP? {CanSpawnVIP} | Current {VIPCount}";
+	//m += "\n{PartyClutter.length} | {DecoCount} | {GuestCount}\n(Can spawn? {CanSpawnGuest}\n Too many? {TooManyGuests})\n\n";
+	// foreach (item in Display)
+	// {
+		// m += "{item.width}x{item.height} - {item.bottom}\n";
+	// }
 	
 	return m;
 }
