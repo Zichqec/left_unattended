@@ -50,6 +50,7 @@ Still to do:
 //- Use move commands to place objects on spawn
 
 //- Talkrate changer lol
+	- Of course, I wonder, would it be better if she only talks when she brings out items/guests arrive...? and when you double click her
 
 //- Set it up to handle different items of each type... and guests as well
 	- Not set up to handle different pools yet, but i will add that if and when we get to such a thing...
