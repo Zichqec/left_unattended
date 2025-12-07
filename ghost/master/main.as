@@ -41,7 +41,7 @@ Item ideas:
 
 
 Still to do:
-- Close herself when you pet close the last item
+//- Close herself when you pet close the last item
 //- Pull out more items when you try to close her
 
 - Open ghosts as VIPs now and then

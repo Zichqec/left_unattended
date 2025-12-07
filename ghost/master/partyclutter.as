@@ -131,8 +131,10 @@ class PartyDeco : PartyThing
 		
 		if (this.pets >= 3)
 		{
+			//I want to abstract these out but I'm not sure where to put them...
 			PartyClutter.Remove("{this.p}");
-			return "\0Stop being weird, omg!!! \p[{this.p}]\s[-1]\0I'll have to fix this up, ugh.";
+			if (DecoCount() == 0) return CloseStopTouchingThingsTalk(this.p) + "\_w[1000]\-";
+			else return "\0Stop being weird, omg!!! \p[{this.p}]\s[-1]\0I'll have to fix this up, ugh.";
 		}
 		else
 		{

@@ -27,3 +27,8 @@ talk CloseStillPartyingTalk
 {
 	Um, hello? I've got a party going here! I'm not going anywhere.
 }
+
+talk CloseStopTouchingThingsTalk(p)
+{
+	Ew??? Stop messing up my stuff! Weirdo!!!\p[{p}]\s[-1]\0 Fine, whatever, if you're just gonna mess stuff up then I'm outta here!!!
+}
