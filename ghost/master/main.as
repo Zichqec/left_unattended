@@ -8,9 +8,9 @@ THE PLAN:
 			//- Items spawn at a slower rate the more there are. natural soft cap. no adjustment allowed
 			//- 60s * 1.25 for each item? possibly starting at 3 items, and when you're at less than that it's a lower rate?
 	
-- Guests can either be silhouette people? lil guys? or, they can be other ghosts
-	- Toggleable option for it to be just silhouette guys, other ghosts, or both
-	- Other ghosts are VIPs and work separately
+//- Guests can either be silhouette people? lil guys? or, they can be other ghosts
+	//- Toggleable option for it to be just silhouette guys, other ghosts, or both
+	//- Other ghosts are VIPs and work separately
 		//- Should she maybe be able to close despite them if you close all her items...? That'd probably be for the best... otherwise this ghost will be my personal hell lol
 	//- Silhouette people appear and disappear based on how much deco is present. They are for flavor text only
 		//- Current planned rate is 1.5 people per 1 deco, starting after at least 3 deco
@@ -51,7 +51,8 @@ Still to do:
 
 //- Talkrate changer lol
 
-- Set it up to handle different items of each type... and guests as well
+//- Set it up to handle different items of each type... and guests as well
+	- Not set up to handle different pools yet, but i will add that if and when we get to such a thing...
 */
 
 //Default save data
