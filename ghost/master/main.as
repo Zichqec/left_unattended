@@ -42,7 +42,7 @@ Item ideas:
 
 Still to do:
 - Close herself when you pet close the last item
-- Pull out more items when you try to close her
+//- Pull out more items when you try to close her
 
 - Open ghosts as VIPs now and then
 - VIPs are toggleable
@@ -126,17 +126,13 @@ function OnInitialize
 	if (Shiori.Reference[0] == "reload")
 	{
 		Debug.WriteLine("Doing a reload...");
-		InitializeItem();
-		InitializeItem();
-		InitializeItem();
+		InitializeItem(3);
 	}
 }
 
 function OnBoot
 {
-	InitializeItem();
-	InitializeItem();
-	InitializeItem();
+	InitializeItem(3);
 	
 	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";
 	local holiday = null;
@@ -161,7 +157,16 @@ function OnCloseAll, OnGhostChanging
 
 function OnClose
 {
-	if (DecoCount() == 0) return CloseCleanedUpTalk() + "\_w[1000]\-";
+	if (DecoCount() == 0)
+	{
+		if (Random.GetIndex(0,3) == 0)
+		{
+			InitializeItem(3);
+			//nouserbreakmode still allows you to double click her, but that refreshes the surfaces so it's probably fine...? but if i reconsider that behavior i should add more tags here
+			return "\![enter,nouserbreakmode]" + CloseNotYetTalk() + "\![leave,nouserbreakmode]\e";
+		}
+		else return CloseCleanedUpTalk() + "\_w[1000]\-";
+	}
 	else return CloseStillPartyingTalk() + "\e";
 }
 
@@ -231,14 +236,19 @@ function OnSecondChange
 
 function OnSpawnItem
 {
-	InitializeItem();
+	InitializeItem(1);
 	return OnSurfaceRestore();
 }
 
-function InitializeItem
+function InitializeItem(num)
 {
-	local clutter = new PartyDeco();
-	PartyClutter.Add("{clutter.p}", clutter);
+	if (num.IsNull()) num = 1;
+	
+	for (local i = 0; i < num; i++)
+	{
+		local clutter = new PartyDeco();
+		PartyClutter.Add("{clutter.p}", clutter);
+	}
 }
 
 function OnSpawnGuest

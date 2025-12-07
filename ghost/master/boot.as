@@ -13,6 +13,11 @@ talk CloseDefeatTalk
 	Heading out? We'll save you some cake lol
 }
 
+talk CloseNotYetTalk
+{
+	Not so fast! I just got another shipment in! {SurfaceRefresh}Yaaaah!
+}
+
 talk CloseCleanedUpTalk
 {
 	Fine!! You've RUINED my party!!!
