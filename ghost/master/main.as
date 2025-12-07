@@ -45,9 +45,13 @@ Still to do:
 //- Pull out more items when you try to close her
 
 - Open ghosts as VIPs now and then
-- VIPs are toggleable
+//- VIPs are toggleable
 
 //- Use move commands to place objects on spawn
+
+//- Talkrate changer lol
+
+- Set it up to handle different items of each type... and guests as well
 */
 
 //Default save data
@@ -55,6 +59,7 @@ function OnAosoraDefaultSaveData
 {
 	Save.Data.TalkInterval = 180;
 	Save.Data.Username = "friend";
+	Save.Data.VIPsAllowed = 0;
 }
 
 //Values to be set upon loading
