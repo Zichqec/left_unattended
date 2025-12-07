@@ -65,30 +65,33 @@ class PartyDeco : PartyThing
 		this.pets = 0;
 		
 		local rand = Random.GetIndex(0,100);
-		this.surface = "1000";
 		
 		//They're jumping around the screen... how odd
 		//Maybe I can accomodate for it by making each one grab its own coords and jump back to its proper position after the align command?
+		local pick = Random.Select(FreeDeco());
 		if (rand >= 80)
 		{
 			this.alignment = "bottom";
-			this.surface = "2000";
+			pick = Random.Select(BottomDeco());
+			
 		}
 		else if (rand >= 60)
 		{
 			this.alignment = "top";
-			this.surface = "3000";
+			pick = Random.Select(TopDeco());
 		}
 		else if (rand >= 50)
 		{
 			this.alignment = "left";
-			this.surface = "4000";
+			pick = Random.Select(LeftDeco());
 		}
 		else if (rand >= 40)
 		{
 			this.alignment = "right";
-			this.surface = "5000";
+			pick = Random.Select(RightDeco());
 		}
+		this.itemtype = pick.name;
+		this.surface = pick.surface;
 		
 		local len = Display.length;
 		local display = Display["{Random.GetIndex(0,len)}"];
@@ -141,6 +144,46 @@ class PartyDeco : PartyThing
 			return "\0Stop messing up my stuff!!";
 		}
 	}
+}
+
+function FreeDeco
+{
+	return [
+		{surface: "1000", name: "caketable"},
+		{surface: "1001", name: "pottedfern"},
+	];
+}
+
+function BottomDeco
+{
+	return [
+		{surface: "2000", name: "weightedballoons"},
+		{surface: "2001", name: "lightthings"},
+	];
+}
+
+function TopDeco
+{
+	return [
+		{surface: "3000", name: "trianglestring"},
+		{surface: "3001", name: "happypartybanner"},
+	];
+}
+
+function LeftDeco
+{
+	return [
+		{surface: "4000", name: "sidebanner"},
+		{surface: "4001", name: "sideballoons"},
+	];
+}
+
+function RightDeco
+{
+	return [
+		{surface: "5000", name: "dartboard"},
+		{surface: "5001", name: "sidefern"},
+	];
 }
 
 //Common to all party guests
