@@ -26,7 +26,8 @@ function OnMainMenu
 	
 	m += "\n\n";
 	
-	m += "\![*]\__q[OnSpawnItem]Spawn object\__q\n\n";
+	m += "\![*]\__q[OnSpawnItem]Spawn object\__q\n";
+	m += "\![*]\__q[OnSpawnGuest]Spawn guest\__q\n\n";
 	
 	m += "\![*]\__q[OnBlank]Cancel\__q";
 	

@@ -47,7 +47,7 @@ Still to do:
 - Open ghosts as VIPs now and then
 - VIPs are toggleable
 
-- Use move commands to place objects on spawn
+//- Use move commands to place objects on spawn
 */
 
 //Default save data
@@ -195,7 +195,7 @@ function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 	return output;
 }
 
-function OnSecondChangeS //TODO fix later i just can't deal with this right now lol
+function OnSecondChange
 {
 	local epoch = Time.GetNowUnixEpoch();
 	if (CanTalk() && epoch - CooldownTime >= 10) //I could use reference3 instead of CanTalk, but...

@@ -28,8 +28,8 @@ class PartyThing
 		if (!this.pos_init)
 		{
 			this.pos_init = true;
-			local script = "\![!!!!!]\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\![set,alignmenttodesktop,{this.alignment}]\![move,--x={this.initX},--y={this.initY},--time=0,--base=primaryscreen]\![set,alpha,100]";
-			return script + script;
+			local move = "\![move,--x={this.initX},--y={this.initY},--time=0,--base=primaryscreen]";
+			return "\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\![set,alignmenttodesktop,{this.alignment}]{move}{move}\![set,alpha,100]";
 		}
 		else
 		{
@@ -92,10 +92,6 @@ class PartyDeco : PartyThing
 		
 		local len = Display.length;
 		local display = Display["{Random.GetIndex(0,len)}"];
-		Debug.WriteLine("len: {len}");
-		Debug.WriteLine("display: {display}");
-		Debug.WriteLine("display.width: {display.width}");
-		Debug.WriteLine("display.height: {display.height}");
 		
 		local rightbound = display.width - this.width;
 		
@@ -166,8 +162,11 @@ class PartyGuest : PartyThing
 		
 		this.initX = Random.GetIndex(0,rightbound) - display.left;
 		
-		local upperbound = ((display.height / 6) * 5).Floor() - this.height;
+		//local upperbound = ((display.height / 6) * 5).Floor() - this.height;
+		this.height = 270; //TODO TEMP
+		
 		local lowerbound = display.height - this.height;
+		local upperbound = lowerbound - (this.height / 2).Floor();
 		this.initY = lowerbound;
 		
 		if (upperbound < lowerbound) this.initY = Random.GetIndex(upperbound,lowerbound);
