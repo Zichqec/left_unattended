@@ -333,6 +333,7 @@ function OnGhostCallComplete, OnOtherGhostBooted
 function OnOtherGhostClosed
 {
 	CooldownTime = Time.GetNowUnixEpoch();
+	return VIPLeaveTalk(Shiori.Reference[0],Shiori.Reference[2]);
 }
 
 

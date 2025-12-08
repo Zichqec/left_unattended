@@ -37,3 +37,8 @@ talk VIPArriveTalk(sakura)
 {
 	Yooo what's up {sakura}, welcome to the party
 }
+
+talk VIPLeaveTalk(sakura)
+{
+	Oh, bye then, {sakura}. Stay longer next time.
+}
