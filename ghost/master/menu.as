@@ -1,17 +1,3 @@
-function OnMouseDoubleClick
-{
-	if (Shiori.Reference[5] == 0)
-	{
-		if (Shiori.Reference[3] == 0) return OnMainMenu();
-		else
-		{
-			local index = Shiori.Reference[3];
-			
-			return PartyClutter["{index}"].Menu;
-		}
-	}
-}
-
 function OnMainMenu
 {
 	local m = "";
@@ -40,11 +26,6 @@ function OnMainMenu
 	// }
 	
 	return m;
-}
-
-function OnLastTalk
-{
-	return LastTalk;
 }
 
 function OnSettings

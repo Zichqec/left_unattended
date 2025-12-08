@@ -56,6 +56,7 @@ Still to do:
 	- Not set up to handle different pools yet, but i will add that if and when we get to such a thing...
 */
 
+//——————————————— Save data ———————————————
 //Default save data
 function OnAosoraDefaultSaveData
 {
@@ -91,6 +92,19 @@ function OnAosoraLoad
 	Stroke = 0;
 }
 
+function OnInitialize
+{
+	//I want it to initialize some of them for me on reloading, but I can't do that without it not knowing what coords to put them at... do I care? hm
+	//It seems like it places them at the coordinates where they were last...? in which case, shrug. Debug annoyance but whatever...
+	//I'm getting some weirdness though... test more perhaps
+	if (Shiori.Reference[0] == "reload")
+	{
+		InitializeItem(3);
+	}
+}
+
+
+//——————————————— Randomtalk control ———————————————
 //Call coming from menu, hotkey, or \a
 function OnAITalk
 {
@@ -105,6 +119,13 @@ function OnSendTalk
 	return LastTalk;
 }
 
+function OnLastTalk
+{
+	return LastTalk;
+}
+
+
+//——————————————— Mouse control ———————————————
 function OnMouseMove, OnMouseWheel
 {
 	local scope = Shiori.Reference[3];
@@ -125,17 +146,22 @@ function OnMouseLeave
 	Stroke = 0;
 }
 
-function OnInitialize
+function OnMouseDoubleClick
 {
-	//I want it to initialize some of them for me on reloading, but I can't do that without it not knowing what coords to put them at... do I care? hm
-	//It seems like it places them at the coordinates where they were last...? in which case, shrug. Debug annoyance but whatever...
-	//I'm getting some weirdness though... test more perhaps
-	if (Shiori.Reference[0] == "reload")
+	if (Shiori.Reference[5] == 0)
 	{
-		InitializeItem(3);
+		if (Shiori.Reference[3] == 0) return OnMainMenu();
+		else
+		{
+			local index = Shiori.Reference[3];
+			
+			return PartyClutter["{index}"].Menu;
+		}
 	}
 }
 
+
+//——————————————— Boot and close control ———————————————
 function OnBoot
 {
 	InitializeItem(3);
@@ -176,6 +202,8 @@ function OnClose
 	else return CloseStillPartyingTalk() + "\e";
 }
 
+
+//——————————————— Surface restore ———————————————
 function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 {
 	local output = "";
@@ -205,6 +233,8 @@ function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 	return output;
 }
 
+
+//——————————————— Spawning/despawning logic ———————————————
 function OnSecondChange
 {
 	local epoch = Time.GetNowUnixEpoch();
@@ -249,11 +279,8 @@ function OnSecondChange
 	}
 }
 
-function OnOtherGhostClosed
-{
-	CooldownTime = Time.GetNowUnixEpoch();
-}
 
+//————— deco —————
 function OnSpawnItem
 {
 	InitializeItem(1);
@@ -271,21 +298,13 @@ function InitializeItem(num)
 	}
 }
 
+
+//————— guests —————
 function OnSpawnGuest
 {
 	local clutter = new PartyGuest();
 	PartyClutter.Add("{clutter.p}", clutter);
 	return OnSurfaceRestore();
-}
-
-function OnSpawnVIP
-{
-	return "\![call,ghost,random]";
-}
-
-function OnGhostCallComplete, OnOtherGhostBooted
-{
-	return VIPArriveTalk(Shiori.Reference[0],Shiori.Reference[2]);
 }
 
 function OnDespawnGuest
@@ -299,40 +318,36 @@ function OnDespawnGuest
 	return PartyClutter[pick].Vanish();
 }
 
-function OnDisplayChangeEx
+
+//————— VIPs —————
+function OnSpawnVIP
 {
-	Display.Clear();
-	local reference = Shiori.Reference;
-	reference.Remove(0); //First reference is "init" or "update"
-	foreach (ref, i in reference)
+	return "\![call,ghost,random]";
+}
+
+function OnGhostCallComplete, OnOtherGhostBooted
+{
+	return VIPArriveTalk(Shiori.Reference[0],Shiori.Reference[2]);
+}
+
+function OnOtherGhostClosed
+{
+	CooldownTime = Time.GetNowUnixEpoch();
+}
+
+
+//——————————————— Misc ———————————————
+function OnAnchorSelect
+{
+	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://"))
 	{
-		//Left, up, right, down, bit depth, primary monitor or otherwise (0/1), the taskbar position (left,top,right,bottom,unknown), the coordinates of where the taskbar is separated from the rest of the screen
-		//Ex: 0,0,1600,900,32,1,bottom,1560
-		local ref = ref.Split(",");
-		local left = ref[0].ToNumber();
-		local top = ref[1].ToNumber();
-		local right = ref[2].ToNumber();
-		local bottom = ref[3].ToNumber();
-		local taskpos = ref[6];
-		local taskbar = ref[7].ToNumber();
-		
-		if (taskpos == "left") left = taskbar;
-		else if (taskpos == "top") top = taskbar;
-		else if (taskpos == "right") right = taskbar;
-		else if (taskpos == "bottom") bottom = taskbar;
-		
-		local width = abs(right) - abs(left);
-		width = abs(width);
-		
-		local height = abs(bottom) - abs(top);
-		height = abs(height);
-		
-		Display["{i}"] = {left: left, top: top, right: right, bottom: bottom, width: width, height: height};
+		return `\j["{Shiori.Reference[0]}"]`;
 	}
 }
 
-function abs(num)
+function OnKeyPress
 {
-	if (num < 0) return num *= -1;
-	else return num;
+	if (Shiori.Reference[0] == "f1") return "\![open,readme]";
+	else if (Shiori.Reference[0] == "t") return OnAITalk;
+	else if (Shiori.Reference[0] == "r") return OnLastTalk;
 }

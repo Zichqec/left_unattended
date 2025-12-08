@@ -1,74 +1,37 @@
-function CanTalk
+//——————————————— Flags/counts ———————————————
+//————— Spawn time calcs —————
+function ItemSpawnTime(test)
 {
-	if (Shiori["talking"] || Shiori["choosing"] || Shiori["minimizing"] || Shiori["timecritical"])
-	{
-		return 0;
-	}
+	local decocount = DecoCount();
+	if (!test.IsNull()) decocount = test;
+	if (decocount < 3) return 30;
 	else
 	{
-		return 1;
+		//OH GOD I'M SO BAD AT MATH WHAT AM I DOING
+		
+		//I would like to thank Balatro for guiding me towards the solution, truly this would not have been possible without your support
+		local decomult = (decocount / 75) + 1;
+		local output = 30;
+		for (local i = 0; i < decocount; i++)
+		{
+			output *= decomult;
+		}
+		return output.Floor();
 	}
 }
 
-function OnSurfaceChange
+function GuestSpawnTime
 {
-	//SSP only, sorry
-	//ID, Surface number, width, height
-	local info = Shiori.Reference[2].Split(",");
-	
-	VisibleChars.Remove("{info[0]}");
-	if (info[1] != -1) VisibleChars.Add("{info[0]}", info[1]);
-	//Why do all the checks when I can just remove, and only add back if needed...
+	return Random.GetIndex(2,7) * 10; //20-60
 }
 
-function OnNotifyUserInfo
+function VIPSpawnTime
 {
-	Save.Data.Username = Shiori.Reference[0];
-	local birthdate = Shiori.Reference[2].Split(",");
-	Birthday = {month: birthdate[1].ToNumber(), day: birthdate[2].ToNumber()};
+	return Random.GetIndex(9,19) * 10; //90-180
 }
 
-function username
-{
-	return Save.Data.Username;
-}
 
-//Sakura names
-function otherghostname
-{
-	OpenGhosts = [];
-	for (local i = 0; i < Shiori.Reference.length; i++)
-	{
-		local split = Shiori.Reference[i].Split("{(1).ToAscii()}");
-		OpenGhosts.Add(split[0]);
-	}
-}
-
-//Full ghost names
-function installedghostname
-{
-	InstalledGhosts = [];
-	for (local i = 0; i < Shiori.Reference.length; i++)
-	{
-		InstalledGhosts.Add(Shiori.Reference[i]);
-	}
-}
-
-function OnAnchorSelect
-{
-	if (Shiori.Reference[0].StartsWith("http://") || Shiori.Reference[0].StartsWith("https://"))
-	{
-		return `\j["{Shiori.Reference[0]}"]`;
-	}
-}
-
-function OnKeyPress
-{
-	if (Shiori.Reference[0] == "f1") return "\![open,readme]";
-	else if (Shiori.Reference[0] == "t") return OnAITalk;
-	else if (Shiori.Reference[0] == "r") return OnLastTalk;
-}
-
+//————— Count things present —————
 function CountPartyClutter(type)
 {
 	local count = 0;
@@ -101,8 +64,8 @@ function VIPCount
 		"FLELE",
 		"FLUX",
 		"Ukatranslator",
-		"simultaneous-interpreter",
-		"my_own_translator",
+		"ancient-tablet",
+		"translator",
 	];
 	
 	foreach (ghost in OpenGhosts)
@@ -120,14 +83,13 @@ function VIPCount
 }
 
 
-function GuestSpawnTime
+//————— Check specific conditions —————
+function TooManyGuests
 {
-	return Random.GetIndex(2,7) * 10; //20-60
-}
-
-function VIPSpawnTime
-{
-	return Random.GetIndex(9,19) * 10; //90-180
+	local decocount = DecoCount() - 3;
+	
+	if (GuestCount() > (decocount * 1.5).Floor() && GuestCount() > 0) return true;
+	else return false;
 }
 
 function CanSpawnGuest
@@ -164,34 +126,109 @@ function CanSpawnVIP
 	else return 0;
 }
 
-function TooManyGuests
+
+//——————————————— Shortcuts ———————————————
+function username
 {
-	local decocount = DecoCount() - 3;
-	
-	if (GuestCount() > (decocount * 1.5).Floor() && GuestCount() > 0) return true;
-	else return false;
+	return Save.Data.Username;
 }
 
-function ItemSpawnTime(test)
+function CanTalk
 {
-	local decocount = DecoCount();
-	if (!test.IsNull()) decocount = test;
-	if (decocount < 3) return 30;
+	if (Shiori["talking"] || Shiori["choosing"] || Shiori["minimizing"] || Shiori["timecritical"])
+	{
+		return 0;
+	}
 	else
 	{
-		//OH GOD I'M SO BAD AT MATH WHAT AM I DOING
-		
-		//I would like to thank Balatro for guiding me towards the solution, truly this would not have been possible without your support
-		local decomult = (decocount / 75) + 1;
-		local output = 30;
-		for (local i = 0; i < decocount; i++)
-		{
-			output *= decomult;
-		}
-		return output.Floor();
+		return 1;
 	}
 }
 
+
+//——————————————— Pure functions ———————————————
+//Absolute
+function abs(num)
+{
+	if (num < 0) return num *= -1;
+	else return num;
+}
+
+
+//——————————————— Notify info ———————————————
+function OnDisplayChangeEx
+{
+	Display.Clear();
+	local reference = Shiori.Reference;
+	reference.Remove(0); //First reference is "init" or "update"
+	foreach (ref, i in reference)
+	{
+		//Left, up, right, down, bit depth, primary monitor or otherwise (0/1), the taskbar position (left,top,right,bottom,unknown), the coordinates of where the taskbar is separated from the rest of the screen
+		//Ex: 0,0,1600,900,32,1,bottom,1560
+		local ref = ref.Split(",");
+		local left = ref[0].ToNumber();
+		local top = ref[1].ToNumber();
+		local right = ref[2].ToNumber();
+		local bottom = ref[3].ToNumber();
+		local taskpos = ref[6];
+		local taskbar = ref[7].ToNumber();
+		
+		if (taskpos == "left") left = taskbar;
+		else if (taskpos == "top") top = taskbar;
+		else if (taskpos == "right") right = taskbar;
+		else if (taskpos == "bottom") bottom = taskbar;
+		
+		local width = abs(right) - abs(left);
+		width = abs(width);
+		
+		local height = abs(bottom) - abs(top);
+		height = abs(height);
+		
+		Display["{i}"] = {left: left, top: top, right: right, bottom: bottom, width: width, height: height};
+	}
+}
+
+function OnSurfaceChange
+{
+	//SSP only, sorry
+	//ID, Surface number, width, height
+	local info = Shiori.Reference[2].Split(",");
+	
+	VisibleChars.Remove("{info[0]}");
+	if (info[1] != -1) VisibleChars.Add("{info[0]}", info[1]);
+	//Why do all the checks when I can just remove, and only add back if needed...
+}
+
+function OnNotifyUserInfo
+{
+	Save.Data.Username = Shiori.Reference[0];
+	local birthdate = Shiori.Reference[2].Split(",");
+	Birthday = {month: birthdate[1].ToNumber(), day: birthdate[2].ToNumber()};
+}
+
+//Sakura names
+function otherghostname
+{
+	OpenGhosts = [];
+	for (local i = 0; i < Shiori.Reference.length; i++)
+	{
+		local split = Shiori.Reference[i].Split("{(1).ToAscii()}");
+		OpenGhosts.Add(split[0]);
+	}
+}
+
+//Full ghost names
+function installedghostname
+{
+	InstalledGhosts = [];
+	for (local i = 0; i < Shiori.Reference.length; i++)
+	{
+		InstalledGhosts.Add(Shiori.Reference[i]);
+	}
+}
+
+
+//——————————————— Debug (delete later probably) ———————————————
 function OnTestCurve
 {
 	local output = "\b[2]\![set,autoscroll,disable]\_q";
