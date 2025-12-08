@@ -11,6 +11,7 @@ talk BootHolidayTalk(holiday)
 	\s[0]Yeah yeah yeah it's {holiday}, whatever, what's more important is my party
 }
 
+
 //——————————————— Close failure ———————————————
 //————— Items still open —————
 talk CloseStillPartyingTalk
