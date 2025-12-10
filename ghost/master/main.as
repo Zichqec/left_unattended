@@ -55,6 +55,12 @@ Still to do:
 //- Set it up to handle different items of each type... and guests as well
 	//- Not set up to handle different pools yet, but i will add that if and when we get to such a thing...
 	- Do we want dialogue for guests arriving and deco being brought out...? If so I need to add it, but it shouldn't be anything terribly difficult I hope, I have all the pieces...
+
+- I wonder if I can improve the flickering... it *probably* doesn't need to reset the alignment on every surfacerestore, does it? Hm...
+	- Could I set it up to do them in sweeping passes so they don't overlap weird...? like... embed and do all the top ones, then raise a new event to do all the bottom ones, etc. wonder if that would help. ... good lord the backflips i'm willing to do lol
+	- alternatively, i could try to minimize how much it snaps them to the sides. They don't... *need* to do it after being brought out, except when reloaded... *maybe* in OnWindowStateRestore, but i'd need to test to be sure? and like... users shouldn't be reloading the ghost, they just shouldn't. not except through the utilities menu which should be fine.
+
+- Do we *want* fade in/out...? It adds extra complexity... maybe at the end if desired.
 */
 
 //——————————————— Save data ———————————————
