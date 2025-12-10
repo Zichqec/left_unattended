@@ -53,7 +53,8 @@ Still to do:
 	- Of course, I wonder, would it be better if she only talks when she brings out items/guests arrive...? and when you double click her
 
 //- Set it up to handle different items of each type... and guests as well
-	- Not set up to handle different pools yet, but i will add that if and when we get to such a thing...
+	//- Not set up to handle different pools yet, but i will add that if and when we get to such a thing...
+	- Do we want dialogue for guests arriving and deco being brought out...? If so I need to add it, but it shouldn't be anything terribly difficult I hope, I have all the pieces...
 */
 
 //——————————————— Save data ———————————————

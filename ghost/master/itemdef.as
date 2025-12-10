@@ -1,47 +1,47 @@
 function GuestTypes
 {
 	return [
-		{surface: "10", name: "regular"},
-		{surface: "11", name: "hornsears"},
+		{surface: "10", name: "Regular"},
+		{surface: "11", name: "HornsEars"},
 	];
 }
 
 function FreeDeco
 {
 	return [
-		{surface: "1000", name: "caketable"},
-		{surface: "1001", name: "pottedfern"},
+		{surface: "1000", name: "CakeTable"},
+		{surface: "1001", name: "PottedFern"},
 	];
 }
 
 function BottomDeco
 {
 	return [
-		{surface: "2000", name: "weightedballoons"},
-		{surface: "2001", name: "lightthings"},
+		{surface: "2000", name: "WeightedBalloons"},
+		{surface: "2001", name: "LightThings"},
 	];
 }
 
 function TopDeco
 {
 	return [
-		{surface: "3000", name: "trianglestring"},
-		{surface: "3001", name: "happypartybanner"},
+		{surface: "3000", name: "TriangleString"},
+		{surface: "3001", name: "HappyPartyBanner"},
 	];
 }
 
 function LeftDeco
 {
 	return [
-		{surface: "4000", name: "sidebanner"},
-		{surface: "4001", name: "sideballoons"},
+		{surface: "4000", name: "SideBanner"},
+		{surface: "4001", name: "SideBalloons"},
 	];
 }
 
 function RightDeco
 {
 	return [
-		{surface: "5000", name: "dartboard"},
-		{surface: "5001", name: "sidefern"},
+		{surface: "5000", name: "Dartboard"},
+		{surface: "5001", name: "SideFern"},
 	];
 }

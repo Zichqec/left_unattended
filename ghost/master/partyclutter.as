@@ -60,7 +60,6 @@ class PartyDeco : PartyThing
 		//For determining the difference between deco and guests...
 		this.type = "deco";
 		
-		this.flavortext = "{flavortest}";
 		this.pets = 0;
 		
 		local rand = Random.GetIndex(0,100);
@@ -72,7 +71,6 @@ class PartyDeco : PartyThing
 		{
 			this.alignment = "bottom";
 			pick = Random.Select(BottomDeco());
-			
 		}
 		else if (rand >= 60)
 		{
@@ -91,6 +89,10 @@ class PartyDeco : PartyThing
 		}
 		this.specifictype = pick.name;
 		this.surface = pick.surface;
+		
+		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}Talk@{this.specifictype}");
+		if (flavortext.IsNull()) flavortext = Reflection.Get("DecoTalk@fallback");
+		this.flavortext = flavortext(this.p); //Assign it to *one* output... hopefully
 		
 		local len = Display.length;
 		local display = Display["{Random.GetIndex(0,len)}"];
@@ -112,7 +114,7 @@ class PartyDeco : PartyThing
 		local m = "";
 		
 		m += "\p[{this.p}]\b[0]\![no-autopause]\![quicksection,1]";
-		m += this.flavortext;
+		m += this.flavortext; //I had the argument here, but I moved it up because I made it so that it saves one output and always displays that for a deco...
 		m += "\n\n";
 		m += "\![*]\__q[OnDismissItem,{this.p}]Remove item\__q\n\n";
 		m += "\![*]\__q[OnBlank]Cancel\__q";
@@ -122,9 +124,10 @@ class PartyDeco : PartyThing
 	
 	function Vanish
 	{
-		local dialogue = "\p[{this.p}]\s[-1]Shoo,\w4 out of here...";
 		PartyClutter.Remove("{this.p}");
-		return dialogue;
+		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}Close@{this.specifictype}");
+		if (dialogue.IsNull()) dialogue = DecoClose@fallback;
+		return dialogue(this.p);
 	}
 	
 	function Pet
@@ -136,11 +139,18 @@ class PartyDeco : PartyThing
 			//I want to abstract these out but I'm not sure where to put them...
 			PartyClutter.Remove("{this.p}");
 			if (DecoCount() == 0) return CloseStopTouchingThingsTalk(this.p) + "\_w[1000]\-";
-			else return "\0Stop being weird, omg!!! \p[{this.p}]\s[-1]\0I'll have to fix this up, ugh.";
+			else
+			{
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}PetClose@{this.specifictype}");
+				if (dialogue.IsNull()) dialogue = DecoPetClose@fallback;
+				return dialogue(this.p);
+			}
 		}
 		else
 		{
-			return "\0Stop messing up my stuff!!";
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}Pet@{this.specifictype}");
+			if (dialogue.IsNull()) dialogue = DecoPet@fallback;
+			return dialogue(this.p);
 		}
 	}
 }
@@ -159,7 +169,13 @@ class PartyGuest : PartyThing
 		
 		this.alignment = "free";
 		
-		this.flavortext = "{guestflavortest}";
+		this.personality = Random.Select([
+			"sassy",
+			"cheery",
+		]);
+		
+		this.flavortext = Reflection.Get("GuestTalk@{Capitalize(this.personality)}");
+		if (this.flavortext.IsNull()) this.flavortext = GuestTalk@fallback;
 		
 		local len = Display.length;
 		local display = Display["{Random.GetIndex(0,len)}"];
@@ -178,44 +194,23 @@ class PartyGuest : PartyThing
 		if (upperbound < lowerbound) this.initY = Random.GetIndex(upperbound,lowerbound);
 	}
 	
-	//Not really a menu, probably should rename...
+	//Not really a menu, probably should rename... idk, may add buttons, hmm
 	function Menu
 	{
 		local m = "";
 		
-		m += "\p[{this.p}]\b[0]{this.flavortext}";
+		m += this.flavortext(this.p);
 		
 		return m;
 	}
 	
 	function Vanish
 	{
-		local dialogue = "\p[{this.p}]\s[-1]I'm outta here lol";
+		local dialogue = Reflection.Get("GuestLeave@{Capitalize(this.personality)}");
+		if (dialogue.IsNull()) dialogue = GuestLeave@fallback;
+		
 		PartyClutter.Remove("{this.p}");
-		return dialogue;
+		
+		return dialogue(this.p);
 	}
-}
-
-function flavortest
-{
-	return Random.Select([
-		"flavor 0",
-		"flavor 1",
-		"flavor 2",
-		"flavor 3",
-		"flavor 4",
-		"flavor 5",
-	]);
-}
-
-function guestflavortest
-{
-	return Random.Select([
-		"what's all this",
-		"so weird",
-		"party time yay!",
-		"where's the cake?",
-		"who are you?",
-		"is this supposed to be a party?",
-	]);
 }

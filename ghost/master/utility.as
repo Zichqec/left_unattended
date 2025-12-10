@@ -154,6 +154,15 @@ function abs(num)
 	else return num;
 }
 
+function Capitalize(word)
+{
+	word = "{word}";
+	local firstlet = word.Substring(0,1);
+	local rest = word.Substring(1);
+	
+	return firstlet.ToUpper() + rest;
+}
+
 
 //——————————————— Notify info ———————————————
 function OnDisplayChangeEx
