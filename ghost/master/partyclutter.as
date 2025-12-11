@@ -32,24 +32,9 @@ class PartyThing
 		}
 		else
 		{
-			return "\p[{this.p}]\s[{this.surface}]\![get,property,OnGetPosition,currentghost.scope({this.p}).rect]\![set,alpha,0]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnReturnToPosition]\![set,alpha,100]";
+			return "\p[{this.p}]\s[{this.surface}]\![set,alpha,100]";
 		}
 	}
-}
-
-//This is a patch for an SSP issue where the alignment commands make the characters jump all over the place if they are aligned differently... it still jumps a bit but at least now they return to their original positions
-function OnGetPosition
-{
-	local coords = Shiori.Reference[0].Split(",");
-	LastX = coords[0];
-	LastY = coords[1];
-}
-
-function OnReturnToPosition
-{
-	//I've never pinned down why doing it twice makes it work better...
-	local script = "\![move,--x={LastX},--y={LastY},--time=0,--base=primaryscreen]";
-	return script + script;
 }
 
 //Common to all party decorative objects
