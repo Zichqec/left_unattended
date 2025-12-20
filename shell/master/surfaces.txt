@@ -3,20 +3,36 @@ descript
 	version,1
 }
 
+surface10
+{
+}
+
 //—————————————————————————————— Jes surfaces ——————————————————————————————
 
 surface0
 {
-	collision0,0,0,130,65,head
+	animation0.interval,random,4
+	animation0.pattern0,overlay,100,0,0,0
+	animation0.pattern1,overlay,101,50,0,0
+	animation0.pattern2,overlay,-1,50,0,0
+}
+
+//—————————————————————————————— Guest surfaces ——————————————————————————————
+surface10000
+{
+}
+
+surface10100
+{
 }
 
 
 //—————————————————————————————— Deco surfaces ——————————————————————————————
 
-surface10,11,1000,2000,3000,4000,5000,1001,2001,3001,4001,5001
+surface20000,30000,40000,50000,60000
 {
-	
 }
 
-//—————————————————————————————— Guest surfaces ——————————————————————————————
-//Maybe swap around? idk
+surface20100,30100,40100,50100,60100
+{
+}
