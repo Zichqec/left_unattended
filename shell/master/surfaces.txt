@@ -17,6 +17,27 @@ surface0
 	animation0.pattern2,overlay,-1,50,0,0
 }
 
+surface1
+{
+	animation0.interval,random,4
+	animation0.pattern0,overlay,110,0,0,0
+	animation0.pattern1,overlay,111,50,0,0
+	animation0.pattern2,overlay,-1,50,0,0
+}
+
+surface2
+{
+	animation10.interval,never
+	animation10.pattern0,overlay,121,75,0,0
+	animation10.pattern1,overlay,122,75,0,0
+	animation10.pattern2,overlay,123,100,0,0
+	
+	animation11.interval,random,4
+	animation11.pattern0,overlay,120,0,0,0
+	animation11.pattern1,overlay,-1,50,0,0
+}
+
+
 //—————————————————————————————— Guest surfaces ——————————————————————————————
 surface10000
 {
