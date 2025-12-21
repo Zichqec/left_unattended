@@ -126,6 +126,11 @@ function CanSpawnVIP
 	else return 0;
 }
 
+function enable_debug
+{
+	IsDebugMode = Shiori.Reference[0].ToNumber();
+}
+
 
 //——————————————— Shortcuts ———————————————
 function username

@@ -70,6 +70,8 @@ function OnAosoraDefaultSaveData
 	Save.Data.TalkInterval = 180;
 	Save.Data.Username = "friend";
 	Save.Data.VIPsAllowed = 0;
+	
+	Save.Data.SpawningEnabled = 1; //DEBUG because i'm dying trying to develop this thing lol
 }
 
 //Values to be set upon loading
@@ -97,6 +99,8 @@ function OnAosoraLoad
 	Display = {};
 	
 	Stroke = 0;
+	
+	IsDebugMode = 0;
 }
 
 function OnInitialize
@@ -243,6 +247,8 @@ function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 //——————————————— Spawning/despawning logic ———————————————
 function OnSecondChange
 {
+	if (Save.Data.SpawningEnabled == 0) return;
+	
 	local epoch = Time.GetNowUnixEpoch();
 	if (CanTalk() && epoch - CooldownTime >= 10) //I could use reference3 instead of CanTalk, but...
 	{
