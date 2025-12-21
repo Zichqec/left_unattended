@@ -181,9 +181,9 @@ function OnBoot
 	
 	if (date == "{Birthday.month}/{Birthday.day}") holiday = "Your Birthday";
 	else if (date == "1/1") holiday = "New Year's";
-	else if (date == "2/14") holiday = "Valentines";
+	else if (date == "2/14") holiday = "Valentine's";
 	else if (date == "2/29") holiday = "Leap Day";
-	else if (date == "4/1") holiday = "April Fools";
+	else if (date == "4/1") holiday = "April Fools' Day";
 	else if (date == "6/23") holiday = "Pink Flamingo Day";
 	else if (date == "12/24") holiday = "Christmas Eve";
 	else if (date == "12/25") holiday = "Christmas";
