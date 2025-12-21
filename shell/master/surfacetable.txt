@@ -1,0 +1,23 @@
+charset,UTF-8
+version,1
+option,DisableNoDefineSurfaces
+
+group,__disabled
+{
+	
+}
+
+group,Jes
+{
+	scope,0
+	
+	0,Phone
+	1,Forward
+	2,Away
+	3,Eyeroll
+	4,Tongue
+	5,Laugh
+	6,Anger
+	7,Annoyed
+	8,Shout
+}
