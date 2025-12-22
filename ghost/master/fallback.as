@@ -16,8 +16,19 @@ talk GuestLeave@fallback(p)
 //———————————————————— Deco ————————————————————
 talk DecoTalk@fallback(p)
 {
-	\p[{p}]default flavor
+	\p[{p}]Where does she get all this stuff...?
 }
+
+talk DecoTalk@fallback(p)
+{
+	\p[{p}]How many party supplies can one elf set up...?
+}
+
+talk DecoTalk@fallback(p)
+{
+	\p[{p}]The tag is still on it...
+}
+
 
 talk DecoPetClose@fallback(p)
 {
