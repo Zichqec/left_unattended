@@ -133,10 +133,56 @@ surface10100
 
 //—————————————————————————————— Deco surfaces ——————————————————————————————
 
-surface20000,30000,40000,50000,60000
+surface20000
 {
+	collision0,0,0,60,185,stroke
 }
 
-surface20100,30100,40100,50100,60100
+surface20100
 {
+	collision0,0,0,300,300,stroke
+}
+
+
+surface30000
+{
+	collision0,0,0,139,36,stroke
+}
+
+surface30100
+{
+	collision0,0,0,300,300,stroke
+}
+
+
+surface40000
+{
+	collision0,0,0,300,300,stroke
+}
+
+surface40100
+{
+	collision0,0,0,300,300,stroke
+}
+
+
+surface50000
+{
+	collision0,0,0,300,300,stroke
+}
+
+surface50100
+{
+	collision0,0,0,225,165,stroke
+}
+
+
+surface60000
+{
+	collision0,0,0,300,300,stroke
+}
+
+surface60100
+{
+	collision0,0,0,300,300,stroke
 }

@@ -1,0 +1,1211 @@
+descript
+{
+	version,1
+}
+
+kero.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char2.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char3.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char4.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char5.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char6.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char7.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char8.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char9.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char10.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char11.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char12.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char13.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char14.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char15.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char16.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char17.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char18.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char19.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char20.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char21.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char22.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char23.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char24.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char25.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char26.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char27.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char28.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char29.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char30.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char31.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char32.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char33.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char34.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char35.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char36.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char37.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char38.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char39.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char40.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char41.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char42.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char43.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char44.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char45.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char46.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char47.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char48.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char49.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char50.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char51.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char52.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char53.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char54.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char55.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char56.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char57.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char58.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char59.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char60.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char61.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char62.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char63.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char64.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char65.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char66.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char67.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char68.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char69.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char70.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char71.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char72.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char73.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char74.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char75.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char76.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char77.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char78.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char79.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char80.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char81.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char82.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char83.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char84.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char85.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char86.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char87.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char88.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char89.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char90.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char91.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char92.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char93.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char94.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char95.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char96.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char97.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char98.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char99.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+char100.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char101.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char102.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char103.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char104.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char105.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char106.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char107.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char108.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char109.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char110.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char111.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char112.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char113.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char114.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char115.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char116.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char117.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char118.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char119.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char120.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char121.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char122.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char123.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char124.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char125.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char126.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char127.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char128.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char129.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char130.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char131.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char132.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char133.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char134.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char135.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char136.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char137.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char138.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char139.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char140.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char141.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char142.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char143.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char144.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char145.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char146.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char147.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char148.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char149.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char150.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char151.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char152.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char153.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char154.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char155.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char156.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char157.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char158.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char159.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char160.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char161.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char162.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char163.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char164.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char165.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char166.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char167.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char168.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char169.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char170.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char171.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char172.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char173.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char174.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char175.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char176.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char177.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char178.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char179.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char180.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char181.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char182.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char183.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char184.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char185.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char186.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char187.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char188.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char189.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char190.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char191.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char192.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char193.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char194.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char195.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char196.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char197.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char198.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
+
+char199.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
