@@ -37,6 +37,12 @@ class PartyThing
 	}
 }
 
+//For determining current width/height
+function OnGetRect
+{
+	//Will need to get the coords and then send them back to the object for initial positioning... we don't need to track these, just use them once. hm...
+}
+
 //Common to all party decorative objects
 class PartyDeco : PartyThing
 {
