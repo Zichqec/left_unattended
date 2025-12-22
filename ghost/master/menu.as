@@ -1,10 +1,29 @@
+//——————————————— Menu greetings ———————————————
+//I want to move these but not sure where to...
+talk MenuGreeting
+{
+	\s[phone]Do you want something? I'm a bit busy.
+}
+
+talk MenuGreeting
+{
+	\s[eyeroll]\i[10]What is it now?
+}
+
+// talk MenuGreeting
+// {
+	// \s[]
+// }
+
+
+//——————————————— Menu code ———————————————
 function OnMainMenu
 {
 	local m = "";
 	
 	m += "\0\b[0]\![no-autopause]\![quicksection,1]\![set,autoscroll,disable]";
 	m += "{OnSurfaceRestore}";
-	m += "Hello!\n\n";
+	m += "\n\n\n";
 	m += "\![*]\__q[OnAITalk]Talk\__q  ";
 	
 	if (LastTalk == "") m += "\f[color,disable]\![*]Repeat\f[color,default]";
@@ -29,6 +48,9 @@ function OnMainMenu
 			// m += "{item.width}x{item.height} - {item.bottom}\n";
 		// }
 	}
+	
+	m += "\_l[0,0]\![quicksection,0]";
+	m += AutoPause(MenuGreeting());
 	
 	return m;
 }
