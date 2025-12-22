@@ -62,6 +62,32 @@ Still to do:
 
 - Do we *want* fade in/out...? It adds extra complexity... maybe at the end if desired.
 */
+//——————————————— OnTranslate ———————————————
+function OnTranslate
+{
+	local talkstr = Shiori.Reference[0];
+	
+	talkstr = AutoPause(talkstr);
+	
+	return talkstr;
+}
+
+function AutoPause(talkstr)
+{
+	if (!(talkstr.Contains("\![no-autopause]") || talkstr.Contains("■Aosora reload completed")))
+	{
+		talkstr = talkstr.Replace(", ",",\w4 ");
+		talkstr = talkstr.Replace(". ",".\w8\w8 ");
+		talkstr = talkstr.Replace("~ ","~\w8\w8 ");
+		talkstr = talkstr.Replace("? ","?\w8\w8 ");
+		talkstr = talkstr.Replace("! ","!\w8\w8 ");
+		talkstr = talkstr.Replace("; ",";\w8 ");
+		talkstr = talkstr.Replace(": ",":\w8 ");
+		talkstr = talkstr.Replace("\n\n ","\n\n\w8\w8");
+	}
+	return talkstr;
+}
+
 
 //——————————————— Save data ———————————————
 //Default save data
