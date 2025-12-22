@@ -19,7 +19,7 @@ sakura.surface.alias
 	laugh,[5]
 	anger,[6]
 	annoyed,[7]
-	// shout,[8]
+	shout,[8]
 }
 
 //——————————————— Surface definitions / blinking ———————————————
@@ -84,6 +84,13 @@ surface7
 	animation100.pattern1,overlay,-1,50,0,0
 }
 
+surface8
+{
+	animation100.interval,random,4
+	animation100.pattern0,overlay,180,0,0,0
+	animation100.pattern1,overlay,-1,50,0,0
+}
+
 //——————————————— Talking animations ———————————————
 surface.append0-3
 {
@@ -117,6 +124,13 @@ surface.append7
 {
 	animation50.interval,talk,4
 	animation50.pattern0,overlay,54,0,0,0
+	animation50.pattern1,overlay,-1,100,0,0
+}
+
+surface.append8
+{
+	animation50.interval,talk,4
+	animation50.pattern0,overlay,55,0,0,0
 	animation50.pattern1,overlay,-1,100,0,0
 }
 
