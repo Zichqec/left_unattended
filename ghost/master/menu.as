@@ -10,10 +10,25 @@ talk MenuGreeting
 	\s[eyeroll]\i[10]What is it now?
 }
 
-// talk MenuGreeting
-// {
-	// \s[]
-// }
+talk MenuGreeting
+{
+	\s[phone]Ooh, they have {bagsofglitter}. \s[tongue]Now we're talking.
+}
+
+talk MenuGreeting
+{
+	\s[phone]These party decorations aren't going to order themselves.
+}
+
+talk MenuGreeting
+{
+	\s[phone]I should probably get another cake. \s[tongue]Maybe two more cakes.
+}
+
+talk MenuGreeting
+{
+	\s[forward]If you're gonna stand around here then you better help me when the {pictureframesare} delivered.
+}
 
 
 //——————————————— Menu code ———————————————
