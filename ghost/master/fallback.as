@@ -9,7 +9,7 @@ talk GuestTalk@fallback(p)
 
 talk GuestLeave@fallback(p)
 {
-	\p[{p}]bye
+	\p[{p}]...
 }
 
 
@@ -21,12 +21,22 @@ talk DecoTalk@fallback(p)
 
 talk DecoPetClose@fallback(p)
 {
-	\p[{p}]\s[-1]\0Stop being like that, omg!!! I'll have to get another one.
+	\s[anger]Stop putting your hands on everything! \p[{p}]\s[-1]\0\s[eyeroll]\i[10]I'll have to get a replacement, ugh.
 }
 
 talk DecoPet@fallback(p)
 {
-	Stop messing up my stuff!!!
+	\s[annoyed]Keep your hands to yourself!
+}
+
+talk DecoPet@fallback(p)
+{
+	\s[annoyed]Ew, don't put your hands all over that!
+}
+
+talk DecoPet@fallback(p)
+{
+	\s[annoyed]Stop touching my decorations, you're getting them all grubby!
 }
 
 talk DecoClose@fallback(p)
