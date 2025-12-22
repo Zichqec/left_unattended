@@ -150,6 +150,15 @@ function CanTalk
 	}
 }
 
+function TrimHolidayName(name)
+{
+	name = name.Replace("your ","");
+	name = name.Replace("The ","");
+	name = name.Replace(" Day","");
+	name = name.Replace(" Night","");
+	return name;
+}
+
 
 //——————————————— Pure functions ———————————————
 //Absolute

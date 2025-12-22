@@ -107,6 +107,9 @@ function OnAosoraLoad
 	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
 	//TalkTimer.NadenadeTalk = OnStroked; //TODO I don't know how to determine which character...
 	
+	//There must be a better way to get what I want but I'm tired and don't feel like it right now, so just copying from Hoard of Shinies
+	TalkBuilder.Default.AutoLineBreak = "\n\w8\w4";
+	
 	LastTalk = "";
 	
 	PartyClutter = {};
@@ -202,17 +205,7 @@ function OnBoot
 {
 	InitializeItem(3);
 	
-	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";
-	local holiday = null;
-	
-	if (date == "{Birthday.month}/{Birthday.day}") holiday = "Your Birthday";
-	else if (date == "1/1") holiday = "New Year's";
-	else if (date == "2/14") holiday = "Valentine's";
-	else if (date == "2/29") holiday = "Leap Day";
-	else if (date == "4/1") holiday = "April Fools' Day";
-	else if (date == "6/23") holiday = "Pink Flamingo Day";
-	else if (date == "12/24") holiday = "Christmas Eve";
-	else if (date == "12/25") holiday = "Christmas";
+	local holiday = TodaysHoliday();
 	
 	if (!holiday.IsNull()) return SurfaceRefresh() + BootHolidayTalk(holiday);
 	else return SurfaceRefresh() + BootTalk();

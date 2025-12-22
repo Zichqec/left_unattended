@@ -31,7 +31,26 @@ talk BootTalk
 //————— Holiday —————
 talk BootHolidayTalk(holiday)
 {
-	\s[0]Yeah yeah yeah it's {holiday}, whatever, what's more important is my party
+	\s[phone]Hey. I'm having a party today.
+	
+	\w8\s[eyeroll]No, it's not for {holiday}. \i[10]My party sense doesn't follow the calendar.
+}
+
+//TODO do we want me to change it to "merry christmas" if christmas is pulled or should I leave it. I don't think she cares about holidays lol
+talk BootHolidayTalk(holiday)
+{
+	\s[forward]Hm? \s[eyeroll]Oh, it's you. \i[10]Happy {TrimHolidayName(holiday)} and whatnot.
+	
+	\s[phone]Unrelated, I'm setting up a party. \s[tongue]I think I'll go ahead and order {morestreamers}, that'll bring out the party spirit for sure.
+}
+
+//TODO clean up or move later
+function OnTestBoot
+{
+	local holiday = Shiori.Reference[0];
+	
+	if (!holiday.IsNull()) return SurfaceRefresh() + BootHolidayTalk(holiday);
+	else return SurfaceRefresh() + BootTalk();
 }
 
 
@@ -39,14 +58,17 @@ talk BootHolidayTalk(holiday)
 //————— Items still open —————
 talk CloseStillPartyingTalk
 {
-	Um, hello? I've got a party going here! I'm not going anywhere.
+	\s[forward]Leave? \w8\s[annoyed]Seriously? \w8\s[eyeroll]\i[10]I have a party going here, in case you haven't noticed.
 }
 
 
 //————— Random failure, summons more items —————
+//{SurfaceRefresh} to show the items
 talk CloseNotYetTalk
 {
-	Not so fast! I just got another shipment in! {SurfaceRefresh}Yaaaah!
+	\s[annoyed]... \w8\s[tongue]Oh, look what just showed up. {SurfaceRefresh}\s[laugh]The party's still going!
+	
+	\s[anger]Stop trying to ruin it, thanks.
 }
 
 
@@ -54,21 +76,32 @@ talk CloseNotYetTalk
 //————— Removed all items and closed —————
 talk CloseCleanedUpTalk
 {
-	Fine!! You've RUINED my party!!!
+	\s[phone]...
+	
+	\w8\s[away]...
+	
+	\w8\s[annoyed]... \w8Fine. \s[anger]Fine! \s[shout]You've \f[italic,1]ruined\f[italic,default] my party!!
+	
+	\s[anger]I'm leaving. Enjoy your boring, partyless livingroom.
 }
 
 
 //————— Pet-closed last item —————
 talk CloseStopTouchingThingsTalk(p)
 {
-	Ew??? Stop messing up my stuff! Weirdo!!!\p[{p}]\s[-1]\0 Fine, whatever, if you're just gonna mess stuff up then I'm outta here!!!
+	\s[anger]Stop putting your hands all over my stuff! \p[{p}]\s[-1]\0\s[shout]Ugh, I can't deal with this anymore! \s[annoyed]If you're gonna mess everything up, then I'm leaving.
 }
 
 
 //————— Give up (close all/change) —————
 talk CloseDefeatTalk
 {
-	Heading out? We'll save you some cake lol
+	\s[phone]Heading out? \s[tongue]We'll be sure to save you some cake.
+}
+
+talk CloseDefeatTalk
+{
+	\s[phone]Hey, if you're heading out could you pick up more {soda} at the store? Thanks.
 }
 
 
@@ -76,12 +109,12 @@ talk CloseDefeatTalk
 //————— Arrival —————
 talk VIPArriveTalk(sakura)
 {
-	Yooo what's up {sakura}, welcome to the party
+	\s[tongue]Yo, good to see you, {sakura}. Welcome to the party.
 }
 
 
 //————— Departure —————
 talk VIPLeaveTalk(sakura)
 {
-	Oh, bye then, {sakura}. Stay longer next time.
+	\s[forward]Was that {sakura} leaving? \s[annoyed]Are you kicking my guests out?
 }

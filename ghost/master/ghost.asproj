@@ -6,6 +6,7 @@ itemdef.as
 menu.as
 boot.as
 randomtalk.as
+word.as
 
 guest/cheery.as
 guest/sassy.as
