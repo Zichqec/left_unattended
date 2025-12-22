@@ -175,7 +175,7 @@ function OnDisplayChangeEx
 	Display.Clear();
 	local reference = Shiori.Reference;
 	reference.Remove(0); //First reference is "init" or "update"
-	foreach (ref, i in reference)
+	foreach (local ref, i in reference)
 	{
 		//Left, up, right, down, bit depth, primary monitor or otherwise (0/1), the taskbar position (left,top,right,bottom,unknown), the coordinates of where the taskbar is separated from the rest of the screen
 		//Ex: 0,0,1600,900,32,1,bottom,1560
