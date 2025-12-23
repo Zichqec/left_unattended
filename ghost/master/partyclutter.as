@@ -169,7 +169,7 @@ class PartyDeco : PartyThing
 		{
 			//I want to abstract these out but I'm not sure where to put them...
 			PartyClutter.Remove("{this.p}");
-			if (DecoCount() == 0) return CloseStopTouchingThingsTalk(this.p) + "\_w[1000]\-";
+			if (DecoCount() == 0) return "\t" + CloseStopTouchingThingsTalk(this.p) + "\_w[1000]\-";
 			else
 			{
 				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}PetClose@{this.specifictype}");

@@ -89,7 +89,7 @@ talk CloseCleanedUpTalk
 //————— Pet-closed last item —————
 talk CloseStopTouchingThingsTalk(p)
 {
-	\s[anger]Stop putting your hands all over my stuff! \p[{p}]\s[-1]\0\s[shout]Ugh, I can't deal with this anymore! \s[annoyed]If you're gonna mess everything up, then I'm leaving.
+	\s[anger]Stop putting your hands all over my stuff! \p[{p}]\s[-1]\0\s[shout]Ugh, I can't deal with this anymore! If you're gonna mess everything up, then I'm leaving!!
 }
 
 
