@@ -156,9 +156,10 @@ class PartyDeco : PartyThing
 	{
 		local m = "";
 		
-		m += "\p[{this.p}]\b[0]\![no-autopause]\![quicksection,1]";
+		m += "\p[{this.p}]\b[0]\![no-autopause]\![quicksection,1]\![set,autoscroll,disable]";
 		m += this.flavortext; //I had the argument here, but I moved it up because I made it so that it saves one output and always displays that for a deco...
 		m += "\n\n";
+		m += this.specialmenu;
 		m += "\![*]\__q[OnDismissItem,{this.p}]Remove item\__q\n\n";
 		m += "\![*]\__q[OnBlank]Cancel\__q";
 		
