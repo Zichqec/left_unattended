@@ -230,8 +230,9 @@ class PartyGuest : PartyThing
 		this.alignment = "free";
 		
 		this.personality = Random.Select([
-			"sassy",
 			"cheery",
+			"sassy",
+			"shy",
 		]);
 		
 		this.flavortext = Reflection.Get("GuestTalk@{Capitalize(this.personality)}");
