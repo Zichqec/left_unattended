@@ -121,11 +121,10 @@ function OnAosoraLoad
 	NextVIPSpawn = Time.GetNowUnixEpoch() + VIPSpawnTime();
 	CooldownTime = Time.GetNowUnixEpoch();
 	
-	LastX = 0;
-	LastY = 0;
-	
 	//As in monitor...
 	Display = {};
+	LastWidth = 0;
+	LastHeight = 0;
 	
 	Stroke = 0;
 	

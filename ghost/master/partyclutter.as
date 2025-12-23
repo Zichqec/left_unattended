@@ -27,8 +27,9 @@ class PartyThing
 		if (!this.pos_init)
 		{
 			this.pos_init = true;
-			local move = "\![move,--x={this.initX},--y={this.initY},--time=0,--base=primaryscreen]";
-			return "\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\![set,alignmenttodesktop,{this.alignment}]{move}{move}\![set,alpha,100]";
+			
+			//i had to add a little pause here because otherwise they weren't getting the right coords and were thinking they were the wrong size... i shouldn't have to do this but i don't know what's gone wrong (excessive use of Debug.WriteLine was causing it to run slowly enough to have this problem as well though, so mind that)
+			return "\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\_w[20]\![get,property,OnGetRect,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnInitializePos,{this.type},{this.alignment}]\![set,alpha,100]";
 		}
 		else
 		{
@@ -40,7 +41,60 @@ class PartyThing
 //For determining current width/height
 function OnGetRect
 {
-	//Will need to get the coords and then send them back to the object for initial positioning... we don't need to track these, just use them once. hm...
+	local reference0 = Shiori.Reference[0].Split(",");
+	local left = reference0[0].ToNumber();
+	local top = reference0[1].ToNumber();
+	local right = reference0[2].ToNumber();
+	local bottom = reference0[3].ToNumber();
+	
+	//TODO untested... need to check this on multiple monitors to be sure I got it the right way around
+	LastWidth = abs(right - left);
+	LastHeight = abs(bottom - top);
+}
+
+function OnInitializePos
+{
+	local type = Shiori.Reference[0];
+	local alignment = Shiori.Reference[1];
+	local itemwidth = LastWidth;
+	local itemheight = LastHeight;
+	
+	local X = 0;
+	local Y = 0;
+	
+	//Ok so I know I was handling everything as classes... but in this case, because I have to do it as an embed, we're going to be doing a bit in a non-class way. Oops!
+	
+	//For items that stick to the top or bottom: specific Y does not matter, only X
+	//For items that stick to the left or right, specific X does not matter, only Y
+	//For items aligned freely and guests, both matter
+	//I say "specific" X and Y because they do still need to be bumped to different monitors...
+	
+	//Pick a random monitor to spawn on
+	local len = Display.length;
+	local display = Display["{Random.GetIndex(0,len)}"];
+	
+	//Get screen bounds, leaving space for the item to be displayed
+	local rightbound = display.width - itemwidth;
+	local lowerbound = display.height - itemheight;
+	
+	//Set the coords randomly
+	X = Random.GetIndex(0,rightbound) - display.left;
+	Y = Random.GetIndex(0,lowerbound) - display.top;
+	
+	//Randomize the upperbound slightly - should be reserved for free items, or possibly only guests
+	//I decided it looks nicer if they all are flat on the floor... code left here in case we change our minds
+	if (alignment == "free")
+	{
+		Y = lowerbound;
+		//local upperbound = lowerbound - (itemheight / 6).Floor();
+		//if (upperbound < lowerbound) Y = Random.GetIndex(upperbound,lowerbound); //Unless the upperbound gets wonked up, choose a value between the two
+		//else Y = lowerbound;
+	}
+	
+	
+	//idk why but sometimes moving them twice helps it actually work... it's very strange. i should track it down and report it.
+	local move = "\![move,--x={X},--y={Y},--time=0,--base=primaryscreen]";
+	return "{move}{move}"; //{itemwidth}x{itemheight}";
 }
 
 //Common to all party decorative objects
@@ -84,20 +138,6 @@ class PartyDeco : PartyThing
 		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}Talk@{this.specifictype}");
 		if (flavortext.IsNull()) flavortext = Reflection.Get("DecoTalk@fallback");
 		this.flavortext = flavortext(this.p); //Assign it to *one* output... hopefully
-		
-		local len = Display.length;
-		local display = Display["{Random.GetIndex(0,len)}"];
-		
-		local rightbound = display.width - this.width;
-		
-		this.initX = Random.GetIndex(0,rightbound) - display.left;
-		
-		local lowerbound = display.height - this.height;
-		this.initY = Random.GetIndex(0,lowerbound) - display.top;
-		
-		//Maybe adjust later, i just don't want to duplicate code, blagh. maybe a function within the PartyThing class??
-		//i guess really i will have to wait to see what items we get, because the level they should be placed at may change based on what they are... perhaps they should get their own classes? ugh but how would i make that happen...
-		if (this.alignment == "free") this.initY = lowerbound;
 	}
 	
 	function Menu
@@ -167,22 +207,6 @@ class PartyGuest : PartyThing
 		
 		this.flavortext = Reflection.Get("GuestTalk@{Capitalize(this.personality)}");
 		if (this.flavortext.IsNull()) this.flavortext = GuestTalk@fallback;
-		
-		local len = Display.length;
-		local display = Display["{Random.GetIndex(0,len)}"];
-		
-		local rightbound = display.width - this.width;
-		
-		this.initX = Random.GetIndex(0,rightbound) - display.left;
-		
-		//local upperbound = ((display.height / 6) * 5).Floor() - this.height;
-		this.height = 270; //TODO TEMP
-		
-		local lowerbound = display.height - this.height;
-		local upperbound = lowerbound - (this.height / 2).Floor();
-		this.initY = lowerbound;
-		
-		if (upperbound < lowerbound) this.initY = Random.GetIndex(upperbound,lowerbound);
 	}
 	
 	//Not really a menu, probably should rename... idk, may add buttons, hmm
