@@ -18,8 +18,6 @@ class PartyThing
 		this.alignment = "free";
 		
 		this.pos_init = false;
-		this.width = 300; //temp... i guess i'm going to have to account for different sizes regardless due to scaling
-		this.height = 300; //temp ↑
 	}
 	
 	function SurfaceRestore
@@ -28,8 +26,7 @@ class PartyThing
 		{
 			this.pos_init = true;
 			
-			//i had to add a little pause here because otherwise they weren't getting the right coords and were thinking they were the wrong size... i shouldn't have to do this but i don't know what's gone wrong (excessive use of Debug.WriteLine was causing it to run slowly enough to have this problem as well though, so mind that)
-			return "\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\_w[20]\![get,property,OnGetRect,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnInitializePos,{this.type},{this.alignment}]\![set,alpha,100]";
+			return "\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\![get,property,OnGetRect,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnInitializePos,{this.type},{this.alignment}]\![set,alpha,100]";
 		}
 		else
 		{
@@ -94,7 +91,26 @@ function OnInitializePos
 	
 	//idk why but sometimes moving them twice helps it actually work... it's very strange. i should track it down and report it.
 	local move = "\![move,--x={X},--y={Y},--time=0,--base=primaryscreen]";
-	return "{move}{move}"; //{itemwidth}x{itemheight}";
+	local output = "";
+	if (alignment == "free") output += "\![set,alignmenttodesktop,bottom]"; //This align command and the one below are a patch because of an SSP issue where the move commands don't always move things, and also an issue i'm running into where the property command is lagging behind even if i added some pause time. fun!
+	output += "{move}{move}";
+	if (IsDebugMode)
+	{
+		output += "\b[2]\![quicksection,1]\![no-autopause]";
+		output += "alignment: {alignment}\n\n";
+		
+		output += "Display size: {display.width}x{display.height}\n";
+		output += "Item size: {itemwidth}x{itemheight}\n\n";
+		
+		output += "rightbound: {rightbound}\n";
+		output += "lowerbound: {lowerbound}\n\n";
+		
+		output += "X: {X}\n";
+		output += "Y: {Y}\n";
+	}
+	if (alignment == "free") output += "\![set,alignmenttodesktop,free]";
+	return output;
+	//return "{move}{move}"; //{itemwidth}x{itemheight}";
 }
 
 //Common to all party decorative objects
