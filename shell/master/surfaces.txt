@@ -149,54 +149,74 @@ surface10100
 
 surface20000
 {
-	collision0,0,0,60,185,stroke
+	collision0,0,0,500,500,stroke
 }
 
 surface20100
 {
-	collision0,0,0,300,300,stroke
+	collision0,0,0,500,500,stroke
+}
+
+surface20200
+{
+	collision0,0,0,500,500,stroke
 }
 
 
 surface30000
 {
-	collision0,0,0,139,36,stroke
+	collision0,0,0,500,500,stroke
 }
 
 surface30100
 {
-	collision0,0,0,300,300,stroke
+	collision0,0,0,500,500,stroke
 }
 
 
 surface40000
 {
-	collision0,0,0,300,300,stroke
+	collision0,0,0,500,500,stroke
 }
 
 surface40100
 {
-	collision0,0,0,300,300,stroke
+	collision0,0,0,500,500,stroke
+}
+
+surface40200
+{
+	collision0,0,0,500,500,stroke
 }
 
 
 surface50000
 {
-	collision0,0,0,300,300,stroke
+	collision0,0,0,500,500,stroke
 }
 
 surface50100
 {
-	collision0,0,0,225,165,stroke
+	collision0,0,0,500,500,stroke
+}
+
+surface50200,50201,50250,50251
+{
+	collision0,0,0,500,500,stroke
 }
 
 
 surface60000
 {
-	collision0,0,0,300,300,stroke
+	collision0,0,0,500,500,stroke
 }
 
-surface60100
+surface60100,60101,60102,60103,60104
 {
-	collision0,0,0,300,300,stroke
+	collision0,0,0,500,500,stroke
+}
+
+surface60200
+{
+	collision0,0,0,500,500,stroke
 }
