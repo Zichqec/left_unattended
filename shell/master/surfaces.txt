@@ -136,11 +136,38 @@ surface.append8
 
 
 //—————————————————————————————— Guest surfaces ——————————————————————————————
-surface10000
+surface10000-10011
 {
 }
 
+surface10020-10031
+{
+}
+
+surface10040-10051
+{
+}
+
+
 surface10100
+{
+}
+
+
+surface10200-10211
+{
+}
+
+surface10220-10231
+{
+}
+
+surface10240-10251
+{
+}
+
+
+surface10300-10311
 {
 }
 
@@ -169,6 +196,11 @@ surface30000
 }
 
 surface30100
+{
+	collision0,0,0,500,500,stroke
+}
+
+surface30200
 {
 	collision0,0,0,500,500,stroke
 }

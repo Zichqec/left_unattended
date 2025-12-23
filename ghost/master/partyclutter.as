@@ -236,6 +236,16 @@ class PartyGuest : PartyThing
 		
 		this.flavortext = Reflection.Get("GuestTalk@{Capitalize(this.personality)}");
 		if (this.flavortext.IsNull()) this.flavortext = GuestTalk@fallback;
+		
+		//Copied from partydeco but i don't think i can make this be in the PartyThing class...
+		this.special = null;
+		
+		if (!pick.variants.IsNull())
+		{
+			local variantpick = Random.Select(pick.variants);
+			this.surface = variantpick.surface;
+			this.special = variantpick.special;
+		}
 	}
 	
 	//Not really a menu, probably should rename... idk, may add buttons, hmm
