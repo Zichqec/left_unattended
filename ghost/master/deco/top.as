@@ -1,34 +1,29 @@
 talk DecoTopTalk@HappyPartyBanner(p)
 {
-	\p[{p}]it's a bit frayed...
+	\p[{p}]{narrator}It's a bit frayed...{narratoroff}
 }
 
 talk DecoTopTalk@HappyPartyBanner(p)
 {
-	\p[{p}]"happy party", is it?
+	\p[{p}]{narrator}"Happy party", is it?{narratoroff}
 }
 
 talk DecoTopPet@HappyPartyBanner(p)
 {
-	Stop messing with that, it was hard to hang up!
+	\s[annoyed]Stop messing with that, it was hard to hang up.
 }
 
 talk DecoTopTalk@TriangleString(p)
 {
-	\p[{p}]shiny triangles on a string.
-}
-
-talk DecoTopTalk@TriangleString(p)
-{
-	\p[{p}]what are these things even called?
+	\p[{p}]{narrator}Shiny triangles on a string... what are these things called?{narratoroff}
 }
 
 talk DecoTopPet@TriangleString(p)
 {
-	My triangles!!!
+	\s[eyeroll]\i[10]Yes, yes, they're very shiny. \s[annoyed]But if you keep putting your hands all over them, they won't be anymore.
 }
 
 talk DecoTopClose@TriangleString(p)
 {
-	\p[{p}]\s[-1]\0Pulling my triangles down??? Hello, who do you think you are!
+	\p[{p}]\s[-1]\0\s[anger]Hey! Don't just pull my triangles down, they're a pain to put up there!
 }
