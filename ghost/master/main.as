@@ -390,4 +390,14 @@ function OnKeyPress
 	if (Shiori.Reference[0] == "f1") return "\![open,readme]";
 	else if (Shiori.Reference[0] == "t") return OnAITalk;
 	else if (Shiori.Reference[0] == "r") return OnLastTalk;
+	if (IsDebugMode)
+	{
+		if (Shiori.Reference[0] == "o") return "\![raise,OnSpawnItem]";
+		else if (Shiori.Reference[0] == "g") return "\![raise,OnSpawnGuest]";
+		else if (Shiori.Reference[0] == "c")
+		{
+			PartyClutter.Clear();
+			return "\![raise,OnSurfaceRestore]";
+		}
+	}
 }
