@@ -94,15 +94,16 @@ function TodaysHoliday
 	
 	//Real holidays
 	else if (date ==  "1/1" ) holiday = "New Year's";
-	else if (date ==  "2/14") holiday = "Valentine's";
+	else if (date ==  "2/14") holiday = "Valentine's Day";
 	else if (date ==  "2/29") holiday = "Leap Day";
 	else if (date ==  "4/1" ) holiday = "April Fools' Day";
 	else if (date ==  "6/23") holiday = "Pink Flamingo Day";
+	else if (date ==  "8/24") holiday = "Salad Dressing Day";
+	else if (date ==  "8/31") holiday = "Vegetable Day";
 	else if (date == "10/31") holiday = "Halloween";
 	else if (date == "12/24") holiday = "Christmas Eve";
 	else if (date == "12/25") holiday = "Christmas";
 	else if (date == "12/31") holiday = "New Year's Eve";
-	//I wanna add vegetable day and salad dressing day...
 	
 	//Fake holidays
 	else if (date ==  "1/12") holiday = "Snowman's Day";
@@ -114,6 +115,7 @@ function TodaysHoliday
 	else if (date ==  "3/5" ) holiday = "Light's Eve";
 	else if (date ==  "3/6" ) holiday = "The Lighting";
 	else if (date ==  "3/17") holiday = "First Budding";
+	else if (date ==  "3/25") holiday = "The Sounding";
 	else if (date ==  "3/30") holiday = "Blue Sky Day";
 	else if (date ==  "4/8" ) holiday = "Luliana's Day";
 	else if (date ==  "4/13") holiday = "Belthandz";
@@ -133,7 +135,7 @@ function TodaysHoliday
 	else if (date ==  "8/1" ) holiday = "Scribe's Fest"; //hehe
 	else if (date ==  "8/19") holiday = "Aqueve";
 	else if (date ==  "8/20") holiday = "Aqua Day"; //hehehe
-	else if (date ==  "8/25") holiday = "The Sounding";
+	else if (date ==  "8/25") holiday = "Red Day";
 	else if (date ==  "9/8" ) holiday = "Undassi";
 	else if (date ==  "9/14") holiday = "Polomeia's Fest";
 	else if (date ==  "9/18") holiday = "The West Enchanting";
