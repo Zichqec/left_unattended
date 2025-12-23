@@ -11,6 +11,7 @@ function LeftDeco
 	return [
 		{surface: "20000", name: "SideBanner"},
 		{surface: "20100", name: "SideBalloons"},
+		{surface: "20200", name: "LeftSpeaker"},
 	];
 }
 
@@ -27,6 +28,7 @@ function RightDeco
 	return [
 		{surface: "40000", name: "Dartboard"},
 		{surface: "40100", name: "SideFern"},
+		{surface: "40200", name: "RightSpeaker"},
 	];
 }
 
@@ -48,6 +50,13 @@ function FreeDeco
 {
 	return [
 		{surface: "60000", name: "CakeTable"},
-		{surface: "60100", name: "PottedFern"},
+		{surface: "60100", name: "PottedFern", variants: [
+			{surface: "60100", special: null},
+			{surface: "60101", special: null},
+			{surface: "60102", special: null},
+			{surface: "60103", special: null},
+			{surface: "60104", special: null},
+		]},
+		{surface: "60200", name: "BouncyCastle"},
 	];
 }
