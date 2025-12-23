@@ -274,38 +274,47 @@ function OnSecondChange
 		local since = epoch - LastItemSpawn;
 		local nextitem = LastItemSpawn + ItemSpawnTime();
 		
+		local output = "";
+		
 		if (epoch >= nextitem)
 		{
 			//TODO something to think about: this will trigger if you dismiss items and the time until next item goes down... might be a nuisance but oh well! the alternative seems worse? maybe add a cooldown variable...
 			LastItemSpawn = epoch;
 			CooldownTime = epoch; //TODO these cooldown things (that's what i should have called it lol) probably need to be moved so that if you manually dismiss stuff that also resets the cooldown
-			return OnSpawnItem();
+			output = OnSpawnItem();
 		}
 		
-		if (CanSpawnGuest())
+		else if (CanSpawnGuest())
 		{
 			if (epoch >= NextGuestSpawn)
 			{
 				NextGuestSpawn = epoch + GuestSpawnTime();
 				CooldownTime = epoch;
-				return OnSpawnGuest();
+				output = OnSpawnGuest();
 			}
 		}
 		
-		if (TooManyGuests())
+		else if (TooManyGuests())
 		{
+			//Debug.WriteLine("SHIORI headers status: {Shiori.Headers.Status.ToString()}");
 			CooldownTime = epoch;
-			return OnDespawnGuest();
+			return OnDespawnGuest(); //Exception, this one returns right away because it opens a new balloon. Maybe change? hmm
 		}
 		
-		if (CanSpawnVIP())
+		else if (CanSpawnVIP())
 		{
 			if (epoch >= NextVIPSpawn)
 			{
 				NextVIPSpawn = epoch + VIPSpawnTime();
 				CooldownTime = epoch;
-				return OnSpawnVIP();
+				output = OnSpawnVIP();
 			}
+		}
+		
+		if (output != "")
+		{
+			if (BalloonIsOpen) output = "\C" + output;
+			return output;
 		}
 	}
 }

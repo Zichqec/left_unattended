@@ -150,6 +150,17 @@ function CanTalk
 	}
 }
 
+//Will be 0 if the balloon is not open, and 1 if the balloon is open
+//TODO it seems to be returning 1 even if the balloon is closed...? everything is using \C when spawning
+//This is probably too much to dig into right at the moment... it isn't causing any obvious bugs, but i should follow up later
+function BalloonIsOpen
+{
+	local shioristatus = Shiori.Headers.Status.ToString();
+	
+	if (shioristatus.Contains("balloon")) return 1;
+	else return 0;
+}
+
 function TrimHolidayName(name)
 {
 	name = name.Replace("your ","");
