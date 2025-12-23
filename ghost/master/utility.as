@@ -170,6 +170,16 @@ function TrimHolidayName(name)
 	return name;
 }
 
+function narrator
+{
+	return "\f[italic,1]";
+}
+
+function narratoroff
+{
+	return "\f[italic,default]";
+}
+
 
 //——————————————— Pure functions ———————————————
 //Absolute

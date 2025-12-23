@@ -16,17 +16,17 @@ talk GuestLeave@fallback(p)
 //———————————————————— Deco ————————————————————
 talk DecoTalk@fallback(p)
 {
-	\p[{p}]Where does she get all this stuff...?
+	\p[{p}]{narrator}Where does she get all this stuff...?{narratoroff}
 }
 
 talk DecoTalk@fallback(p)
 {
-	\p[{p}]How many party supplies can one elf set up...?
+	\p[{p}]{narrator}How many party supplies can one elf set up...?{narratoroff}
 }
 
 talk DecoTalk@fallback(p)
 {
-	\p[{p}]The tag is still on it...
+	\p[{p}]{narrator}The tag is still on it...{narratoroff}
 }
 
 
@@ -34,6 +34,7 @@ talk DecoPetClose@fallback(p)
 {
 	\s[anger]Stop putting your hands on everything! \p[{p}]\s[-1]\0\s[eyeroll]\i[10]I'll have to get a replacement, ugh.
 }
+
 
 talk DecoPet@fallback(p)
 {
@@ -50,7 +51,9 @@ talk DecoPet@fallback(p)
 	\s[annoyed]Stop touching my decorations, you're getting them all grubby!
 }
 
+
+//TODO this was a placeholder, havent decided if i want to replace it yet...
 talk DecoClose@fallback(p)
 {
-	\p[{p}]\s[-1]Shoo, out of here...
+	\p[{p}]\s[-1]{narrator}Shoo, out of here...{narratoroff}
 }
