@@ -134,10 +134,22 @@ class PartyDeco : PartyThing
 		}
 		this.specifictype = pick.name;
 		this.surface = pick.surface;
+		this.special = null;
+		
+		if (!pick.variants.IsNull())
+		{
+			local variantpick = Random.Select(pick.variants);
+			this.surface = variantpick.surface;
+			this.special = variantpick.special;
+		}
 		
 		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}Talk@{this.specifictype}");
 		if (flavortext.IsNull()) flavortext = Reflection.Get("DecoTalk@fallback");
 		this.flavortext = flavortext(this.p); //Assign it to *one* output... hopefully
+		
+		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}MenuOpt@{this.specifictype}");
+		if (specialmenu.IsNull()) specialmenu = "";
+		this.specialmenu = specialmenu(this.special);
 	}
 	
 	function Menu
