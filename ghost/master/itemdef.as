@@ -168,7 +168,14 @@ function LeftDeco
 function TopDeco
 {
 	return [
-		{surface: "30000", name: "TriangleString"},
+		{surface: "30000", name: "TriangleString", variants: [
+			{surface: "30000", special: null},
+			{surface: "30001", special: null},
+			{surface: "30002", special: null},
+			{surface: "30003", special: null},
+			{surface: "30004", special: null},
+			{surface: "30005", special: null},
+		]},
 		{surface: "30100", name: "TopBanner"},
 		{surface: "30200", name: "DiscoBall"},
 		{surface: "30300", name: "TopLightString"},

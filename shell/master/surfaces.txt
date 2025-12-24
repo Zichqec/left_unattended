@@ -203,7 +203,7 @@ surface20300
 }
 
 
-surface30000
+surface30000-30005
 {
 	collision0,0,0,500,500,stroke
 }
