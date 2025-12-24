@@ -136,7 +136,7 @@ function OnDismissItem
 {
 	local p = Shiori.Reference[0].ToNumber();
 	
-	return PartyClutter["{p}"].Vanish() + OnSurfaceRestore();
+	return PartyClutter["{p}"].Vanish(); //Removed surface restore here because it was causing weirdness
 }
 
 function OnDebug@ToggleSpawning
