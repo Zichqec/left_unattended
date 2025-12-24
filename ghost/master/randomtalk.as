@@ -24,3 +24,30 @@ talk RandomTalk
 	
 	\s[phone]Cancel that...
 }
+
+talk RandomTalk
+{
+	\s[away]Vanilla or strawberry... \w8\s[tongue]Both.
+}
+
+talk RandomTalk
+{
+	\s[tongue]Hehehehe, of \f[italic,1]course\f[italic,default] I want to write a custom message on it...
+}
+
+talk RandomTalk
+{
+	\s[away]Hmm... \w8\w8\s[forward]I want to get one of these giant snack bars, but your doorway is too small to bring it inside.
+	
+	\s[annoyed]You should fix that.
+}
+
+talk RandomTalk
+{
+	\s[phone]Ooh, flash sale... \s[tongue]Guess we're having {morestreamers}.
+}
+
+talk RandomTalk
+{
+	\s[phone]Another round of invites sent... \s[tongue]Let's see who bites.
+}
