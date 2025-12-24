@@ -1,4 +1,4 @@
 // talk DecoFreeTalk@happypartybanner(p)
 // {
-	// \p[{p}]it's a bit frayed...
+	// \p[{p}]{narrator}temp{narratoroff}
 // }

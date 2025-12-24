@@ -163,7 +163,7 @@ class PartyDeco : PartyThing
 		
 		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}MenuOpt@{this.specifictype}");
 		if (specialmenu.IsNull()) specialmenu = "";
-		this.specialmenu = specialmenu(this.special);
+		this.specialmenu = specialmenu(this.p,this.special);
 	}
 	
 	function Menu
