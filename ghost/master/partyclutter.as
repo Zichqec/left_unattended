@@ -94,20 +94,20 @@ function OnInitializePos
 	local output = "";
 	if (alignment == "free") output += "\![set,alignmenttodesktop,bottom]"; //This align command and the one below are a patch because of an SSP issue where the move commands don't always move things, and also an issue i'm running into where the property command is lagging behind even if i added some pause time. fun!
 	output += "{move}{move}";
-	if (IsDebugMode)
-	{
-		output += "\b[2]\![quicksection,1]\![no-autopause]";
-		output += "alignment: {alignment}\n\n";
+	// if (IsDebugMode)
+	// {
+		// output += "\b[2]\![quicksection,1]\![no-autopause]";
+		// output += "alignment: {alignment}\n\n";
 		
-		output += "Display size: {display.width}x{display.height}\n";
-		output += "Item size: {itemwidth}x{itemheight}\n\n";
+		// output += "Display size: {display.width}x{display.height}\n";
+		// output += "Item size: {itemwidth}x{itemheight}\n\n";
 		
-		output += "rightbound: {rightbound}\n";
-		output += "lowerbound: {lowerbound}\n\n";
+		// output += "rightbound: {rightbound}\n";
+		// output += "lowerbound: {lowerbound}\n\n";
 		
-		output += "X: {X}\n";
-		output += "Y: {Y}\n";
-	}
+		// output += "X: {X}\n";
+		// output += "Y: {Y}\n";
+	// }
 	if (alignment == "free") output += "\![set,alignmenttodesktop,free]";
 	return output;
 	//return "{move}{move}"; //{itemwidth}x{itemheight}";

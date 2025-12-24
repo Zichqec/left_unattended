@@ -189,6 +189,11 @@ surface20200
 	collision0,0,0,500,500,stroke
 }
 
+surface20300
+{
+	collision0,0,0,500,500,stroke
+}
+
 
 surface30000
 {
@@ -221,6 +226,11 @@ surface40200
 	collision0,0,0,500,500,stroke
 }
 
+surface40300
+{
+	collision0,0,0,500,500,stroke
+}
+
 
 surface50000
 {
@@ -232,13 +242,18 @@ surface50100
 	collision0,0,0,500,500,stroke
 }
 
-surface50200,50201,50250,50251
+surface50200-50205,50250,50251
 {
 	collision0,0,0,500,500,stroke
 }
 
 
-surface60000
+surface60000-60004
+{
+	collision0,0,0,500,500,stroke
+}
+
+surface60050-60054
 {
 	collision0,0,0,500,500,stroke
 }

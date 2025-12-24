@@ -3,7 +3,7 @@
 	// \p[{p}]it's a bit frayed...
 // }
 
-function DecoBottomMenuOpt@PunchBowl(type)
+function DecoBottomMenuOpt@FoodBowl(type)
 {
 	if (type == "candy bowl")
 	{

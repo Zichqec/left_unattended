@@ -109,8 +109,8 @@ function GuestTypes
 function LeftDeco
 {
 	return [
-		{surface: "20000", name: "SideBanner"},
-		{surface: "20100", name: "SideBalloons"},
+		{surface: "20000", name: "LeftBanner"},
+		{surface: "20100", name: "LeftBalloons"},
 		{surface: "20200", name: "LeftSpeaker"},
 	];
 }
@@ -119,27 +119,35 @@ function TopDeco
 {
 	return [
 		{surface: "30000", name: "TriangleString"},
-		{surface: "30100", name: "HappyPartyBanner"},
+		{surface: "30100", name: "TopBanner"},
+		{surface: "30200", name: "DiscoBall"},
 	];
 }
 
 function RightDeco
 {
 	return [
-		{surface: "40000", name: "Dartboard"},
-		{surface: "40100", name: "SideFern"},
+		{surface: "40000", name: "RightBanner"},
+		{surface: "40100", name: "RightBalloons"},
 		{surface: "40200", name: "RightSpeaker"},
+		{surface: "40300", name: "RightDartboard"},
 	];
 }
 
 function BottomDeco
 {
 	return [
-		{surface: "50000", name: "WeightedBalloons"},
+		{surface: "50000", name: "BottomBalloons"},
 		{surface: "50100", name: "SpotLights"},
-		{surface: "50200", name: "PunchBowl", variants: [
+		{surface: "50200", name: "DrinkBowl", variants: [
 			{surface: "50200", special: null},
-			{surface: "50201", special: null},
+			{surface: "50201", special: "water bowl"},
+			{surface: "50202", special: null},
+			{surface: "50203", special: null},
+			{surface: "50204", special: null},
+			{surface: "50205", special: null},
+		]},
+		{surface: "50250", name: "FoodBowl", variants: [
 			{surface: "50250", special: null},
 			{surface: "50251", special: "candy bowl"},
 		]},
@@ -149,7 +157,20 @@ function BottomDeco
 function FreeDeco
 {
 	return [
-		{surface: "60000", name: "CakeTable"},
+		{surface: "60000", name: "TieredCake", variants: [
+			{surface: "60000", special: null},
+			{surface: "60001", special: null},
+			{surface: "60002", special: null},
+			{surface: "60003", special: null},
+			{surface: "60004", special: null},
+		]},
+		{surface: "60000", name: "SlicedCake", variants: [
+			{surface: "60050", special: null},
+			{surface: "60051", special: null},
+			{surface: "60052", special: null},
+			{surface: "60053", special: null},
+			{surface: "60054", special: null},
+		]},
 		{surface: "60100", name: "PottedFern", variants: [
 			{surface: "60100", special: null},
 			{surface: "60101", special: null},
