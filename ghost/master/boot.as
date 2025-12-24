@@ -61,6 +61,11 @@ talk CloseStillPartyingTalk
 	\s[forward]Leave? \w8\s[annoyed]Seriously? \w8\s[eyeroll]\i[10]I have a party going here, in case you haven't noticed.
 }
 
+talk CloseStillPartyingTalk
+{
+	\s[eyeroll]Uh, \i[10]\f[italic,1]no\f[italic,default], I'm not leaving while my party is still ongoing.
+}
+
 
 //————— Random failure, summons more items —————
 //{SurfaceRefresh} to show the items
@@ -104,6 +109,11 @@ talk CloseDefeatTalk
 	\s[phone]Hey, if you're heading out could you pick up more {soda} at the store? Thanks.
 }
 
+talk CloseDefeatTalk
+{
+	\s[forward]You're heading out? \s[tongue]Okay, see you later then. \s[laugh]I'm sure we'll still be partying by the time you get back.
+}
+
 
 //——————————————— Other ghosts ———————————————
 //————— Arrival —————
@@ -112,9 +122,31 @@ talk VIPArriveTalk(sakura)
 	\s[tongue]Yo, good to see you, {sakura}. Welcome to the party.
 }
 
+talk VIPArriveTalk(sakura)
+{
+	\s[tongue]Heyyy, check it out, it's {sakura}. \s[laugh]Glad you made it.
+}
+
+talk VIPArriveTalk(sakura)
+{
+	\s[laugh]Is that {sakura} here to swipe some cake? \s[tongue]I think it is~
+}
+
 
 //————— Departure —————
 talk VIPLeaveTalk(sakura)
 {
 	\s[forward]Was that {sakura} leaving? \s[annoyed]Are you kicking my guests out?
+}
+
+talk VIPLeaveTalk(sakura)
+{
+	\s[annoyed]Hey, where did {sakura} go? \s[anger]Don't kick out my friends while we're trying to have a good time!
+}
+
+talk VIPLeaveTalk(sakura)
+{
+	\s[away]... {sakura}?
+	
+	\s[annoyed]What did you say? \s[anger]I hope you're not kicking my guests out.
 }
