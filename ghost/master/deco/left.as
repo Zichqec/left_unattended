@@ -1,4 +1,4 @@
-talk DecoLeftTalk@LeftBanner(p,text)
-{
-	\p[{p}]{narrator}It says "{text}"...{narratoroff}
-}
+// talk DecoLeftTalk@LeftBanner(p,text)
+// {
+	// \p[{p}]{narrator}It says "{text}"...{narratoroff}
+// }
