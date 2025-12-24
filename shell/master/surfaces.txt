@@ -149,7 +149,15 @@ surface10040-10051
 }
 
 
-surface10100
+surface10100-10111
+{
+}
+
+surface10120-10131
+{
+}
+
+surface10140-10151
 {
 }
 
@@ -179,7 +187,7 @@ surface20000-20003
 	collision0,0,0,500,500,stroke
 }
 
-surface20100
+surface20100-20103
 {
 	collision0,0,0,500,500,stroke
 }
@@ -210,13 +218,23 @@ surface30200
 	collision0,0,0,500,500,stroke
 }
 
+surface30300
+{
+	collision0,0,0,500,500,stroke
+}
+
+surface30400
+{
+	collision0,0,0,500,500,stroke
+}
+
 
 surface40000-40003
 {
 	collision0,0,0,500,500,stroke
 }
 
-surface40100
+surface40100-40103
 {
 	collision0,0,0,500,500,stroke
 }
@@ -232,7 +250,7 @@ surface40300
 }
 
 
-surface50000
+surface50000-50003
 {
 	collision0,0,0,500,500,stroke
 }
@@ -242,7 +260,7 @@ surface50100
 	collision0,0,0,500,500,stroke
 }
 
-surface50200-50205,50250,50251
+surface50200-50205,50250-50255
 {
 	collision0,0,0,500,500,stroke
 }

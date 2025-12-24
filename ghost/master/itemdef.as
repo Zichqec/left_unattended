@@ -44,7 +44,46 @@ function GuestTypes
 			{surface: "10051", special: null},
 		]},
 		
-		{surface: "10100", name: "Minotaur"},
+		{surface: "10100", name: "Beastfolk", variants: [
+			{surface: "10100", special: "Minotaur"},
+			{surface: "10101", special: "Minotaur"},
+			{surface: "10102", special: "Minotaur"},
+			{surface: "10103", special: "Minotaur"},
+			{surface: "10104", special: "Minotaur"},
+			{surface: "10105", special: "Minotaur"},
+			{surface: "10106", special: "Minotaur"},
+			{surface: "10107", special: "Minotaur"},
+			{surface: "10108", special: "Minotaur"},
+			{surface: "10109", special: "Minotaur"},
+			{surface: "10110", special: "Minotaur"},
+			{surface: "10111", special: "Minotaur"},
+			
+			{surface: "10120", special: "Catfolk"},
+			{surface: "10121", special: "Catfolk"},
+			{surface: "10122", special: "Catfolk"},
+			{surface: "10123", special: "Catfolk"},
+			{surface: "10124", special: "Catfolk"},
+			{surface: "10125", special: "Catfolk"},
+			{surface: "10126", special: "Catfolk"},
+			{surface: "10127", special: "Catfolk"},
+			{surface: "10128", special: "Catfolk"},
+			{surface: "10129", special: "Catfolk"},
+			{surface: "10130", special: "Catfolk"},
+			{surface: "10131", special: "Catfolk"},
+			
+			{surface: "10140", special: "Unicorn"},
+			{surface: "10141", special: "Unicorn"},
+			{surface: "10142", special: "Unicorn"},
+			{surface: "10143", special: "Unicorn"},
+			{surface: "10144", special: "Unicorn"},
+			{surface: "10145", special: "Unicorn"},
+			{surface: "10146", special: "Unicorn"},
+			{surface: "10147", special: "Unicorn"},
+			{surface: "10148", special: "Unicorn"},
+			{surface: "10149", special: "Unicorn"},
+			{surface: "10150", special: "Unicorn"},
+			{surface: "10151", special: "Unicorn"},
+		]},
 		
 		{surface: "10200", name: "ElfRegular", variants: [
 			{surface: "10200", special: null},
@@ -115,7 +154,12 @@ function LeftDeco
 			{surface: "20002", special: "CAKE TIME"},
 			{surface: "20003", special: "PARTY GIRL"},
 		]},
-		{surface: "20100", name: "LeftBalloons"},
+		{surface: "20100", name: "LeftBalloons", variants: [
+			{surface: "20100", special: null},
+			{surface: "20101", special: null},
+			{surface: "20102", special: null},
+			{surface: "20103", special: null},
+		]},
 		{surface: "20200", name: "LeftSpeaker"},
 		{surface: "20300", name: "LeftDartboard"},
 	];
@@ -127,6 +171,8 @@ function TopDeco
 		{surface: "30000", name: "TriangleString"},
 		{surface: "30100", name: "TopBanner"},
 		{surface: "30200", name: "DiscoBall"},
+		{surface: "30300", name: "TopLightString"},
+		{surface: "30400", name: "TopSpeaker"},
 	];
 }
 
@@ -139,7 +185,12 @@ function RightDeco
 			{surface: "40002", special: "CAKE TIME"},
 			{surface: "40003", special: "PARTY GIRL"},
 		]},
-		{surface: "40100", name: "RightBalloons"},
+		{surface: "40100", name: "RightBalloons", variants: [
+			{surface: "40100", special: null},
+			{surface: "40101", special: null},
+			{surface: "40102", special: null},
+			{surface: "40103", special: null},
+		]},
 		{surface: "40200", name: "RightSpeaker"},
 		{surface: "40300", name: "RightDartboard"},
 	];
@@ -148,7 +199,12 @@ function RightDeco
 function BottomDeco
 {
 	return [
-		{surface: "50000", name: "BottomBalloons"},
+		{surface: "50000", name: "BottomBalloons", variants: [
+			{surface: "50000", special: null},
+			{surface: "50001", special: null},
+			{surface: "50002", special: null},
+			{surface: "50003", special: null},
+		]},
 		{surface: "50100", name: "SpotLights"},
 		{surface: "50200", name: "DrinkBowl", variants: [
 			{surface: "50200", special: null},
@@ -161,6 +217,10 @@ function BottomDeco
 		{surface: "50250", name: "FoodBowl", variants: [
 			{surface: "50250", special: null},
 			{surface: "50251", special: "candy bowl"},
+			{surface: "50252", special: null},
+			{surface: "50253", special: "noodle soup"},
+			{surface: "50254", special: null},
+			{surface: "50255", special: null},
 		]},
 	];
 }
