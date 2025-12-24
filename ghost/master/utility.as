@@ -10,7 +10,7 @@ function ItemSpawnTime(test)
 		//OH GOD I'M SO BAD AT MATH WHAT AM I DOING
 		
 		//I would like to thank Balatro for guiding me towards the solution, truly this would not have been possible without your support
-		local decomult = (decocount / 75) + 1;
+		local decomult = 1.15;
 		local output = 30;
 		for (local i = 0; i < decocount; i++)
 		{
@@ -275,8 +275,8 @@ function installedghostname
 //——————————————— Debug (delete later probably) ———————————————
 function OnTestCurve
 {
-	local output = "\b[2]\![set,autoscroll,disable]\_q";
-	for (local i = 0; i < 50; i++)
+	local output = "\b[2]\![set,autoscroll,disable]\![no-autopause]\_q";
+	for (local i = 0; i < 100; i++)
 	{
 		local spawntime = ItemSpawnTime(i);
 		output += "{i}: {TimeDisplay(spawntime)} \f[color,disable]({spawntime})\f[color,default]\n";
