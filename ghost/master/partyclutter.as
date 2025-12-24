@@ -125,8 +125,6 @@ class PartyDeco : PartyThing
 		
 		local rand = Random.GetIndex(0,100);
 		
-		//They're jumping around the screen... how odd
-		//Maybe I can accomodate for it by making each one grab its own coords and jump back to its proper position after the align command?
 		local pick = Random.Select(FreeDeco());
 		if (rand >= 80)
 		{
@@ -266,6 +264,8 @@ class PartyGuest : PartyThing
 		
 		PartyClutter.Remove("{this.p}");
 		
-		return dialogue(this.p);
+		return "\t" + dialogue(this.p) + "\s[-1]";
 	}
 }
+
+//TODO i tried to set these up so that I didn't have to send the p number, but unfortunately Aosora's head setting was getting in the way even when i turned it off...? May need to follow up on this one. Perhaps update the Aosora dll on another ghost and see if behavior changes...
