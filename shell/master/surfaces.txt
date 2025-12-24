@@ -174,7 +174,7 @@ surface10300-10311
 
 //—————————————————————————————— Deco surfaces ——————————————————————————————
 
-surface20000
+surface20000-20003
 {
 	collision0,0,0,500,500,stroke
 }
@@ -211,7 +211,7 @@ surface30200
 }
 
 
-surface40000
+surface40000-40003
 {
 	collision0,0,0,500,500,stroke
 }

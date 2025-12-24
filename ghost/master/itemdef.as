@@ -109,9 +109,15 @@ function GuestTypes
 function LeftDeco
 {
 	return [
-		{surface: "20000", name: "LeftBanner"},
+		{surface: "20000", name: "LeftBanner", variants: [
+			{surface: "20000", special: "YAY JES"},
+			{surface: "20001", special: "HAPPY PARTY"},
+			{surface: "20002", special: "CAKE TIME"},
+			{surface: "20003", special: "PARTY GIRL"},
+		]},
 		{surface: "20100", name: "LeftBalloons"},
 		{surface: "20200", name: "LeftSpeaker"},
+		{surface: "20300", name: "LeftDartboard"},
 	];
 }
 
@@ -127,7 +133,12 @@ function TopDeco
 function RightDeco
 {
 	return [
-		{surface: "40000", name: "RightBanner"},
+		{surface: "40000", name: "RightBanner", variants: [
+			{surface: "40000", special: "YAY JES"},
+			{surface: "40001", special: "HAPPY PARTY"},
+			{surface: "40002", special: "CAKE TIME"},
+			{surface: "40003", special: "PARTY GIRL"},
+		]},
 		{surface: "40100", name: "RightBalloons"},
 		{surface: "40200", name: "RightSpeaker"},
 		{surface: "40300", name: "RightDartboard"},

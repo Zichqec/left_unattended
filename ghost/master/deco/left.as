@@ -1,4 +1,4 @@
-// talk DecoLeftTalk@happypartybanner(p)
-// {
-	// \p[{p}]it's a bit frayed...
-// }
+talk DecoLeftTalk@LeftBanner(p,text)
+{
+	\p[{p}]{narrator}It says "{text}"...{narratoroff}
+}
