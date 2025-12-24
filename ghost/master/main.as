@@ -262,6 +262,7 @@ function OnSpawnItem
 	return OnSurfaceRestore();
 }
 
+//TODO there's a little issue here where if an item spawns during a dialogue her face will reset at the end...
 function InitializeItem(num)
 {
 	if (num.IsNull()) num = 1;
@@ -279,7 +280,7 @@ function OnSpawnGuest
 {
 	local clutter = new PartyGuest();
 	PartyClutter.Add("{clutter.p}", clutter);
-	return OnSurfaceRestore();
+	return clutter.SurfaceRestore();
 }
 
 function OnDespawnGuest
