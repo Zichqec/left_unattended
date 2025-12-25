@@ -17,6 +17,6 @@ deco/right.as
 deco/left.as
 deco/bottom.as
 deco/free.as
-deco/sides.as
+deco/multi.as
 
 fallback.as

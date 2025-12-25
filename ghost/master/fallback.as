@@ -13,7 +13,7 @@ talk GuestLeave@fallback(p)
 }
 
 
-//———————————————————— Deco ————————————————————
+//———————————————————— Deco flavortext ————————————————————
 talk DecoTalk@fallback(p)
 {
 	\p[{p}]{narrator}Where does she get all this stuff...?{narratoroff}
@@ -30,12 +30,22 @@ talk DecoTalk@fallback(p)
 }
 
 
+//———————————————————— Deco close by menu ————————————————————
+//TODO this was a placeholder, havent decided if i want to replace it yet...
+talk DecoClose@fallback(p)
+{
+	\p[{p}]\s[-1]{narrator}Shoo, out of here...{narratoroff}
+}
+
+
+//———————————————————— Deco pet close ————————————————————
 talk DecoPetClose@fallback(p)
 {
 	\s[anger]Stop putting your hands on everything! \p[{p}]\s[-1]\0\s[eyeroll]\i[10]I'll have to get a replacement, ugh.
 }
 
 
+//———————————————————— Deco petting ————————————————————
 talk DecoPet@fallback(p)
 {
 	\s[annoyed]Keep your hands to yourself!
@@ -49,11 +59,4 @@ talk DecoPet@fallback(p)
 talk DecoPet@fallback(p)
 {
 	\s[annoyed]Stop touching my decorations, you're getting them all grubby!
-}
-
-
-//TODO this was a placeholder, havent decided if i want to replace it yet...
-talk DecoClose@fallback(p)
-{
-	\p[{p}]\s[-1]{narrator}Shoo, out of here...{narratoroff}
 }
