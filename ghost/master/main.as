@@ -338,3 +338,13 @@ function OnKeyPress
 		}
 	}
 }
+
+function quitbutton@caption
+{
+	return "Leave";
+}
+
+function closebutton@caption
+{
+	return "Ask her to leave";
+}

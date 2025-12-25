@@ -44,6 +44,7 @@ function OnMainMenu
 	if (LastTalk == "") m += "\f[color,disable]\![*]Repeat\f[color,default]";
 	else m += "\![*]\__q[OnLastTalk]Repeat\__q";
 	
+	m += "  \![*]\__q[OnClose]Please leave\__q";
 	m += "\n\n";
 	m += "\![*]\__q[OnSettings]Settings\__q\n\n";
 	
