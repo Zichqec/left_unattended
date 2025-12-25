@@ -7,10 +7,10 @@ shiori,aosora.dll
 
 craftman,Galla & Zichqec
 craftmanw,Galla & Zichqec
-craftmanurl,
+craftmanurl,https://ukagaka.zichqec.com/
 
 sakura.name,Jesaeria
-kero.name,Party decor
+kero.name,Party decor & guests
 
 icon,icon.ico
 

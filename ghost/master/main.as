@@ -348,3 +348,8 @@ function closebutton@caption
 {
 	return "Ask her to leave";
 }
+
+function homeurl
+{
+	return "https://raw.githubusercontent.com/Zichqec/left_unattended/refs/heads/main/";
+}

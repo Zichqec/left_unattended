@@ -1,10 +1,10 @@
 charset,UTF-8
 type,shell
 
-name,Default Shell
-craftman,
-craftmanw,
-craftmanurl,
+name,Default
+craftman,Galla & Zichqec
+craftmanw,Galla & Zichqec
+craftmanurl,https://gallathegalla.github.io/gtg-ghosts/
 
 seriko.alignmenttodesktop,free
 seriko.use_self_alpha,1
