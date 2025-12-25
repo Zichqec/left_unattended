@@ -222,10 +222,10 @@ function BottomDeco
 			{surface: "50205", special: null},
 		]},
 		{surface: "50250", name: "FoodBowl", variants: [
-			{surface: "50250", special: null},
+			{surface: "50250", special: "mashed potato bowl"},
 			{surface: "50251", special: "candy bowl"},
 			{surface: "50252", special: null},
-			{surface: "50253", special: "noodle soup"},
+			{surface: "50253", special: "noodle bowl"},
 			{surface: "50254", special: null},
 			{surface: "50255", special: null},
 		]},
