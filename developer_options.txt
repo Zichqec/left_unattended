@@ -1,0 +1,4 @@
+ghost/master/savedata.asv,nonar,noupdate
+ghost/master/debug.asproj,nonar,noupdate
+.gitattributes,nonar,noupdate
+.gitignore,nonar,noupdate
