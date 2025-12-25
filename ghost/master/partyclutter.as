@@ -205,7 +205,7 @@ class PartyDeco : PartyThing
 				
 				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@PetClose@{this.specifictype}");
 				if (dialogue.IsNull()) dialogue = DecoPetClose@fallback;
-				return dialogue(this.p,this.special);
+				return "\t\![enter,nouserbreakmode]" + dialogue(this.p,this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
