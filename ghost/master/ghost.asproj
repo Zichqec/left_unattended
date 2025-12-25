@@ -2,6 +2,7 @@ main.as
 utility.as
 partyclutter.as
 itemdef.as
+meta.as
 
 menu.as
 boot.as
