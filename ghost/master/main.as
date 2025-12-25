@@ -55,7 +55,7 @@ function OnAosoraLoad
 	//This one is the other way around so we can have a little randomness to it...
 	NextGuestSpawn = Time.GetNowUnixEpoch() + GuestSpawnTime();
 	NextVIPSpawn = Time.GetNowUnixEpoch() + VIPSpawnTime();
-	CooldownTime = Time.GetNowUnixEpoch();
+	ResetCooldown();
 	
 	//As in monitor...
 	Display = {};
@@ -215,7 +215,7 @@ function OnSecondChange
 		{
 			//TODO something to think about: this will trigger if you dismiss items and the time until next item goes down... might be a nuisance but oh well! the alternative seems worse? maybe add a cooldown variable...
 			LastItemSpawn = epoch;
-			CooldownTime = epoch; //TODO these cooldown things (that's what i should have called it lol) probably need to be moved so that if you manually dismiss stuff that also resets the cooldown
+			ResetCooldown(); //TODO these cooldown things (that's what i should have called it lol) probably need to be moved so that if you manually dismiss stuff that also resets the cooldown
 			output = OnSpawnItem();
 		}
 		
@@ -224,7 +224,7 @@ function OnSecondChange
 			if (epoch >= NextGuestSpawn)
 			{
 				NextGuestSpawn = epoch + GuestSpawnTime();
-				CooldownTime = epoch;
+				ResetCooldown();
 				output = OnSpawnGuest();
 			}
 		}
@@ -232,7 +232,7 @@ function OnSecondChange
 		else if (TooManyGuests())
 		{
 			//Debug.WriteLine("SHIORI headers status: {Shiori.Headers.Status.ToString()}");
-			CooldownTime = epoch;
+			ResetCooldown();
 			return OnDespawnGuest(); //Exception, this one returns right away because it opens a new balloon. Maybe change? hmm
 		}
 		
@@ -241,7 +241,7 @@ function OnSecondChange
 			if (epoch >= NextVIPSpawn)
 			{
 				NextVIPSpawn = epoch + VIPSpawnTime();
-				CooldownTime = epoch;
+				ResetCooldown();
 				output = OnSpawnVIP();
 			}
 		}
@@ -308,7 +308,7 @@ function OnGhostCallComplete, OnOtherGhostBooted
 
 function OnOtherGhostClosed
 {
-	CooldownTime = Time.GetNowUnixEpoch();
+	ResetCooldown();
 	return VIPLeaveTalk(Shiori.Reference[0],Shiori.Reference[2]);
 }
 

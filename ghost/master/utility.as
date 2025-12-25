@@ -192,6 +192,11 @@ function narratoroff
 	return "\f[italic,default]";
 }
 
+function ResetCooldown
+{
+	CooldownTime = Time.GetNowUnixEpoch();
+}
+
 
 //——————————————— Pure functions ———————————————
 //Absolute

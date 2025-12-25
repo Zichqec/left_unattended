@@ -182,6 +182,8 @@ class PartyDeco : PartyThing
 	
 	function Vanish
 	{
+		ResetCooldown();
+		
 		PartyClutter.Remove("{this.p}");
 		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@Close@{this.specifictype}");
 		if (dialogue.IsNull()) dialogue = DecoClose@fallback;
@@ -199,6 +201,8 @@ class PartyDeco : PartyThing
 			if (DecoCount() == 0) return "\t" + CloseStopTouchingThingsTalk(this.p) + "\_w[1000]\-";
 			else
 			{
+				ResetCooldown();
+				
 				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@PetClose@{this.specifictype}");
 				if (dialogue.IsNull()) dialogue = DecoPetClose@fallback;
 				return dialogue(this.p,this.special);
