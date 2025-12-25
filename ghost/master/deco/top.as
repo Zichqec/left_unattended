@@ -38,12 +38,24 @@ talk DecoTop@Talk@DiscoBall(p)
 	\p[{p}]{narrator}It glimmers and gleams as it spins...{narratoroff}
 }
 
-talk DecoTop@Pet@TopBanner(p)
+talk DecoTop@Pet@DiscoBall(p)
 {
 	\s[annoyed]If you get your handprints all over the disco ball, it's not going to be shiny anymore!
 }
 
-talk DecoTop@Pet@TopBanner(p)
+talk DecoTop@Pet@DiscoBall(p)
 {
 	\s[annoyed]Stop messing with that disco ball, I don't have time to clean it if you get it dirty!
+}
+
+
+//——————————————— Light string ———————————————
+talk DecoTop@Talk@TopLightString(p)
+{
+	\p[{p}]{narrator}If you squint and tilt your head a little, they look like terrifyingly huge lightning bugs...{narratoroff}
+}
+
+talk DecoTop@Pet@TopLightString(p)
+{
+	\s[anger]They zapped me when I put them up there. I hope they zap you too for messing with my hard work!
 }
