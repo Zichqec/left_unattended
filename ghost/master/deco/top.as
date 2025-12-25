@@ -55,6 +55,11 @@ talk DecoTop@Talk@TopLightString(p)
 	\p[{p}]{narrator}If you squint and tilt your head a little, they look like terrifyingly huge lightning bugs...{narratoroff}
 }
 
+talk DecoTop@Talk@TopLightString(p)
+{
+	\p[{p}]{narrator}Tiny, burning suns, stabbing into the retinas of onlookers...{narratoroff}
+}
+
 talk DecoTop@Pet@TopLightString(p)
 {
 	\s[anger]They zapped me when I put them up there. I hope they zap you too for messing with my hard work!

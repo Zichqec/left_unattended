@@ -185,7 +185,7 @@ class PartyDeco : PartyThing
 		PartyClutter.Remove("{this.p}");
 		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@Close@{this.specifictype}");
 		if (dialogue.IsNull()) dialogue = DecoClose@fallback;
-		return dialogue(this.p);
+		return dialogue(this.p,this.special);
 	}
 	
 	function Pet
@@ -201,14 +201,14 @@ class PartyDeco : PartyThing
 			{
 				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@PetClose@{this.specifictype}");
 				if (dialogue.IsNull()) dialogue = DecoPetClose@fallback;
-				return dialogue(this.p);
+				return dialogue(this.p,this.special);
 			}
 		}
 		else
 		{
 			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@Pet@{this.specifictype}");
 			if (dialogue.IsNull()) dialogue = DecoPet@fallback;
-			return dialogue(this.p);
+			return dialogue(this.p,this.special);
 		}
 	}
 }

@@ -40,3 +40,8 @@ talk DecoLeft@Talk@LeftDartboard,  DecoRight@Talk@RightDartboard(p)
 {
 	\p[{p}]{narrator}Someone's done quite well at this.{narratoroff}
 }
+
+talk DecoLeft@Pet@LeftDartboard,  DecoRight@Pet@RightDartboard(p)
+{
+	\s[annoyed]Keep messing with that and we'll start using your \f[italic,1]face\f[italic,default] as a target.
+}
