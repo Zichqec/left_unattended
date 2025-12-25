@@ -353,3 +353,24 @@ function homeurl
 {
 	return "https://raw.githubusercontent.com/Zichqec/left_unattended/refs/heads/main/";
 }
+
+function FormatLinks(links)
+{
+	local output = "";
+	for (i = 0; i < links.length; i++)
+	{
+		//Name then 0x01, URL then 0x02
+		output += links[i].name + (1).ToAscii();
+		output += links[i].url + (2).ToAscii();
+	}
+	return output;
+}
+
+function sakura@recommendsites
+{
+	return FormatLinks([
+		{name: "Zi's Ukagaka Space", url: "https://ukagaka.zichqec.com/"},
+		{name: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/"},
+		{name: "Aosora SHIORI", url: "https://github.com/kanadelab/aosora-shiori"},
+	]);
+}
