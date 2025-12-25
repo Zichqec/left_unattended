@@ -7,12 +7,12 @@ talk DecoLeft@Talk@LeftBanner,  DecoRight@Talk@RightBanner(p,text)
 
 
 //——————————————— Balloons ———————————————
-talk DecoLeft@Talk@LeftBalloons, DecoLeft@Talk@RightBalloons, DecoBottom@Talk@BottomBalloons(p)
+talk DecoLeft@Talk@LeftBalloons, DecoRight@Talk@RightBalloons, DecoBottom@Talk@BottomBalloons(p)
 {
 	\p[{p}]{narrator}Pockets of captive helium... a tiny enclave in an atmosphere full of nitrogen and oxygen.{narratoroff}
 }
 
-talk DecoLeft@Talk@LeftBalloons, DecoLeft@Talk@RightBalloons, DecoBottom@Talk@BottomBalloons(p)
+talk DecoLeft@Talk@LeftBalloons, DecoRight@Talk@RightBalloons, DecoBottom@Talk@BottomBalloons(p)
 {
 	\p[{p}]{narrator}Balloons never seem willing participants at parties, they always yearn to fly away...{narratoroff}
 }
