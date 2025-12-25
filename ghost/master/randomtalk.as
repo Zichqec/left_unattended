@@ -27,7 +27,7 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	\s[away]Vanilla or strawberry... \w8\s[tongue]Both.
+	\s[away]{Capitalize(vanilla)} or {blueberry}... \w8\s[tongue]Both.
 }
 
 talk RandomTalk
@@ -109,11 +109,37 @@ talk RandomTalk
 	\s[annoyed]I can't believe that every place I look for {plushsushi} is sold out. \s[eyeroll]\i[10]What's with the huge rush on them, it's not like they're an endangered species.
 }
 
-talk RandomTalk , On
+talk RandomTalk
 {
 	\s[annoyed]I really ought to charge admission, that would cover the cost of the party supplies at least.
 	
 	\s[eyeroll]But then there would be fewer guests, which would defeat the point of having a party in the first place...
 	
 	\i[10]Oh well, I guess we'll just have to keep footing the bill for the greater good.
+}
+
+//———————————————————— Conditional dialogues ————————————————————
+//Done carefully to avoid upsetting nonoverlap... although this is kind of a bad method if I add more than one. Hm! There's probably a better way I'm forgetting, I am just tired... work on this later perhaps.
+talk RandomTalk
+{
+	>ManyGuestTalk : ManyGuests()
+	>FewGuestTalk : FewGuests()
+	>NoGuestTalk
+}
+
+talk ManyGuestTalk
+{
+	\s[tongue]Another successful party. \s[laugh]Jes never disappoints.
+}
+
+talk FewGuestTalk
+{
+	\s[away]I sent out more invites than this... \s[eyeroll]A \f[italic,1]lot\f[italic,default] more...
+	
+	\s[tongue]Guess I'll send some more~
+}
+
+talk NoGuestTalk
+{
+	\s[away]Hmm... where is everyone?
 }

@@ -131,9 +131,15 @@ function enable_debug
 	IsDebugMode = Shiori.Reference[0].ToNumber();
 }
 
-function LotsOfGuests
+function ManyGuests
 {
-	if (GuestCount >= 10) return true;
+	if (GuestCount() >= 10) return true;
+	else return false;
+}
+
+function FewGuests
+{
+	if (GuestCount() >= 1 && !ManyGuests()) return true;
 	else return false;
 }
 

@@ -4,6 +4,14 @@ function bagsofglitter
 		"bags of {redandblue} glitter",
 		"custom-printed cardboard cutouts",
 		"fog machines",
+		"marble cakes",
+		"cute cake toppers",
+		"cakes with custom printed designs on top",
+		"bubble machines",
+		"projectors",
+		"water guns",
+		"extra spicy nachos",
+		"spray paint",
 	]);
 }
 
@@ -16,6 +24,10 @@ function redandblue
 		"rainbow",
 		"giant",
 		"extra fine",
+		"metallic",
+		"chunky",
+		"flakey",
+		"iridescent",
 	]);
 }
 
@@ -26,6 +38,28 @@ function pictureframesare
 		"rest of the balloons are",
 		"next cake is",
 		"big disco ball is",
+		"life sized gummy elephant is",
+		"talking dog is",
+		"big vat of {blueberry} punch is",
+		"pallet of eggs is",
+		"giant cake sculpture is",
+		"ice sculptures are",
+	]);
+}
+
+function blueberry
+{
+	return Random.Select([
+		"blueberry",
+		"raspberry",
+		"green apple",
+		"lemon",
+		"grape",
+		"watermelon",
+		"orange",
+		"strawberry",
+		"blackberry",
+		"kiwi-lime",
 	]);
 }
 
@@ -36,6 +70,12 @@ function soda
 		"sparkling cider",
 		"snacks",
 		"paper plates",
+		"plastic forks",
+		"plastic cups",
+		"napkins",
+		"mustard",
+		"ketchup",
+		"sprinkles",
 	]);
 }
 
@@ -45,7 +85,13 @@ function morestreamers
 		"more streamers",
 		"another banner",
 		"another sandwich platter",
-		"a chocolate fountain",
+		"another chocolate fountain",
+		"more candles",
+		"another cake",
+		"more speakers",
+		"more lights",
+		"another table",
+		"more cookies",
 	]);
 }
 
@@ -56,6 +102,12 @@ function thecheesecake
 		"the jukebox",
 		"the ambassador",
 		"the extra subwoofer",
+		"the giant cheese wheel",
+		"the jacuzzi",
+		"the new TV",
+		"the clown",
+		"the giant tray of cupcakes",
+		"the arcade machine",
 	]);
 }
 
@@ -67,6 +119,12 @@ function discoball
 		"tray of cupcakes",
 		"candy bowl",
 		"shrimp decoration",
+		"hotdog plush",
+		"airhorn",
+		"set of party poppers",
+		"throw rug",
+		"jar of sprinkles",
+		"fog machine",
 	]);
 }
 
@@ -82,6 +140,8 @@ function muchcake
 		"many party favors",
 		"much glitter",
 		"many streamers",
+		"many guests",
+		"many napkins",
 	]);
 }
 
@@ -92,6 +152,12 @@ function plushsushi
 		"miniature party hats",
 		"glowstick necklaces",
 		"sticker packs",
+		"bubble bottles",
+		"pinwheels",
+		"glitter pens",
+		"pencil toppers",
+		"themed erasers",
+		"miniature jars",
 	]);
 }
 
@@ -104,6 +170,28 @@ function enoughballoons
 		"enough cake",
 		"enough cups",
 		"enough plates",
+		"enough hot dog buns",
+		"enough ketchup",
+		"enough napkins",
+		"enough glitter",
+		"jello molds",
+	]);
+}
+
+function vanilla
+{
+	return Random.Select([
+		"vanilla",
+		"chocolate",
+		"peanut butter",
+		"fudge",
+		"mint",
+		"caramel",
+		"pistachio",
+		"cookie dough",
+		"neapolitan",
+		"rocky road",
+		"cookies and cream",
 	]);
 }
 
