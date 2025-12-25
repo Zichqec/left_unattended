@@ -46,7 +46,6 @@ talk DecoTalk@fallback(p)
 
 
 //———————————————————— Deco close by menu ————————————————————
-//TODO this was a placeholder, havent decided if i want to replace it yet...
 talk DecoClose@fallback(p)
 {
 	\p[{p}]\s[-1]{narrator}Pack that up...{narratoroff}

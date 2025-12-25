@@ -157,11 +157,11 @@ class PartyDeco : PartyThing
 			this.special = variantpick.special;
 		}
 		
-		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}Talk@{this.specifictype}");
+		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@Talk@{this.specifictype}");
 		if (flavortext.IsNull()) flavortext = Reflection.Get("DecoTalk@fallback");
 		this.flavortext = flavortext(this.p,this.special); //Assign it to *one* output... hopefully
 		
-		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}MenuOpt@{this.specifictype}");
+		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@MenuOpt@{this.specifictype}");
 		if (specialmenu.IsNull()) specialmenu = "";
 		this.specialmenu = specialmenu(this.p,this.special);
 	}
@@ -183,7 +183,7 @@ class PartyDeco : PartyThing
 	function Vanish
 	{
 		PartyClutter.Remove("{this.p}");
-		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}Close@{this.specifictype}");
+		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@Close@{this.specifictype}");
 		if (dialogue.IsNull()) dialogue = DecoClose@fallback;
 		return dialogue(this.p);
 	}
@@ -199,14 +199,14 @@ class PartyDeco : PartyThing
 			if (DecoCount() == 0) return "\t" + CloseStopTouchingThingsTalk(this.p) + "\_w[1000]\-";
 			else
 			{
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}PetClose@{this.specifictype}");
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@PetClose@{this.specifictype}");
 				if (dialogue.IsNull()) dialogue = DecoPetClose@fallback;
 				return dialogue(this.p);
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}Pet@{this.specifictype}");
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@Pet@{this.specifictype}");
 			if (dialogue.IsNull()) dialogue = DecoPet@fallback;
 			return dialogue(this.p);
 		}

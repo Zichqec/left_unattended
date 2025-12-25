@@ -1,10 +1,10 @@
-// talk DecoBottomTalk@PartyBanner(p)
+// talk DecoBottom@Talk@PartyBanner(p)
 // {
 	// \p[{p}]{narrator}temp{narratoroff}
 // }
 
 //——————————————— Balloons ———————————————
-talk DecoBottomTalk@BottomBalloons(p)
+talk DecoBottom@Talk@BottomBalloons(p)
 {
 	\p[{p}]{narrator}Elegant creatures, masters of the skies... Yet tethered to the earth. Tragic...{narratoroff}
 }
@@ -12,39 +12,39 @@ talk DecoBottomTalk@BottomBalloons(p)
 //——————————————— Lights ———————————————
 
 //——————————————— Drink bowls ———————————————
-function DecoBottomTalk@DrinkBowl(p,type)
+function DecoBottom@Talk@DrinkBowl(p,type)
 {
 	if (type == "water bowl") return DecoBottomTalk@WaterBowl(p);
 	else return DecoBottomTalk@OtherDrinkBowl(p);
 }
 
-talk DecoBottomTalk@WaterBowl(p)
+talk DecoBottom@Talk@WaterBowl(p)
 {
 	\p[{p}]{narrator}Is this... just plain water?{narratoroff}
 }
 
-talk DecoBottomTalk@WaterBowl(p)
+talk DecoBottom@Talk@WaterBowl(p)
 {
 	\p[{p}]{narrator}Plain water in a punch bowl...?{narratoroff}
 }
 
-talk DecoBottomTalk@OtherDrinkBowl(p)
+talk DecoBottom@Talk@OtherDrinkBowl(p)
 {
 	\p[{p}]{narrator}Looks like punch of some kind...{narratoroff}
 }
 
-talk DecoBottomTalk@OtherDrinkBowl(p)
+talk DecoBottom@Talk@OtherDrinkBowl(p)
 {
 	\p[{p}]{narrator}Some sugary drink or another...{narratoroff}
 }
 
-talk DecoBottomTalk@OtherDrinkBowl(p)
+talk DecoBottom@Talk@OtherDrinkBowl(p)
 {
 	\p[{p}]{narrator}Looks a bit sickly... did she get the ratio of drink mix to water correct?{narratoroff}
 }
 
 //——————————————— Food bowls ———————————————
-function DecoBottomMenuOpt@FoodBowl(p,type)
+function DecoBottom@MenuOpt@FoodBowl(p,type)
 {
 	if (type == "candy bowl")
 	{
