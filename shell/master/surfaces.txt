@@ -189,86 +189,86 @@ surface.append10000-19999
 	
 	//!
 	animation10.interval,never
-	animation10.pattern0,overlay,70000,0,65,-25
-	animation10.pattern1,overlay,70000,25,65,-27
-	animation10.pattern2,overlay,70000,25,65,-29
-	animation10.pattern3,overlay,70000,25,65,-31
+	animation10.pattern0,overlay,70000,0,65,15
+	animation10.pattern1,overlay,70000,25,65,13
+	animation10.pattern2,overlay,70000,25,65,11
+	animation10.pattern3,overlay,70000,25,65,9
 	animation10.pattern4,overlay,-1,1000,0,0
 	
 	//?
 	animation11.interval,never
-	animation11.pattern0,overlay,70010,0,65,-25
-	animation11.pattern1,overlay,70010,25,65,-27
-	animation11.pattern2,overlay,70010,25,65,-29
-	animation11.pattern3,overlay,70010,25,65,-31
+	animation11.pattern0,overlay,70010,0,65,15
+	animation11.pattern1,overlay,70010,25,65,13
+	animation11.pattern2,overlay,70010,25,65,11
+	animation11.pattern3,overlay,70010,25,65,9
 	animation11.pattern4,overlay,-1,1000,0,0
 	
 	//!?
 	animation12.interval,never
-	animation12.pattern0,overlay,70020,0,65,-25
-	animation12.pattern1,overlay,70020,25,65,-27
-	animation12.pattern2,overlay,70020,25,65,-29
-	animation12.pattern3,overlay,70020,25,65,-31
+	animation12.pattern0,overlay,70020,0,65,15
+	animation12.pattern1,overlay,70020,25,65,13
+	animation12.pattern2,overlay,70020,25,65,11
+	animation12.pattern3,overlay,70020,25,65,9
 	animation12.pattern4,overlay,-1,1000,0,0
 	
 	//...
 	animation13.interval,never
-	animation13.pattern0,overlay,70030,0,65,-25
-	animation13.pattern1,overlay,70031,300,65,-25
-	animation13.pattern2,overlay,70032,300,65,-25
+	animation13.pattern0,overlay,70030,0,65,15
+	animation13.pattern1,overlay,70031,300,65,15
+	animation13.pattern2,overlay,70032,300,65,15
 	animation13.pattern4,overlay,-1,750,0,0
 	
 	//Cheerful
 	animation14.interval,never
-	animation14.pattern0,overlay,70040,0,65,-25
-	animation14.pattern1,overlay,70041,200,65,-25
-	animation14.pattern2,overlay,70040,200,65,-25
-	animation14.pattern3,overlay,70041,200,65,-25
-	animation14.pattern4,overlay,70040,200,65,-25
-	animation14.pattern5,overlay,70041,200,65,-25
-	animation14.pattern6,overlay,70040,200,65,-25
-	animation14.pattern7,overlay,70041,200,65,-25
+	animation14.pattern0,overlay,70040,0,65,15
+	animation14.pattern1,overlay,70041,200,65,15
+	animation14.pattern2,overlay,70040,200,65,15
+	animation14.pattern3,overlay,70041,200,65,15
+	animation14.pattern4,overlay,70040,200,65,15
+	animation14.pattern5,overlay,70041,200,65,15
+	animation14.pattern6,overlay,70040,200,65,15
+	animation14.pattern7,overlay,70041,200,65,15
 	animation14.pattern8,overlay,-1,200,0,0
 	
 	//Sweat
 	animation15.interval,never
-	animation15.pattern0,overlay,70050,0,65,-25
-	animation15.pattern1,overlay,70050,25,65,-23
-	animation15.pattern2,overlay,70050,25,65,-21
-	animation15.pattern3,overlay,70050,25,65,-19
+	animation15.pattern0,overlay,70050,0,65,15
+	animation15.pattern1,overlay,70050,25,65,17
+	animation15.pattern2,overlay,70050,25,65,19
+	animation15.pattern3,overlay,70050,25,65,21
 	animation15.pattern4,overlay,-1,1000,0,0
 	
 	//Surprise
 	animation16.interval,never
-	animation16.pattern0,overlay,70060,0,65,-25
-	animation16.pattern1,overlay,-1,750,65,-25
+	animation16.pattern0,overlay,70060,0,65,15
+	animation16.pattern1,overlay,-1,750,65,15
 	
 	//Annoyed
 	animation17.interval,never
-	animation17.pattern0,overlay,70070,0,65,-25
-	animation17.pattern1,overlay,70071,150,65,-25
-	animation17.pattern2,overlay,70070,150,65,-25
-	animation17.pattern3,overlay,70071,150,65,-25
-	animation17.pattern4,overlay,70070,150,65,-25
-	animation17.pattern5,overlay,70071,150,65,-25
-	animation17.pattern6,overlay,70070,150,65,-25
-	animation17.pattern7,overlay,70071,150,65,-25
-	animation17.pattern8,overlay,70070,150,65,-25
-	animation17.pattern9,overlay,70071,150,65,-25
+	animation17.pattern0,overlay,70070,0,65,15
+	animation17.pattern1,overlay,70071,150,65,15
+	animation17.pattern2,overlay,70070,150,65,15
+	animation17.pattern3,overlay,70071,150,65,15
+	animation17.pattern4,overlay,70070,150,65,15
+	animation17.pattern5,overlay,70071,150,65,15
+	animation17.pattern6,overlay,70070,150,65,15
+	animation17.pattern7,overlay,70071,150,65,15
+	animation17.pattern8,overlay,70070,150,65,15
+	animation17.pattern9,overlay,70071,150,65,15
 	animation17.pattern10,overlay,-1,150,0,0
 	
 	//Anger
 	animation18.interval,never
-	animation18.pattern0,overlay,70080,0,65,-25
-	animation18.pattern1,overlay,70081,150,65,-25
-	animation18.pattern2,overlay,70080,150,65,-25
-	animation18.pattern3,overlay,70081,150,65,-25
-	animation18.pattern4,overlay,70080,150,65,-25
-	animation18.pattern5,overlay,70081,150,65,-25
-	animation18.pattern6,overlay,70080,150,65,-25
-	animation18.pattern7,overlay,70081,150,65,-25
-	animation18.pattern8,overlay,70080,150,65,-25
-	animation18.pattern9,overlay,70081,150,65,-25
+	animation18.pattern0,overlay,70080,0,65,15
+	animation18.pattern1,overlay,70081,150,65,15
+	animation18.pattern2,overlay,70080,150,65,15
+	animation18.pattern3,overlay,70081,150,65,15
+	animation18.pattern4,overlay,70080,150,65,15
+	animation18.pattern5,overlay,70081,150,65,15
+	animation18.pattern6,overlay,70080,150,65,15
+	animation18.pattern7,overlay,70081,150,65,15
+	animation18.pattern8,overlay,70080,150,65,15
+	animation18.pattern9,overlay,70081,150,65,15
 	animation18.pattern10,overlay,-1,150,0,0
 }
 
@@ -318,13 +318,6 @@ surface30300
 surface30400
 {
 	collision0,0,0,500,500,stroke
-}
-
-//TODO remove unless we have no other choice
-surface.append30000-39999
-{
-	animation0.interval,runonce
-	animation0.pattern0,move,-1,1,0,-31
 }
 
 
