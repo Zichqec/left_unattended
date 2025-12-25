@@ -131,6 +131,12 @@ function enable_debug
 	IsDebugMode = Shiori.Reference[0].ToNumber();
 }
 
+function LotsOfGuests
+{
+	if (GuestCount >= 10) return true;
+	else return false;
+}
+
 
 //——————————————— Shortcuts ———————————————
 function username

@@ -44,6 +44,13 @@ talk BootHolidayTalk(holiday)
 	\s[phone]Unrelated, I'm setting up a party. \s[tongue]I think I'll go ahead and order {morestreamers}, that'll bring out the party spirit for sure.
 }
 
+talk BootHolidayTalk(holiday)
+{
+	\s[phone]Hey. I'm having a not-{TrimHolidayName(holiday)} party.
+	
+	\s[tongue]Should be fun~
+}
+
 //TODO clean up or move later
 function OnTestBoot
 {
@@ -66,6 +73,11 @@ talk CloseStillPartyingTalk
 	\s[eyeroll]Uh, \i[10]\f[italic,1]no\f[italic,default], I'm not leaving while my party is still ongoing.
 }
 
+talk CloseStillPartyingTalk
+{
+	\s[annoyed]Hello? I've got a party going on here. \s[phone]I'll leave once it's wrapped up.
+}
+
 
 //————— Random failure, summons more items —————
 //{SurfaceRefresh} to show the items
@@ -74,6 +86,16 @@ talk CloseNotYetTalk
 	\s[annoyed]... \w8\s[tongue]Oh, look what just showed up. {SurfaceRefresh}\s[laugh]The party's still going!
 	
 	\s[anger]Stop trying to ruin it, thanks.
+}
+
+talk CloseNotYetTalk
+{
+	\s[away]... \w8\s[tongue]Not so fast, look what just got here~ {SurfaceRefresh}\s[laugh]Perfect timing!
+}
+
+talk CloseNotYetTalk
+{
+	\s[anger]... \w8\s[annoyed]... \w8\s[away]... \w8\s[tongue] Not quite, check it out~ {SurfaceRefresh}\s[laugh]My delivery got here just in time to keep the party dream alive!
 }
 
 
@@ -90,11 +112,40 @@ talk CloseCleanedUpTalk
 	\s[anger]I'm leaving. Enjoy your boring, partyless livingroom.
 }
 
+talk CloseCleanedUpTalk
+{
+	\s[annoyed]... \w8\w8\s[anger]You know what, fine. Fine! \s[shout]You've ruined \f[italic,1]everything!\f[italic,default]
+	
+	I had a nice party going, and you've \f[italic,1]completely wrecked it!!\f[italic,default]
+	
+	\s[anger]I'm going somewhere else. Enjoy having a boring, fun-free night.
+}
+
+talk CloseCleanedUpTalk
+{
+	\s[away]... All my cakes, snacks, decorations... \s[annoyed]you got rid of all of it? \s[anger]What are you, the fun police?
+	
+	\s[eyeroll]\i[10]Is it really so bad for me to have a few friends over to share some food and drink, and play some games? \s[away]I was even going to help you clean it up later.
+	
+	\s[annoyance]But no, you have to kick us out so you can "get a good night's sleep", or whatever excuse it is this time. \s[anger]Well, \f[italic,1]fine\f[italic,default] then. \s[shout]Sweet dreams, we'll party somewhere else where \f[italic,1]you\f[italic,default] aren't.
+}
+
 
 //————— Pet-closed last item —————
 talk CloseStopTouchingThingsTalk(p)
 {
 	\s[anger]Stop putting your hands all over my stuff! \p[{p}]\s[-1]\0\s[shout]Ugh, I can't deal with this anymore! If you're gonna mess everything up, then I'm leaving!!
+}
+
+talk CloseStopTouchingThingsTalk(p)
+{
+	\s[anger]Yuck, yuck, yuck! \s[shout]Stop \f[italic,1]doing\f[italic,default] that!! \p[{p}]\s[-1]\0\s[shout]I can't stand this anymore. \s[anger]If you're gonna get all my party decorations nasty then me and my friends are going somewhere else to party!
+}
+talk CloseStopTouchingThingsTalk(p)
+{
+	\s[anger]Stop \f[italic,1]doing\f[italic,default] that! That's not yours, stop putting your nasty, oily hands all over it! \p[{p}]\s[-1]\0\s[shout]Ugh, that's it, enough is enough!
+	
+	If you're gonna be weird, then I'm leaving and taking the party with me. Goodbye.
 }
 
 

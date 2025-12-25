@@ -85,6 +85,28 @@ function muchcake
 	]);
 }
 
+function plushsushi
+{
+	return Random.Select([
+		"plush sushi",
+		"miniature party hats",
+		"glowstick necklaces",
+		"sticker packs",
+	]);
+}
+
+function enoughballoons
+{
+	return Random.Select([
+		"enough balloons",
+		"enough snacks",
+		"enough drinks",
+		"enough cake",
+		"enough cups",
+		"enough plates",
+	]);
+}
+
 function TodaysHoliday
 {
 	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";
