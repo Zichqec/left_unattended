@@ -354,6 +354,11 @@ function homeurl
 	return "https://raw.githubusercontent.com/Zichqec/left_unattended/refs/heads/main/";
 }
 
+function ghostver
+{
+	return "1.0.0";
+}
+
 function FormatLinks(links)
 {
 	local output = "";
