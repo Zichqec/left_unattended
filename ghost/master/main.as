@@ -201,7 +201,7 @@ function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 //——————————————— Spawning/despawning logic ———————————————
 function OnSecondChange
 {
-	if (Save.Data.SpawningEnabled == 0) return;
+	if (IsDebugMode && Save.Data.SpawningEnabled == 0) return;
 	
 	local epoch = Time.GetNowUnixEpoch();
 	if (CanTalk() && epoch - CooldownTime >= 10) //I could use reference3 instead of CanTalk, but...
@@ -213,9 +213,8 @@ function OnSecondChange
 		
 		if (epoch >= nextitem)
 		{
-			//TODO something to think about: this will trigger if you dismiss items and the time until next item goes down... might be a nuisance but oh well! the alternative seems worse? maybe add a cooldown variable...
 			LastItemSpawn = epoch;
-			ResetCooldown(); //TODO these cooldown things (that's what i should have called it lol) probably need to be moved so that if you manually dismiss stuff that also resets the cooldown
+			ResetCooldown();
 			output = OnSpawnItem();
 		}
 		
