@@ -146,3 +146,12 @@ function OnDebug@ToggleSpawning
 	else Save.Data.SpawningEnabled = 1;
 	return OnMainMenu;
 }
+
+//Manual call to test booting
+function OnTestBoot
+{
+	local holiday = Shiori.Reference[0];
+	
+	if (!holiday.IsNull()) return SurfaceRefresh() + BootHolidayTalk(holiday);
+	else return SurfaceRefresh() + BootTalk();
+}

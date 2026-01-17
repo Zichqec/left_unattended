@@ -50,15 +50,6 @@ talk BootHolidayTalk(holiday)
 	\s[tongue]Should be fun~
 }
 
-//TODO clean up or move later
-function OnTestBoot
-{
-	local holiday = Shiori.Reference[0];
-	
-	if (!holiday.IsNull()) return SurfaceRefresh() + BootHolidayTalk(holiday);
-	else return SurfaceRefresh() + BootTalk();
-}
-
 
 //——————————————— Close failure ———————————————
 //————— Items still open —————
