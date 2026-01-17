@@ -36,7 +36,6 @@ talk BootHolidayTalk(holiday)
 	\w8\s[eyeroll]No, it's not for {holiday}. \i[10]My party sense doesn't follow the calendar.
 }
 
-//TODO do we want me to change it to "merry christmas" if christmas is pulled or should I leave it. I don't think she cares about holidays lol
 talk BootHolidayTalk(holiday)
 {
 	\s[forward]Hm? \s[eyeroll]Oh, it's you. \i[10]Happy {TrimHolidayName(holiday)} and whatnot.

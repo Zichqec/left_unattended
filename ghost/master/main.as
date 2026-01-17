@@ -41,7 +41,6 @@ function OnAosoraLoad
 {
 	TalkTimer.RandomTalk = OnSendTalk;
 	TalkTimer.RandomTalkIntervalSeconds = Save.Data.TalkInterval;
-	//TalkTimer.NadenadeTalk = OnStroked; //TODO I don't know how to determine which character...
 	
 	//There must be a better way to get what I want but I'm tired and don't feel like it right now, so just copying from Hoard of Shinies
 	TalkBuilder.Default.AutoLineBreak = "\n\w8\w4";

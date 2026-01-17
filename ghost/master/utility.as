@@ -58,7 +58,6 @@ function VIPCount
 	//llllllllisten. they don't count. they don't.
 	//here i was wondering why the VIP mechanic wasn't working, and it turns out it's because i like music and water reminders
 	//THEY DONT COUNT
-	//TODO check i got the translator names correct later
 	local excludedghosts = [
 		"Hydrate",
 		"FLELE",

@@ -91,7 +91,6 @@ function DecoBottom@Pet@FoodBowl(p,type)
 	else return DecoBottom@Pet@OtherFoodBowl(p);
 }
 
-//TODO this isn't working, i don't know why??
 talk DecoBottom@Pet@MashedPotatoBowl(p)
 {
 	\s[annoyed]... Gross. \s[anger]That's \f[italic,1]mashed potatoes\f[italic,default], not clay.
