@@ -254,29 +254,30 @@ function OnSecondChange
 
 
 //————— deco —————
-function OnSpawnItem
+function OnSpawnItem(debugalignment, debugspecifictype, debugsurface, debugspecial)
 {
-	InitializeItem(1);
+	InitializeItem(1, debugalignment, debugspecifictype, debugsurface, debugspecial);
 	return OnSurfaceRestore();
 }
 
 //TODO there's a little issue here where if an item spawns during a dialogue her face will reset at the end...
-function InitializeItem(num)
+function InitializeItem(num, debugalignment, debugspecifictype, debugsurface, debugspecial)
 {
 	if (num.IsNull()) num = 1;
 	
 	for (local i = 0; i < num; i++)
 	{
-		local clutter = new PartyDeco();
+		local clutter = new PartyDeco(debugalignment, debugspecifictype, debugsurface, debugspecial);
 		PartyClutter.Add("{clutter.p}", clutter);
 	}
 }
 
 
 //————— guests —————
-function OnSpawnGuest
+function OnSpawnGuest(debugpersonality, debugsurface, debugspecial)
 {
-	local clutter = new PartyGuest();
+	//Arguments only sent when calling from debug menu
+	local clutter = new PartyGuest(debugpersonality, debugsurface, debugspecial);
 	PartyClutter.Add("{clutter.p}", clutter);
 	return clutter.SurfaceRestore();
 }

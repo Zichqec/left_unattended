@@ -116,7 +116,7 @@ function OnInitializePos
 //Common to all party decorative objects
 class PartyDeco : PartyThing
 {
-	init
+	init (debugalignment, debugspecifictype, debugsurface, debugspecial)
 	{
 		//For determining the difference between deco and guests...
 		this.type = "deco";
@@ -125,27 +125,21 @@ class PartyDeco : PartyThing
 		
 		local rand = Random.GetIndex(0,100);
 		
+		//Set to "free" by default by parent class
+		if (rand >= 80) this.alignment = "bottom";
+		else if (rand >= 60) this.alignment = "top";
+		else if (rand >= 50) this.alignment = "left";
+		else if (rand >= 40) this.alignment = "right";
+		
+		if (!debugalignment.IsNull()) this.alignment = debugalignment; //Set via debug
+		
 		local pick = Random.Select(FreeDeco());
-		if (rand >= 80)
-		{
-			this.alignment = "bottom";
-			pick = Random.Select(BottomDeco());
-		}
-		else if (rand >= 60)
-		{
-			this.alignment = "top";
-			pick = Random.Select(TopDeco());
-		}
-		else if (rand >= 50)
-		{
-			this.alignment = "left";
-			pick = Random.Select(LeftDeco());
-		}
-		else if (rand >= 40)
-		{
-			this.alignment = "right";
-			pick = Random.Select(RightDeco());
-		}
+		if (this.alignment == "left") pick = Random.Select(LeftDeco());
+		if (this.alignment == "top") pick = Random.Select(TopDeco());
+		if (this.alignment == "right") pick = Random.Select(RightDeco());
+		if (this.alignment == "bottom") pick = Random.Select(BottomDeco());
+		
+		
 		this.specifictype = pick.name;
 		this.surface = pick.surface;
 		this.special = null;
@@ -156,6 +150,12 @@ class PartyDeco : PartyThing
 			this.surface = variantpick.surface;
 			this.special = variantpick.special;
 		}
+		
+		if (!debugsurface.IsNull()) this.surface = debugsurface; //Set via debug
+		if (!debugspecial.IsNull()) this.special = debugspecial; //Set via debug
+		if (!debugspecifictype.IsNull()) this.specifictype = debugspecifictype; //Set via debug
+		
+		Debug.WriteLine("string: Deco{Capitalize(this.alignment)}@Talk@{this.specifictype}");
 		
 		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@Talk@{this.specifictype}");
 		if (flavortext.IsNull()) flavortext = Reflection.Get("DecoTalk@fallback");
@@ -220,7 +220,7 @@ class PartyDeco : PartyThing
 //Common to all party guests
 class PartyGuest : PartyThing
 {
-	init
+	init (debugpersonality, debugsurface, debugspecial)
 	{
 		//For determining the difference between deco and guests...
 		this.type = "guest";
@@ -231,11 +231,9 @@ class PartyGuest : PartyThing
 		
 		this.alignment = "free";
 		
-		this.personality = Random.Select([
-			"cheery",
-			"sassy",
-			"shy",
-		]);
+		this.personality = Random.Select(GuestPersonalities());
+		//Note to self - as in the debug menu, had to switch from a null check here to an empty string check... need to pin this down
+		if (!debugpersonality == "") this.personality = debugpersonality; //Specific pick via debug
 		
 		this.flavortext = Reflection.Get("GuestTalk@{Capitalize(this.personality)}");
 		if (this.flavortext.IsNull()) this.flavortext = GuestTalk@fallback;
@@ -249,6 +247,9 @@ class PartyGuest : PartyThing
 			this.surface = variantpick.surface;
 			this.special = variantpick.special;
 		}
+		
+		if (!debugsurface.IsNull()) this.surface = debugsurface; //Specific pick via debug
+		if (!debugspecial.IsNull()) this.special = debugspecial; //Specific pick via debug
 	}
 	
 	//Not really a menu, probably should rename... idk, may add buttons, hmm
@@ -270,6 +271,15 @@ class PartyGuest : PartyThing
 		
 		return "\t" + dialogue(this.p) + "\s[-1]";
 	}
+}
+
+function GuestPersonalities
+{
+	return [
+		"cheery",
+		"sassy",
+		"shy",
+	];
 }
 
 //TODO i tried to set these up so that I didn't have to send the p number, but unfortunately Aosora's head setting was getting in the way even when i turned it off...? May need to follow up on this one. Perhaps update the Aosora dll on another ghost and see if behavior changes...
