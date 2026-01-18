@@ -111,18 +111,6 @@ function OnDebug@SpawnMenu@Guest
 	}
 	m += "\n";
 	
-	// foreach (type in GuestTypes())
-	// {
-		// m += "\f[bold,1]{type.name}\f[bold,default]\n";
-		// foreach (variant in type.variants)
-		// {
-			// m += "\![*]\__q[OnDebug@SpawnMenu@GuestSpawn,{variant.surface}]{variant.surface}";
-			// if (variant.special != null) m += " ({variant.special})";
-			// m += "\__q\n";
-		// }
-		// m += "\n";
-	// }
-	
 	m += "\![*]\__q[OnDebug@SpawnMenu]Back\__q  \![*]\__q[OnBlank]Close\__q";
 	return m;
 }
