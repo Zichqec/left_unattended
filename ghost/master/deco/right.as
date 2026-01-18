@@ -1,4 +1,4 @@
-// talk DecoRight@Talk@RightBanner(p,text)
+// talk DecoRight@RightBanner@Talk(p,text)
 // {
 	// \p[{p}]{narrator}temp{narratoroff}
 // }

@@ -155,13 +155,13 @@ class PartyDeco : PartyThing
 		if (!debugspecial.IsNull()) this.special = debugspecial; //Set via debug
 		if (!debugspecifictype.IsNull()) this.specifictype = debugspecifictype; //Set via debug
 		
-		Debug.WriteLine("string: Deco{Capitalize(this.alignment)}@Talk@{this.specifictype}");
+		Debug.WriteLine("string: Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
 		
-		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@Talk@{this.specifictype}");
-		if (flavortext.IsNull()) flavortext = Reflection.Get("DecoTalk@fallback");
+		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
+		if (flavortext.IsNull()) flavortext = Reflection.Get("Deco@Fallback@Talk");
 		this.flavortext = flavortext(this.p,this.special); //Assign it to *one* output... hopefully
 		
-		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@MenuOpt@{this.specifictype}");
+		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@MenuOpt");
 		if (specialmenu.IsNull()) specialmenu = "";
 		this.specialmenu = specialmenu(this.p,this.special);
 	}
@@ -185,8 +185,8 @@ class PartyDeco : PartyThing
 		ResetCooldown();
 		
 		PartyClutter.Remove("{this.p}");
-		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@Close@{this.specifictype}");
-		if (dialogue.IsNull()) dialogue = DecoClose@fallback;
+		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Close");
+		if (dialogue.IsNull()) dialogue = Deco@Fallback@Close;
 		return dialogue(this.p,this.special);
 	}
 	
@@ -203,15 +203,15 @@ class PartyDeco : PartyThing
 			{
 				ResetCooldown();
 				
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@PetClose@{this.specifictype}");
-				if (dialogue.IsNull()) dialogue = DecoPetClose@fallback;
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@PetClose");
+				if (dialogue.IsNull()) dialogue = Deco@Fallback@PetClose;
 				return "\t\![enter,nouserbreakmode]" + dialogue(this.p,this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@Pet@{this.specifictype}");
-			if (dialogue.IsNull()) dialogue = DecoPet@fallback;
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Pet");
+			if (dialogue.IsNull()) dialogue = Deco@Fallback@Pet;
 			return dialogue(this.p,this.special);
 		}
 	}
@@ -235,8 +235,8 @@ class PartyGuest : PartyThing
 		//Note to self - as in the debug menu, had to switch from a null check here to an empty string check... need to pin this down
 		if (!debugpersonality == "") this.personality = debugpersonality; //Specific pick via debug
 		
-		this.flavortext = Reflection.Get("GuestTalk@{Capitalize(this.personality)}");
-		if (this.flavortext.IsNull()) this.flavortext = GuestTalk@fallback;
+		this.flavortext = Reflection.Get("Guest@{Capitalize(this.personality)}@Talk");
+		if (this.flavortext.IsNull()) this.flavortext = Guest@Fallback@Talk;
 		
 		//Copied from partydeco but i don't think i can make this be in the PartyThing class...
 		this.special = null;
@@ -264,8 +264,8 @@ class PartyGuest : PartyThing
 	
 	function Vanish
 	{
-		local dialogue = Reflection.Get("GuestLeave@{Capitalize(this.personality)}");
-		if (dialogue.IsNull()) dialogue = GuestLeave@fallback;
+		local dialogue = Reflection.Get("Guest@{Capitalize(this.personality)}@Leave");
+		if (dialogue.IsNull()) dialogue = Guest@Fallback@Leave;
 		
 		PartyClutter.Remove("{this.p}");
 		
