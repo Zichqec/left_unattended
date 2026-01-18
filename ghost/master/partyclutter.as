@@ -151,11 +151,9 @@ class PartyDeco : PartyThing
 			this.special = variantpick.special;
 		}
 		
-		if (!debugsurface.IsNull()) this.surface = debugsurface; //Set via debug
-		if (!debugspecial.IsNull()) this.special = debugspecial; //Set via debug
-		if (!debugspecifictype.IsNull()) this.specifictype = debugspecifictype; //Set via debug
-		
-		Debug.WriteLine("string: Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
+		if (!(debugsurface.IsNull() || debugsurface == "")) this.surface = debugsurface; //Set via debug
+		if (!(debugspecial.IsNull() || debugspecial == "")) this.special = debugspecial; //Set via debug
+		if (!(debugspecifictype.IsNull() || debugspecifictype == "")) this.specifictype = debugspecifictype; //Set via debug
 		
 		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
 		if (flavortext.IsNull()) flavortext = Reflection.Get("Deco@Fallback@Talk");
@@ -234,11 +232,7 @@ class PartyGuest : PartyThing
 		this.personality = Random.Select(GuestPersonalities());
 		//Note to self - as in the debug menu, had to switch from a null check here to an empty string check... need to pin this down
 		//It varies based on normal spawning vs debug spawning....... sometimes it's null, sometimes it's not null but it is an empty string
-		Debug.WriteLine("debugpersonality: {debugpersonality}");
 		if (!(debugpersonality.IsNull() || debugpersonality == "")) this.personality = debugpersonality; //Specific pick via debug
-		Debug.WriteLine("debugpersonality: {debugpersonality}");
-		Debug.WriteLine("debugpersonality is null?: {debugpersonality.IsNull()}");
-		Debug.WriteLine("this.personality: {this.personality}");
 		
 		this.flavortext = Reflection.Get("Guest@{Capitalize(this.personality)}@Talk");
 		if (this.flavortext.IsNull()) this.flavortext = Guest@Fallback@Talk;
@@ -253,8 +247,8 @@ class PartyGuest : PartyThing
 			this.special = variantpick.special;
 		}
 		
-		if (!debugsurface.IsNull()) this.surface = debugsurface; //Specific pick via debug
-		if (!debugspecial.IsNull()) this.special = debugspecial; //Specific pick via debug
+		if (!(debugsurface.IsNull() || debugsurface == "")) this.surface = debugsurface; //Specific pick via debug
+		if (!(debugspecial.IsNull() || debugspecial == "")) this.special = debugspecial; //Specific pick via debug
 	}
 	
 	//Not really a menu, probably should rename... idk, may add buttons, hmm

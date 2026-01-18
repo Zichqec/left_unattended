@@ -161,7 +161,7 @@ function OnDebug@SpawnMenu@Object
 		foreach (item in type.list)
 		{
 			//Randomly pick traits because we can't send the associative array item, so we do the random operation here...
-			local debugsurface = "";
+			local debugsurface = item.surface;
 			local debugspecial = "";
 			if (!item.variants.IsNull())
 			{
