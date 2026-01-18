@@ -134,6 +134,19 @@ function OnMouseDoubleClick
 }
 
 
+//——————————————— Needle poking ———————————————
+function OnNeedlePoke
+{
+	local scope = Shiori.Reference[0];
+	if (scope == 0) return OnJesNeedlePoke;
+	
+	if (PartyClutter[scope].type == "deco")
+	{
+		return PartyClutter[scope].NeedlePoke();
+	}
+}
+
+
 //——————————————— Boot and close control ———————————————
 function OnBoot
 {

@@ -213,6 +213,13 @@ class PartyDeco : PartyThing
 			return dialogue(this.p,this.special);
 		}
 	}
+	
+	function NeedlePoke
+	{
+		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedlePoke");
+		if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedlePoke;
+		return dialogue(this.p,this.special);
+	}
 }
 
 //Common to all party guests

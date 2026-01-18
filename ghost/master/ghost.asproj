@@ -3,6 +3,7 @@ utility.as
 partyclutter.as
 itemdef.as
 meta.as
+commu.as
 debug.as
 
 menu.as

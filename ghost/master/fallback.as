@@ -119,3 +119,15 @@ talk Deco@Fallback@Pet(p)
 {
 	\s[annoyed]Get your fingers off that, yuck!
 }
+
+
+//———————————————————— Needle poke ————————————————————
+talk Deco@Fallback@NeedlePoke(p)
+{
+	\s[anger]Stop scratching up my stuff!
+}
+
+talk Deco@Fallback@NeedlePoke(p)
+{
+	\s[anger]Don't stab that!
+}
