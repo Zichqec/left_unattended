@@ -233,7 +233,12 @@ class PartyGuest : PartyThing
 		
 		this.personality = Random.Select(GuestPersonalities());
 		//Note to self - as in the debug menu, had to switch from a null check here to an empty string check... need to pin this down
-		if (!debugpersonality == "") this.personality = debugpersonality; //Specific pick via debug
+		//It varies based on normal spawning vs debug spawning....... sometimes it's null, sometimes it's not null but it is an empty string
+		Debug.WriteLine("debugpersonality: {debugpersonality}");
+		if (!(debugpersonality.IsNull() || debugpersonality == "")) this.personality = debugpersonality; //Specific pick via debug
+		Debug.WriteLine("debugpersonality: {debugpersonality}");
+		Debug.WriteLine("debugpersonality is null?: {debugpersonality.IsNull()}");
+		Debug.WriteLine("this.personality: {this.personality}");
 		
 		this.flavortext = Reflection.Get("Guest@{Capitalize(this.personality)}@Talk");
 		if (this.flavortext.IsNull()) this.flavortext = Guest@Fallback@Talk;
