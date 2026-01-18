@@ -148,20 +148,20 @@ function GuestTypes
 function LeftDeco
 {
 	return [
-		{surface: "20000", name: "LeftBanner", variants: [
+		{surface: "20000", name: "SideBanner", variants: [
 			{surface: "20000", special: "YAY JES"},
 			{surface: "20001", special: "HAPPY PARTY"},
 			{surface: "20002", special: "CAKE TIME"},
 			{surface: "20003", special: "PARTY GIRL"},
 		]},
-		{surface: "20100", name: "LeftBalloons", variants: [
+		{surface: "20100", name: "SideBalloons", variants: [
 			{surface: "20100", special: null},
 			{surface: "20101", special: null},
 			{surface: "20102", special: null},
 			{surface: "20103", special: null},
 		]},
-		{surface: "20200", name: "LeftSpeaker"},
-		{surface: "20300", name: "LeftDartboard"},
+		{surface: "20200", name: "SideSpeaker"},
+		{surface: "20300", name: "SideDartboard"},
 	];
 }
 
@@ -186,20 +186,20 @@ function TopDeco
 function RightDeco
 {
 	return [
-		{surface: "40000", name: "RightBanner", variants: [
+		{surface: "40000", name: "SideBanner", variants: [
 			{surface: "40000", special: "YAY JES"},
 			{surface: "40001", special: "HAPPY PARTY"},
 			{surface: "40002", special: "CAKE TIME"},
 			{surface: "40003", special: "PARTY GIRL"},
 		]},
-		{surface: "40100", name: "RightBalloons", variants: [
+		{surface: "40100", name: "SideBalloons", variants: [
 			{surface: "40100", special: null},
 			{surface: "40101", special: null},
 			{surface: "40102", special: null},
 			{surface: "40103", special: null},
 		]},
-		{surface: "40200", name: "RightSpeaker"},
-		{surface: "40300", name: "RightDartboard"},
+		{surface: "40200", name: "SideSpeaker"},
+		{surface: "40300", name: "SideDartboard"},
 	];
 }
 
