@@ -62,3 +62,10 @@ function OnLoboHowlStart
 	
 	return output;
 }
+
+
+//———————————————————— Can toss ————————————————————
+talk OnCanToss
+{
+	\s[anger]Um, I'm in the middle of a party. \s[eyeroll]\i[10]It's not my fault you decided to get groceries today. \s[phone]Put them away yourself.
+}
