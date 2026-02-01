@@ -1,78 +1,78 @@
 //——————————————— Flavortext ———————————————
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]Hooray! I love parties!
+	Hooray! I love parties!
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]This party is great!
+	This party is great!
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]I'm gonna eat sooo much cake!
+	I'm gonna eat sooo much cake!
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]Jes throws the best parties!
+	Jes throws the best parties!
 }
 
 //Ambiguous stuff...
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]Wooow, look at all the stuff in here!
+	Wooow, look at all the stuff in here!
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]Are you a friend of Jes's? You must be if you got invited!
+	Are you a friend of Jes's? You must be if you got invited!
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]This is so much fun!
+	This is so much fun!
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]I'm having a great time! Aren't you?
+	I'm having a great time! Aren't you?
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]Food! Music! Confetti! What's not to love about a party?
+	Food! Music! Confetti! What's not to love about a party?
 }
 
-talk Guest@Cheery@Talk(p)
+talk Guest@Cheery@Talk
 {
-	\p[{p}]I skipped work to come here!
+	I skipped work to come here!
 }
 
 
 //——————————————— Leaving ———————————————
-talk Guest@Cheery@Leave(p)
+talk Guest@Cheery@Leave
 {
-	\p[{p}]I'm off to another party, cya~!
+	I'm off to another party, cya~!
 }
 
-talk Guest@Cheery@Leave(p)
+talk Guest@Cheery@Leave
 {
-	\p[{p}]This was fun, but I've got to go now. Bye!
+	This was fun, but I've got to go now. Bye!
 }
 
-talk Guest@Cheery@Leave(p)
+talk Guest@Cheery@Leave
 {
-	\p[{p}]See you around, Jes!
+	See you around, Jes!
 }
 
-talk Guest@Cheery@Leave(p)
+talk Guest@Cheery@Leave
 {
-	\p[{p}]Looks like it's time to go. See you later!
+	Looks like it's time to go. See you later!
 }
 
-talk Guest@Cheery@Leave(p)
+talk Guest@Cheery@Leave
 {
-	\p[{p}]I had a great time, I'll see you at tomorrow's party!
+	I had a great time, I'll see you at tomorrow's party!
 }

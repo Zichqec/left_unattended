@@ -2,14 +2,14 @@
 
 //Shouldn't happen... depends how we build it. Either way, avoids runtime errors. You know, I could also use try/catch for this...
 //———————————————————— Guests ————————————————————
-talk Guest@Fallback@Talk(p)
+talk Guest@Fallback@Talk
 {
-	\p[{p}]...
+	...
 }
 
-talk Guest@Fallback@Talk(p)
+talk Guest@Fallback@Talk
 {
-	\p[{p}]...
+	...
 }
 
 

@@ -263,9 +263,9 @@ class PartyGuest : PartyThing
 	//Not really a menu, probably should rename... idk, may add buttons, hmm
 	function Menu
 	{
-		local m = "";
+		local m = "\p[{this.p}]";
 		
-		m += this.flavortext(this.p);
+		m += this.flavortext();
 		
 		return m;
 	}
@@ -277,7 +277,7 @@ class PartyGuest : PartyThing
 		
 		PartyClutter.Remove("{this.p}");
 		
-		return "\t" + dialogue(this.p) + "\s[-1]";
+		return "\t\p[{this.p}]" + dialogue() + "\s[-1]";
 	}
 }
 
@@ -291,3 +291,4 @@ function GuestPersonalities
 }
 
 //TODO i tried to set these up so that I didn't have to send the p number, but unfortunately Aosora's head setting was getting in the way even when i turned it off...? May need to follow up on this one. Perhaps update the Aosora dll on another ghost and see if behavior changes...
+//I put in a bandaid patch with OnTranslate because it seems this is a very difficult issue...
