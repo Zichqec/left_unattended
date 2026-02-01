@@ -4,6 +4,7 @@ function OnTranslate
 	local talkstr = Shiori.Reference[0];
 	
 	talkstr = AutoPause(talkstr);
+	talkstr = talkstr.Replace("\![-head-]\0",""); //This resolves the issue of not being able to remove the \0 at the start of talk blocks... not my favorite workaround but it is working
 	
 	return talkstr;
 }
@@ -44,6 +45,7 @@ function OnAosoraLoad
 	
 	//There must be a better way to get what I want but I'm tired and don't feel like it right now, so just copying from Hoard of Shinies
 	TalkBuilder.Default.AutoLineBreak = "\n\w8\w4";
+	TalkBuilder.Default.Head = "\![-head-]";
 	
 	LastTalk = "";
 	

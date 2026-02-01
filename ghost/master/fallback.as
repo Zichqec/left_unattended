@@ -14,56 +14,56 @@ talk Guest@Fallback@Talk(p)
 
 
 //———————————————————— Deco flavortext ————————————————————
-talk Deco@Fallback@Talk(p)
+talk Deco@Fallback@Talk
 {
-	\p[{p}]{narrator}Where does she get all this stuff...?{narratoroff}
+	{narrator}Where does she get all this stuff...?{narratoroff}
 }
 
-talk Deco@Fallback@Talk(p)
+talk Deco@Fallback@Talk
 {
-	\p[{p}]{narrator}How many party supplies can one elf set up...?{narratoroff}
+	{narrator}How many party supplies can one elf set up...?{narratoroff}
 }
 
-talk Deco@Fallback@Talk(p)
+talk Deco@Fallback@Talk
 {
-	\p[{p}]{narrator}The tag is still on it...{narratoroff}
+	{narrator}The tag is still on it...{narratoroff}
 }
 
-talk Deco@Fallback@Talk(p)
+talk Deco@Fallback@Talk
 {
-	\p[{p}]{narrator}Looks kind of cheap...{narratoroff}
+	{narrator}Looks kind of cheap...{narratoroff}
 }
 
-talk Deco@Fallback@Talk(p)
+talk Deco@Fallback@Talk
 {
-	\p[{p}]{narrator}... Is this a fake?{narratoroff}
+	{narrator}... Is this a fake?{narratoroff}
 }
 
-talk Deco@Fallback@Talk(p)
+talk Deco@Fallback@Talk
 {
-	\p[{p}]{narrator}Somehow, this takes up much more space than it should...{narratoroff}
+	{narrator}Somehow, this takes up much more space than it should...{narratoroff}
 }
 
 
 //———————————————————— Deco close by menu ————————————————————
-talk Deco@Fallback@Close(p)
+talk Deco@Fallback@Close
 {
-	\p[{p}]\s[-1]{narrator}Pack that up...{narratoroff}
+	\s[-1]{narrator}Pack that up...{narratoroff}
 }
 
-talk Deco@Fallback@Close(p)
+talk Deco@Fallback@Close
 {
-	\p[{p}]\s[-1]{narrator}Let's just put that out of sight while she isn't looking...{narratoroff}
+	\s[-1]{narrator}Let's just put that out of sight while she isn't looking...{narratoroff}
 }
 
-talk Deco@Fallback@Close(p)
+talk Deco@Fallback@Close
 {
-	\p[{p}]\s[-1]{narrator}One less thing to put away later...{narratoroff}
+	\s[-1]{narrator}One less thing to put away later...{narratoroff}
 }
 
-talk Deco@Fallback@Close(p)
+talk Deco@Fallback@Close
 {
-	\p[{p}]\s[-1]\0\s[away]... \w8\w8\s[annoyed]\f[italic,1]Fine\f[italic,default]. \s[eyeroll]\i[10]I'll need that space for something bigger later anyway.
+	\s[-1]\0\s[away]... \w8\w8\s[annoyed]\f[italic,1]Fine\f[italic,default]. \s[eyeroll]\i[10]I'll need that space for something bigger later anyway.
 }
 
 
@@ -85,49 +85,49 @@ talk Deco@Fallback@PetClose(p)
 
 
 //———————————————————— Deco petting ————————————————————
-talk Deco@Fallback@Pet(p)
+talk Deco@Fallback@Pet
 {
 	\s[annoyed]Keep your hands to yourself!
 }
 
-talk Deco@Fallback@Pet(p)
+talk Deco@Fallback@Pet
 {
 	\s[annoyed]Ew, don't put your hands all over that!
 }
 
-talk Deco@Fallback@Pet(p)
+talk Deco@Fallback@Pet
 {
 	\s[annoyed]Stop touching my decorations, you're getting them all grubby!
 }
 
-talk Deco@Fallback@Pet(p)
+talk Deco@Fallback@Pet
 {
 	\s[annoyed]Get your oily fingers off my party decor!
 }
 
-talk Deco@Fallback@Pet(p)
+talk Deco@Fallback@Pet
 {
 	\s[annoyed]Cut that out, I have it set up all nice and you're going to ruin it!
 }
 
-talk Deco@Fallback@Pet(p)
+talk Deco@Fallback@Pet
 {
 	\s[annoyed]Don't touch that, you're going to make it look gross!
 }
 
-talk Deco@Fallback@Pet(p)
+talk Deco@Fallback@Pet
 {
 	\s[annoyed]Get your fingers off that, yuck!
 }
 
 
 //———————————————————— Needle poke ————————————————————
-talk Deco@Fallback@NeedlePoke(p)
+talk Deco@Fallback@NeedlePoke
 {
 	\s[anger]Stop scratching up my stuff!
 }
 
-talk Deco@Fallback@NeedlePoke(p)
+talk Deco@Fallback@NeedlePoke
 {
 	\s[anger]Don't stab that!
 }

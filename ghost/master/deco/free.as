@@ -1,36 +1,36 @@
-// talk DecoFree@happypartybanner@Talk(p)
+// talk DecoFree@happypartybanner@Talk
 // {
-	// \p[{p}]{narrator}temp{narratoroff}
+	// {narrator}temp{narratoroff}
 // }
 
 //——————————————— Cakes ———————————————
-talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk(p)
+talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk
 {
-	\p[{p}]{narrator}Sugary frosting...{narratoroff}
+	{narrator}Sugary frosting...{narratoroff}
 }
 
-talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk(p)
+talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk
 {
-	\p[{p}]{narrator}Looks tasty...{narratoroff}
+	{narrator}Looks tasty...{narratoroff}
 }
 
-talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk(p)
+talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk
 {
-	\p[{p}]{narrator}Tempting...{narratoroff}
+	{narrator}Tempting...{narratoroff}
 }
 
 
-talk DecoFree@TieredCake@Pet, DecoFree@SlicedCake@Pet(p)
+talk DecoFree@TieredCake@Pet, DecoFree@SlicedCake@Pet
 {
 	\s[anger]Don't stick your hands in the frosting!
 }
 
-talk DecoFree@TieredCake@Pet, DecoFree@SlicedCake@Pet(p)
+talk DecoFree@TieredCake@Pet, DecoFree@SlicedCake@Pet
 {
 	\s[annoying]Stop snitching frosting, just have a slice!
 }
 
-talk DecoFree@TieredCake@Pet, DecoFree@SlicedCake@Pet(p)
+talk DecoFree@TieredCake@Pet, DecoFree@SlicedCake@Pet
 {
 	\s[anger]Don't touch the cake with your hands, nasty!
 }
@@ -45,21 +45,21 @@ talk DecoFree@TieredCake@PetClose, DecoFree@SlicedCake@PetClose(p)
 
 
 //——————————————— Bouncy castle ———————————————
-talk DecoFree@BouncyCastle@Talk(p)
+talk DecoFree@BouncyCastle@Talk
 {
-	\p[{p}]{narrator}A plastic palace, an air-filled throne...{narratoroff}
+	{narrator}A plastic palace, an air-filled throne...{narratoroff}
 }
 
 
 //——————————————— Snack tables ———————————————
-talk DecoFree@SnackTable@Pet(p)
+talk DecoFree@SnackTable@Pet
 {
-	\s[annoyed]If you want some food, just grab it, don't touch everything on the table!
+	\0\s[annoyed]If you want some food, just grab it, don't touch everything on the table!
 }
 
-talk DecoFree@SnackTable@Pet(p)
+talk DecoFree@SnackTable@Pet
 {
-	\s[eyeroll]\i[10]You can \f[italic,1]have\f[italic,default] some snacks, just don't touch food that you're not going to eat, thank you!
+	\0\s[eyeroll]\i[10]You can \f[italic,1]have\f[italic,default] some snacks, just don't touch food that you're not going to eat, thank you!
 	
 	\s[phone]Sheesh, it's common sense...
 }
@@ -74,22 +74,22 @@ talk DecoFree@SnackTable@PetClose(p)
 
 
 //——————————————— Plants ———————————————
-talk DecoFree@PottedFern@Talk(p)
+talk DecoFree@PottedFern@Talk
 {
-	\p[{p}]{narrator}Fresh greenery.{narratoroff}
+	{narrator}Fresh greenery.{narratoroff}
 }
 
-talk DecoFree@PottedFern@Talk(p)
+talk DecoFree@PottedFern@Talk
 {
-	\p[{p}]{narrator}A splash of green in a room of sickly colors...{narratoroff}
+	{narrator}A splash of green in a room of sickly colors...{narratoroff}
 }
 
-talk DecoFree@PottedFern@Talk(p)
+talk DecoFree@PottedFern@Talk
 {
-	\p[{p}]{narrator}Dutifully replenishing the room's oxygen supply.{narratoroff}
+	{narrator}Dutifully replenishing the room's oxygen supply.{narratoroff}
 }
 
-talk DecoFree@PottedFern@Talk(p)
+talk DecoFree@PottedFern@Talk
 {
-	\p[{p}]{narrator}... This one appears to be made of plastic.{narratoroff}
+	{narrator}... This one appears to be made of plastic.{narratoroff}
 }

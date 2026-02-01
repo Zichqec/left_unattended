@@ -1,47 +1,47 @@
 //—————————————————————————————— Stuff shared between left and right ——————————————————————————————
 //——————————————— Banners ———————————————
-talk DecoLeft@SideBanner@Talk,  DecoRight@SideBanner@Talk(p,text)
+talk DecoLeft@SideBanner@Talk,  DecoRight@SideBanner@Talk(text)
 {
-	\p[{p}]{narrator}It says "{text}"...{narratoroff}
+	{narrator}It says "{text}"...{narratoroff}
 }
 
 
 //——————————————— Balloons ———————————————
-talk DecoLeft@SideBalloons@Talk, DecoRight@SideBalloons@Talk, DecoBottom@BottomBalloons@Talk(p)
+talk DecoLeft@SideBalloons@Talk, DecoRight@SideBalloons@Talk, DecoBottom@BottomBalloons@Talk
 {
-	\p[{p}]{narrator}Pockets of captive helium... a tiny enclave in an atmosphere full of nitrogen and oxygen.{narratoroff}
+	{narrator}Pockets of captive helium... a tiny enclave in an atmosphere full of nitrogen and oxygen.{narratoroff}
 }
 
-talk DecoLeft@SideBalloons@Talk, DecoRight@SideBalloons@Talk, DecoBottom@BottomBalloons@Talk(p)
+talk DecoLeft@SideBalloons@Talk, DecoRight@SideBalloons@Talk, DecoBottom@BottomBalloons@Talk
 {
-	\p[{p}]{narrator}Balloons never seem willing participants at parties, they always yearn to fly away...{narratoroff}
+	{narrator}Balloons never seem willing participants at parties, they always yearn to fly away...{narratoroff}
 }
 
 
 //——————————————— Speakers ———————————————
-talk DecoLeft@SideSpeaker@Talk,  DecoRight@SideSpeaker@Talk, DecoTop@TopSpeaker@Talk(p)
+talk DecoLeft@SideSpeaker@Talk,  DecoRight@SideSpeaker@Talk, DecoTop@TopSpeaker@Talk
 {
-	\p[{p}]{narrator}The music is so loud...{narratoroff}
+	{narrator}The music is so loud...{narratoroff}
 }
 
-talk DecoLeft@SideSpeaker@Talk,  DecoRight@SideSpeaker@Talk, DecoTop@TopSpeaker@Talk(p)
+talk DecoLeft@SideSpeaker@Talk,  DecoRight@SideSpeaker@Talk, DecoTop@TopSpeaker@Talk
 {
-	\p[{p}]{narrator}Music blares out of the speakers, paying no mind to the headaches it is causing in those nearby...{narratoroff}
+	{narrator}Music blares out of the speakers, paying no mind to the headaches it is causing in those nearby...{narratoroff}
 }
 
-talk DecoLeft@SideSpeaker@Talk,  DecoRight@SideSpeaker@Talk, DecoTop@TopSpeaker@Talk(p)
+talk DecoLeft@SideSpeaker@Talk,  DecoRight@SideSpeaker@Talk, DecoTop@TopSpeaker@Talk
 {
-	\p[{p}]{narrator}Why does party music have to drone so loudly...{narratoroff}
+	{narrator}Why does party music have to drone so loudly...{narratoroff}
 }
 
 
 //——————————————— Dart boards ———————————————
-talk DecoLeft@SideDartboard@Talk,  DecoRight@SideDartboard@Talk(p)
+talk DecoLeft@SideDartboard@Talk,  DecoRight@SideDartboard@Talk
 {
-	\p[{p}]{narrator}Someone's done quite well at this.{narratoroff}
+	{narrator}Someone's done quite well at this.{narratoroff}
 }
 
-talk DecoLeft@SideDartboard@Pet,  DecoRight@SideDartboard@Pet(p)
+talk DecoLeft@SideDartboard@Pet,  DecoRight@SideDartboard@Pet
 {
-	\s[annoyed]Keep messing with that and we'll start using your \f[italic,1]face\f[italic,default] as a target.
+	\0\s[annoyed]Keep messing with that and we'll start using your \f[italic,1]face\f[italic,default] as a target.
 }

@@ -157,11 +157,11 @@ class PartyDeco : PartyThing
 		
 		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
 		if (flavortext.IsNull()) flavortext = Reflection.Get("Deco@Fallback@Talk");
-		this.flavortext = flavortext(this.p,this.special); //Assign it to *one* output... hopefully
+		this.flavortext = flavortext(this.special); //Assign it to *one* output... hopefully
 		
 		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@MenuOpt");
 		if (specialmenu.IsNull()) specialmenu = "";
-		this.specialmenu = specialmenu(this.p,this.special);
+		this.specialmenu = specialmenu(this.special);
 	}
 	
 	function Menu
@@ -178,16 +178,18 @@ class PartyDeco : PartyThing
 		return m;
 	}
 	
-	function Vanish
+	function Vanish //TODO this stopped removing items properly
 	{
 		ResetCooldown();
 		
 		PartyClutter.Remove("{this.p}");
 		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Close");
 		if (dialogue.IsNull()) dialogue = Deco@Fallback@Close;
-		return dialogue(this.p,this.special);
+		return "\p[{this.p}]" + dialogue(this.p, this.special);
 	}
 	
+	//Petting and poking have HER as the default talker, while other things have the individual item as the default.
+	//My workaround in OnTranslate means that placing a \0 at the start of a dialogue on its own doesn't work properly... this may come back to bite me later. Can double-write them if needed... It seems to be that Aosora is collapsing a manually placed \0 into the auto placed one.
 	function Pet
 	{
 		this.pets++;
@@ -203,14 +205,14 @@ class PartyDeco : PartyThing
 				
 				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@PetClose");
 				if (dialogue.IsNull()) dialogue = Deco@Fallback@PetClose;
-				return "\t\![enter,nouserbreakmode]" + dialogue(this.p,this.special) + "\![leave,nouserbreakmode]";
+				return "\t\![enter,nouserbreakmode]" + dialogue(this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
 			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Pet");
 			if (dialogue.IsNull()) dialogue = Deco@Fallback@Pet;
-			return dialogue(this.p,this.special);
+			return dialogue(this.p, this.special);
 		}
 	}
 	
@@ -218,7 +220,7 @@ class PartyDeco : PartyThing
 	{
 		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedlePoke");
 		if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedlePoke;
-		return dialogue(this.p,this.special);
+		return dialogue(this.p, this.special);
 	}
 }
 

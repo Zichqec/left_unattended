@@ -1,50 +1,50 @@
-// talk DecoBottom@PartyBanner@Talk(p)
+// talk DecoBottom@PartyBanner@Talk
 // {
-	// \p[{p}]{narrator}temp{narratoroff}
+	// {narrator}temp{narratoroff}
 // }
 
 //——————————————— Balloons ———————————————
-talk DecoBottom@BottomBalloons@Talk(p)
+talk DecoBottom@BottomBalloons@Talk
 {
-	\p[{p}]{narrator}Elegant creatures, masters of the skies... Yet tethered to the earth. Tragic...{narratoroff}
+	{narrator}Elegant creatures, masters of the skies... Yet tethered to the earth. Tragic...{narratoroff}
 }
 
 //——————————————— Lights ———————————————
 
 //——————————————— Drink bowls ———————————————
-function DecoBottom@DrinkBowl@Talk(p,type)
+function DecoBottom@DrinkBowl@Talk(type)
 {
-	if (type == "water bowl") return DecoBottom@WaterBowl@Talk(p);
-	else return DecoBottom@OtherDrinkBowl@Talk(p);
+	if (type == "water bowl") return DecoBottom@WaterBowl@Talk();
+	else return DecoBottom@OtherDrinkBowl@Talk();
 }
 
-talk DecoBottom@WaterBowl@Talk(p)
+talk DecoBottom@WaterBowl@Talk
 {
-	\p[{p}]{narrator}Is this... just plain water?{narratoroff}
+	{narrator}Is this... just plain water?{narratoroff}
 }
 
-talk DecoBottom@WaterBowl@Talk(p)
+talk DecoBottom@WaterBowl@Talk
 {
-	\p[{p}]{narrator}Plain water in a punch bowl...?{narratoroff}
+	{narrator}Plain water in a punch bowl...?{narratoroff}
 }
 
-talk DecoBottom@OtherDrinkBowl@Talk(p)
+talk DecoBottom@OtherDrinkBowl@Talk
 {
-	\p[{p}]{narrator}Looks like punch of some kind...{narratoroff}
+	{narrator}Looks like punch of some kind...{narratoroff}
 }
 
-talk DecoBottom@OtherDrinkBowl@Talk(p)
+talk DecoBottom@OtherDrinkBowl@Talk
 {
-	\p[{p}]{narrator}Some sugary drink or another...{narratoroff}
+	{narrator}Some sugary drink or another...{narratoroff}
 }
 
-talk DecoBottom@OtherDrinkBowl@Talk(p)
+talk DecoBottom@OtherDrinkBowl@Talk
 {
-	\p[{p}]{narrator}Looks a bit sickly... did she get the ratio of drink mix to water correct?{narratoroff}
+	{narrator}Looks a bit sickly... did she get the ratio of drink mix to water correct?{narratoroff}
 }
 
 //——————————————— Food bowls ———————————————
-function DecoBottom@FoodBowl@MenuOpt(p,type)
+function DecoBottom@FoodBowl@MenuOpt(type)
 {
 	if (type == "candy bowl")
 	{
@@ -62,46 +62,46 @@ talk OnCandyBowl@TakePiece
 	\s[tongue]Yeah, feel free to have some. I've got plenty more on the way.
 }
 
-function DecoBottom@FoodBowl@Talk(p,type)
+function DecoBottom@FoodBowl@Talk(type)
 {
-	if (type == "noodle bowl") return DecoBottom@NoodleBowl@Talk(p);
-	else if (type == "candy bowl") return DecoBottom@CandyBowl@Talk(p);
-	else return DecoBottom@OtherFoodBowl@Talk(p);
+	if (type == "noodle bowl") return DecoBottom@NoodleBowl@Talk();
+	else if (type == "candy bowl") return DecoBottom@CandyBowl@Talk();
+	else return DecoBottom@OtherFoodBowl@Talk();
 }
 
-talk DecoBottom@NoodleBowl@Talk(p,type)
+talk DecoBottom@NoodleBowl@Talk(type)
 {
-	\p[{p}]{narrator}There's no cup... are you supposed to eat this with your hands? Pour it straight into your throat...?{narratoroff}
+	{narrator}There's no cup... are you supposed to eat this with your hands? Pour it straight into your throat...?{narratoroff}
 }
 
-talk DecoBottom@CandyBowl@Talk(p)
+talk DecoBottom@CandyBowl@Talk
 {
-	\p[{p}]{narrator}This candy looks innocent enough...{narratoroff}
+	{narrator}This candy looks innocent enough...{narratoroff}
 }
 
-talk DecoBottom@OtherFoodBowl@Talk(p,type)
+talk DecoBottom@OtherFoodBowl@Talk(type)
 {
-	\p[{p}]{narrator}The sound of the sink hasn't been heard even once tonight... ew.{narratoroff}
+	{narrator}The sound of the sink hasn't been heard even once tonight... ew.{narratoroff}
 }
 
-function DecoBottom@FoodBowl@Pet(p,type)
+function DecoBottom@FoodBowl@Pet(p, type)
 {
-	if (type == "mashed potato bowl") return DecoBottom@MashedPotatoBowl@Pet(p);
-	else if (type == "noodle bowl") return DecoBottom@NoodleBowl@Pet(p);
-	else return DecoBottom@OtherFoodBowl@Pet(p);
+	if (type == "mashed potato bowl") return DecoBottom@MashedPotatoBowl@Pet();
+	else if (type == "noodle bowl") return DecoBottom@NoodleBowl@Pet();
+	else return DecoBottom@OtherFoodBowl@Pet();
 }
 
-talk DecoBottom@MashedPotatoBowl@Pet(p)
+talk DecoBottom@MashedPotatoBowl@Pet
 {
 	\s[annoyed]... Gross. \s[anger]That's \f[italic,1]mashed potatoes\f[italic,default], not clay.
 }
 
-talk DecoBottom@NoodleBowl@Pet(p)
+talk DecoBottom@NoodleBowl@Pet
 {
 	\s[annoyed]... Seriously? \s[anger]Don't stick your hands in the noodle soup, use the \s[eyeroll]\i[10]\f[italic,1]ladle\f[italic,default] like a civilized person.
 }
 
-talk DecoBottom@OtherFoodBowl@Pet(p)
+talk DecoBottom@OtherFoodBowl@Pet
 {
 	\s[annoyed]Don't just stick your hands all over the food, gross.
 }
