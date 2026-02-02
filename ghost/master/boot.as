@@ -139,6 +139,15 @@ talk CloseStopTouchingThingsTalk(p)
 }
 
 
+//————— Needle-closed last item —————
+talk CloseStopPokingThingsTalk(p)
+{
+	\s[anger]Stop scratching everything up! \p[{p}]\s[-1]\0\s[shout]Ugh, I've had it! What kind of roommate are you anyway, destroying my stuff!?
+	
+	\s[annoyed]I'm leaving, you have until I get back to hide anything you want to preserve.
+}
+
+
 //————— Give up (close all/change) —————
 talk CloseDefeatTalk
 {

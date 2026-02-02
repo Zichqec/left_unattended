@@ -18,6 +18,8 @@ class PartyThing
 		this.alignment = "free";
 		
 		this.pos_init = false;
+		
+		this.needlepokes = 0;
 	}
 	
 	function SurfaceRestore
@@ -205,22 +207,41 @@ class PartyDeco : PartyThing
 				
 				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@PetClose");
 				if (dialogue.IsNull()) dialogue = Deco@Fallback@PetClose;
-				return "\t\![enter,nouserbreakmode]" + dialogue(this.special) + "\![leave,nouserbreakmode]";
+				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
 			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Pet");
 			if (dialogue.IsNull()) dialogue = Deco@Fallback@Pet;
-			return dialogue(this.p, this.special);
+			return dialogue(this.special);
 		}
 	}
 	
 	function NeedlePoke
 	{
-		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedlePoke");
-		if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedlePoke;
-		return dialogue(this.p, this.special);
+		this.needlepokes++;
+		
+		if (this.needlepokes >= 3)
+		{
+			//I want to abstract these out but I'm not sure where to put them...
+			PartyClutter.Remove("{this.p}");
+			if (DecoCount() == 0) return "\t" + CloseStopPokingThingsTalk(this.p) + "\_w[1000]\-";
+			else
+			{
+				ResetCooldown();
+				
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedleClose");
+				if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedleClose;
+				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
+			}
+		}
+		else
+		{
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedlePoke");
+			if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedlePoke;
+			return dialogue(this.special);
+		}
 	}
 }
 
@@ -235,7 +256,6 @@ class PartyGuest : PartyThing
 		local pick = Random.Select(GuestTypes());
 		this.specifictype = pick.name;
 		this.surface = pick.surface;
-		this.needlepokes = 0;
 		
 		this.alignment = "free";
 		

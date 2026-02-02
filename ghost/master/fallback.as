@@ -133,7 +133,14 @@ talk Deco@Fallback@NeedlePoke
 }
 
 
-//———————————————————— Needle poke leave ————————————————————
+//———————————————————— Needle poke close (deco) ————————————————————
+talk Deco@Fallback@NeedleClose(p)
+{
+	\s[anger]Now look what you've done, you've totally ruined this! \p[{p}]\s[-1]\0\s[phone]I'll have to get a new one...
+}
+
+
+//———————————————————— Needle poke leave (guests) ————————————————————
 talk Guest@Fallback@NeedleLeave
 {
 	...
