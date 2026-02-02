@@ -29,6 +29,7 @@ class PartyThing
 			this.pos_init = true;
 			
 			return "\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\![get,property,OnGetRect,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnInitializePos,{this.type},{this.alignment}]\![set,alpha,100]";
+			//return "\_q\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\![embed,OnDebugWidth] \![get,property,OnGetRect,currentghost.scope({this.p}).rect]\![embed,OnDebugWidth] \![set,alignmenttodesktop,{this.alignment}]\![embed,OnInitializePos,{this.type},{this.alignment}]\![embed,OnDebugWidth] \![set,alpha,100]"; //for debugging...
 		}
 		else
 		{
@@ -36,6 +37,38 @@ class PartyThing
 		}
 	}
 }
+
+function OnTest
+{
+	if (LastDebugNum.IsNull()) LastDebugNum = 0;
+	LastDebugNum++;
+	
+	return "\_q\![no-autopause]\p[{LastDebugNum}]\s[10000]Character: {LastDebugNum}\nLast width: {LastDebugWidth}\n\![get,property,OnDebugRect,currentghost.scope({LastDebugNum}).rect]After property command: \![embed,OnDebugWidth]\x";
+}
+
+function OnDebugRect
+{
+	local reference0 = Shiori.Reference[0].Split(",");
+	local left = reference0[0].ToNumber();
+	local top = reference0[1].ToNumber();
+	local right = reference0[2].ToNumber();
+	local bottom = reference0[3].ToNumber();
+	
+	LastDebugWidth = abs(right - left);
+	LastDebugHeight = abs(bottom - top);
+}
+
+function OnDebugWidth
+{
+	return LastDebugWidth;
+	//return LastWidth;
+}
+
+//TODO IIRC the problem is that somehow this information isn't being saved at the right time or isn't being called at the right time. I think the reason that they sometimes spawn offscreen is that it sometimes thinks they have a different width than they really do
+//I need a way to determine if that's true... and if so, determine what the cause is, and if I can work around it...
+//All the math logic in the function after this *seems* correct to me... it's nothing difficult
+//Ok, new info: if you reload the ghost completely it uninitializes all the windows, and then we can see with my debug info that everything starts as 114 width, which is Jes's width. likely her height also. Why does this happen...?
+//I can probably make a simpler version for testing now...
 
 //For determining current width/height
 function OnGetRect
@@ -49,6 +82,10 @@ function OnGetRect
 	//TODO untested... need to check this on multiple monitors to be sure I got it the right way around
 	LastWidth = abs(right - left);
 	LastHeight = abs(bottom - top);
+	
+	Debug.WriteLine("left: {left}");
+	Debug.WriteLine("right: {right}");
+	Debug.WriteLine("LastWidth: {LastWidth}");
 }
 
 function OnInitializePos
