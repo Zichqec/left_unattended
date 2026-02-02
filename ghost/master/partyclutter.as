@@ -43,7 +43,8 @@ function OnTest
 	if (LastDebugNum.IsNull()) LastDebugNum = 0;
 	LastDebugNum++;
 	
-	return "\_q\![no-autopause]\p[{LastDebugNum}]\s[10000]Character: {LastDebugNum}\nLast width: {LastDebugWidth}\n\![get,property,OnDebugRect,currentghost.scope({LastDebugNum}).rect]After property command: \![embed,OnDebugWidth]\x";
+	//return "\_q\![no-autopause]\p[{LastDebugNum}]\s[10150]Character: {LastDebugNum}\nLast width: {LastDebugWidth}\n\![get,property,OnDebugRect,currentghost.scope({LastDebugNum}).rect]After property command: \![embed,OnDebugWidth]\x";
+	return "\_q\![no-autopause]\p[{LastDebugNum}]\![set,alpha,0]\s[10{Random.GetIndex(0,2)}0{Random.GetIndex(0,9)}]\![embed,OnDebugWidth]\n\![get,property,OnDebugRect,currentghost.scope({LastDebugNum}).rect]\![embed,OnDebugWidth]\n\![set,alignmenttodesktop,free]\![embed,OnInitializePos,guest,free]\![embed,OnDebugWidth]\![set,alpha,100]";
 }
 
 function OnDebugRect
