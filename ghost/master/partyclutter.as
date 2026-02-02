@@ -277,7 +277,7 @@ class PartyGuest : PartyThing
 		
 		PartyClutter.Remove("{this.p}");
 		
-		return "\t\p[{this.p}]" + dialogue() + "\s[-1]";
+		return "\t\p[{this.p}]" + dialogue() + "\s[-1]"; //\![set,alpha,0,500]\_w[500]\s[-1]\![set,alpha,100]
 	}
 }
 
