@@ -153,8 +153,8 @@ function OnBoot
 	
 	local holiday = TodaysHoliday();
 	
-	if (!holiday.IsNull()) return SurfaceRefresh() + BootHolidayTalk(holiday);
-	else return SurfaceRefresh() + BootTalk();
+	if (!holiday.IsNull()) return InitItemPos() + "\0\s[0]" + BootHolidayTalk(holiday);
+	else return InitItemPos() + "\0\s[0]" + BootTalk();
 }
 
 function OnCloseAll, OnGhostChanging
@@ -180,7 +180,7 @@ function OnClose
 
 
 //——————————————— Surface restore ———————————————
-function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
+function OnSurfaceRestore, OnWindowStateRestore
 {
 	local output = "";
 	local usedwindows = [];
@@ -206,6 +206,19 @@ function OnSurfaceRestore, OnWindowStateRestore, SurfaceRefresh
 	}
 	
 	output += "\0\s[0]";
+	return output;
+}
+
+//Initialize the positions of items that have not been initialized yet - it's a bit like surface restore, but for ones that haven't had their initial position yet, as in the case of booting, reloading, etc.
+//Without this setup, there were weird bugs... separating out this behavior is best.
+//If you do this without being able to return the string, it will break the display of the items
+function InitItemPos
+{
+	local output = "";
+	foreach (local thing in PartyClutter)
+	{
+		if (!thing.pos_init) output += thing.SurfaceRestore();
+	}
 	return output;
 }
 
@@ -270,10 +283,9 @@ function OnSecondChange
 function OnSpawnItem(debugalignment, debugspecifictype, debugsurface, debugspecial)
 {
 	InitializeItem(1, debugalignment, debugspecifictype, debugsurface, debugspecial);
-	return OnSurfaceRestore();
+	return InitItemPos();
 }
 
-//TODO there's a little issue here where if an item spawns during a dialogue her face will reset at the end...
 function InitializeItem(num, debugalignment, debugspecifictype, debugsurface, debugspecial)
 {
 	if (num.IsNull()) num = 1;

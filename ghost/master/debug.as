@@ -12,8 +12,8 @@ function OnTestBoot
 {
 	local holiday = Shiori.Reference[0];
 	
-	if (!holiday.IsNull()) return SurfaceRefresh() + BootHolidayTalk(holiday);
-	else return SurfaceRefresh() + BootTalk();
+	if (!holiday.IsNull()) return InitItemPos() + "\0\s[0]" + BootHolidayTalk(holiday);
+	else return InitItemPos() + "\0\s[0]" + BootTalk();
 }
 
 function OnDebug@SpawnMenu

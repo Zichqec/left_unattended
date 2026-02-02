@@ -70,22 +70,22 @@ talk CloseStillPartyingTalk
 
 
 //————— Random failure, summons more items —————
-//{SurfaceRefresh} to show the items
+//{InitItemPos} to show the items
 talk CloseNotYetTalk
 {
-	\s[annoyed]... \w8\s[tongue]Oh, look what just showed up. {SurfaceRefresh}\s[laugh]The party's still going!
+	\s[annoyed]... \w8\s[tongue]Oh, look what just showed up. {InitItemPos}\s[laugh]The party's still going!
 	
 	\s[anger]Stop trying to ruin it, thanks.
 }
 
 talk CloseNotYetTalk
 {
-	\s[away]... \w8\s[tongue]Not so fast, look what just got here~ {SurfaceRefresh}\s[laugh]Perfect timing!
+	\s[away]... \w8\s[tongue]Not so fast, look what just got here~ {InitItemPos}\s[laugh]Perfect timing!
 }
 
 talk CloseNotYetTalk
 {
-	\s[anger]... \w8\s[annoyed]... \w8\s[away]... \w8\s[tongue] Not quite, check it out~ {SurfaceRefresh}\s[laugh]My delivery got here just in time to keep the party dream alive!
+	\s[anger]... \w8\s[annoyed]... \w8\s[away]... \w8\s[tongue] Not quite, check it out~ {InitItemPos}\s[laugh]My delivery got here just in time to keep the party dream alive!
 }
 
 
