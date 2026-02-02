@@ -75,3 +75,12 @@ talk Guest@Shy@Leave
 {
 	Oh, it's time to go... Bye, then.
 }
+
+
+//———————————————————— Needle poke leave ————————————————————
+talk Guest@Shy@NeedleLeave
+{
+	Is there a mosquito in here...?
+	
+	I think I'll go home now, before it eats me alive...
+}

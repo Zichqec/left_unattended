@@ -140,12 +140,9 @@ function OnMouseDoubleClick
 function OnNeedlePoke
 {
 	local scope = Shiori.Reference[0];
-	if (scope == 0) return OnJesNeedlePoke;
 	
-	if (PartyClutter[scope].type == "deco")
-	{
-		return PartyClutter[scope].NeedlePoke();
-	}
+	if (scope == 0) return OnJesNeedlePoke;
+	else return PartyClutter[scope].NeedlePoke();
 }
 
 

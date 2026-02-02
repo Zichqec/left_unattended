@@ -76,3 +76,12 @@ talk Guest@Cheery@Leave
 {
 	I had a great time, I'll see you at tomorrow's party!
 }
+
+
+//———————————————————— Needle poke leave ————————————————————
+talk Guest@Cheery@NeedleLeave
+{
+	Hey! Quit elbowing me! Sheesh, way to bring the party spirit down.
+	
+	I'm gonna get going now, see you later Jes!
+}

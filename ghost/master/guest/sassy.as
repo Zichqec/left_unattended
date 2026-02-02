@@ -74,3 +74,10 @@ talk Guest@Sassy@Leave
 {
 	Oh, it's over now? Good. Bye.
 }
+
+
+//———————————————————— Needle poke leave ————————————————————
+talk Guest@Sassy@NeedleLeave
+{
+	Ugh, my skin is prickling from the atmosphere in here. I'm leaving.
+}

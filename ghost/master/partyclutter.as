@@ -235,6 +235,7 @@ class PartyGuest : PartyThing
 		local pick = Random.Select(GuestTypes());
 		this.specifictype = pick.name;
 		this.surface = pick.surface;
+		this.needlepokes = 0;
 		
 		this.alignment = "free";
 		
@@ -278,6 +279,35 @@ class PartyGuest : PartyThing
 		PartyClutter.Remove("{this.p}");
 		
 		return "\t\p[{this.p}]" + dialogue() + "\s[-1]"; //\![set,alpha,0,500]\_w[500]\s[-1]\![set,alpha,100]
+	}
+	
+	function NeedlePoke
+	{
+		this.needlepokes++;
+		
+		if (this.needlepokes >= 3)
+		{
+			//I want to abstract these out but I'm not sure where to put them...
+			PartyClutter.Remove("{this.p}");
+			
+			ResetCooldown();
+			
+			local dialogue = Reflection.Get("Guest@{Capitalize(this.personality)}@NeedleLeave");
+			if (dialogue.IsNull()) dialogue = Guest@Fallback@NeedleLeave;
+			return "\t\p[{this.p}]" + dialogue(this.special) + "\s[-1]";
+		}
+		else
+		{
+			local dialogue = Random.Select([
+				"\i[10]",
+				"\i[12]",
+				"\i[15]",
+				"\i[16]",
+				"\i[17]",
+				"\i[18]",
+			]);
+			return "\p[{this.p}]\s[{this.surface}]" + dialogue;
+		}
 	}
 }
 

@@ -131,3 +131,10 @@ talk Deco@Fallback@NeedlePoke
 {
 	\s[anger]Don't stab that!
 }
+
+
+//———————————————————— Needle poke leave ————————————————————
+talk Guest@Fallback@NeedleLeave
+{
+	...
+}
