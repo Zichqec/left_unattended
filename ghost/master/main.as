@@ -272,7 +272,7 @@ function OnSecondChange
 		
 		if (output != "")
 		{
-			if (BalloonIsOpen) output = "\C" + output;
+			if (BalloonIsOpen()) output = "\C" + output;
 			return output;
 		}
 	}
