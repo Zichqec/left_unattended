@@ -57,7 +57,7 @@ function OnLoboHowlStart
 	if (BalloonIsOpen()) output += "\C";
 	foreach (thing in PartyClutter)
 	{
-		if (thing.type == "guest") output += "\_w[{Random.GetIndex(1,3)}00]\p[{thing.p}]\i[{animation}]";
+		if (thing.type == "guest") output += "\_w[{Random.GetIndex(1,3)}00]\p[{thing.p}]\s[{thing.surface}]\i[{animation}]";
 	}
 	
 	return output;
