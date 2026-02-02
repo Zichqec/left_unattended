@@ -159,7 +159,8 @@ function OnBoot
 
 function OnCloseAll, OnGhostChanging
 {
-	return CloseDefeatTalk() + "\_w[1000]\-";
+	if (DecoCount() == 0) return CloseCleanedUpTalk() + "\_w[1000]\-";
+	else return CloseDefeatTalk() + "\_w[1000]\-";
 }
 
 function OnClose
