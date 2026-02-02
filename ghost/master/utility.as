@@ -109,19 +109,14 @@ function CanSpawnVIP
 	if (!Save.Data.VIPsAllowed) return 0;
 	
 	local guestcount = GuestCount();
-	Debug.WriteLine("guestcount: {guestcount}");
 	
 	//3 VIPs per guest
 	local maxvips = (guestcount / 3).Floor();
-	Debug.WriteLine("maxvips: {maxvips}");
 	
 	local vipcount = VIPCount();
-	Debug.WriteLine("vipcount: {vipcount}");
-	Debug.WriteLine("OpenGhosts.length: {OpenGhosts.length}");
-	Debug.WriteLine("InstalledGhosts.length: {InstalledGhosts.length}");
 	
-	//TODO i need to test on an instance of SSP with fewer ghosts how it counts itself...
-	if (vipcount < maxvips && OpenGhosts.length < InstalledGhosts.length) return 1;
+	//She counts as 1 installed ghost, so subtract one here
+	if (vipcount < maxvips && OpenGhosts.length < (InstalledGhosts.length - 1)) return 1;
 	else return 0;
 }
 
@@ -278,6 +273,7 @@ function otherghostname
 }
 
 //Full ghost names
+//Note - it seems this includes THIS ghost in the count
 function installedghostname
 {
 	InstalledGhosts = [];
