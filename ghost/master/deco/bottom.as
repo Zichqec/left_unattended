@@ -84,7 +84,7 @@ talk DecoBottom@OtherFoodBowl@Talk(type)
 	{narrator}The sound of the sink hasn't been heard even once tonight... ew.{narratoroff}
 }
 
-function DecoBottom@FoodBowl@Pet(p, type)
+function DecoBottom@FoodBowl@Pet(type)
 {
 	if (type == "mashed potato bowl") return DecoBottom@MashedPotatoBowl@Pet();
 	else if (type == "noodle bowl") return DecoBottom@NoodleBowl@Pet();
