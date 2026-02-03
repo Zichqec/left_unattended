@@ -52,6 +52,16 @@ talk DecoFree@BouncyCastle@Talk
 
 
 //——————————————— Snack tables ———————————————
+talk DecoFree@SnackTable@Talk
+{
+	{narrator}Standard party fare...{narratoroff}
+}
+
+talk DecoFree@SnackTable@Talk
+{
+	{narrator}Refreshments for all.{narratoroff}
+}
+
 talk DecoFree@SnackTable@Pet
 {
 	\0\s[annoyed]If you want some food, just grab it, don't touch everything on the table!
