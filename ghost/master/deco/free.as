@@ -50,6 +50,23 @@ talk DecoFree@BouncyCastle@Talk
 	{narrator}A plastic palace, an air-filled throne...{narratoroff}
 }
 
+talk DecoFree@BouncyCastle@NeedlePoke
+{
+	\s[anger]Don't poke holes in my bouncy castle, all the air will come out!
+}
+
+talk DecoFree@BouncyCastle@NeedlePoke
+{
+	\s[anger]Stop tearing up the netting!
+}
+
+talk DecoFree@BouncyCastle@NeedleClose(p)
+{
+	\s[annoyed]Well, now look what you've done, it's completely ruined. \p[{p}]\s[-1]\0\s[eyeroll]\i[10]Ugh, and after I spent all that time inflating it, too.
+	
+	\s[away]I'll have to get another one to replace it... \s[tongue]Maybe I'll get the bigger size this time.
+}
+
 
 //——————————————— Snack tables ———————————————
 talk DecoFree@SnackTable@Talk
