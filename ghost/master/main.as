@@ -185,14 +185,18 @@ function OnSurfaceRestore, OnWindowStateRestore
 	local output = "";
 	local usedwindows = [];
 	
+	//Run surface restore for all guests & deco
 	foreach (local thing in PartyClutter)
 	{
 		output += thing.SurfaceRestore();
 		usedwindows.Add(thing.p);
 	}
 	
+	//Remove all visible characters that do not have an associated object
 	foreach (local surface, p in VisibleChars)
 	{
+		if (p == 0) continue; //skip Jes, always present
+		
 		local found = 0;
 		foreach (local window in usedwindows)
 		{
@@ -205,7 +209,9 @@ function OnSurfaceRestore, OnWindowStateRestore
 		if (!found) output += "\p[{p}]\s[-1]";
 	}
 	
+	//Restore Jes
 	output += "\0\s[0]";
+	
 	return output;
 }
 
