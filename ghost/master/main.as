@@ -66,6 +66,9 @@ function OnAosoraLoad
 	Stroke = 0;
 	
 	IsDebugMode = 0;
+	
+	LastCommunicateTime = Time.GetNowUnixEpoch();
+	LastCommunicateGhost = null;
 }
 
 function OnInitialize
@@ -340,6 +343,32 @@ function OnOtherGhostClosed
 {
 	ResetCooldown();
 	return VIPLeaveTalk(Shiori.Reference[0],Shiori.Reference[2]);
+}
+
+
+//——————————————— Generic communication response ———————————————
+//VIPs are her guests, after all...
+function OnCommunicate
+{
+	local response = "";
+	local nowtime = Time.GetNowUnixEpoch();
+	local ghost = Shiori.Reference[0];
+	
+	//If it's been less than a minute and it's the same ghost as last time, avoid a loop. This may be an issue if your text speed is set super low...? But, you can always dismiss the balloon... hum.
+	if (ghost == LastCommunicateGhost && nowtime - LastCommunicateTime <= 60)
+	{
+		response = CommunicateTalkFinal;
+	}
+	else //Treat it as a new response
+	{
+		Shiori.ResponseReference.Add("{Shiori.Reference[0]}");
+		response = CommunicateTalkInitial;
+	}
+	
+	
+	LastCommunicateTime = Time.GetNowUnixEpoch();
+	LastCommunicateGhost = ghost;
+	return response(ghost);
 }
 
 

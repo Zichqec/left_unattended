@@ -1,3 +1,38 @@
+//———————————————————— Generic commu response ————————————————————
+//————— Initial response —————
+talk CommunicateTalkInitial(ghost)
+{
+	\s[tongue]Yo, what's happening {ghost}?
+}
+
+talk CommunicateTalkInitial(ghost)
+{
+	\s[tongue]Heyyy {ghost}, how's it going?
+}
+
+talk CommunicateTalkInitial(ghost)
+{
+	\s[tongue]Glad to see you here, {ghost}.
+}
+
+
+//————— Followup if they reply back —————
+talk CommunicateTalkFinal(ghost)
+{
+	\s[laugh]Hope you're enjoying the party~
+}
+
+talk CommunicateTalkFinal(ghost)
+{
+	\s[laugh]We'll have to catch up sometime~
+}
+
+talk CommunicateTalkFinal(ghost)
+{
+	\s[laugh]I'm a little busy managing the party right now, but catch me after {thecheesecake} gets here, alright?
+}
+
+
 //———————————————————— Needle poke Jes ————————————————————
 talk OnJesNeedlePoke
 {
