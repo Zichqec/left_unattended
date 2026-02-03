@@ -144,8 +144,16 @@ function OnNeedlePoke
 {
 	local scope = Shiori.Reference[0];
 	
-	if (scope == 0) return OnJesNeedlePoke;
-	else return PartyClutter[scope].NeedlePoke();
+	if (Shiori.Reference[1] == "Birthday Needle")
+	{
+		if (scope == 0) return OnJesGiveCake;
+		else return PartyClutter[scope].GiveCake();
+	}
+	else
+	{
+		if (scope == 0) return OnJesNeedlePoke;
+		else return PartyClutter[scope].NeedlePoke();
+	}
 }
 
 

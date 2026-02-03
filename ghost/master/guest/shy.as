@@ -84,3 +84,9 @@ talk Guest@Shy@NeedleLeave
 	
 	I think I'll go home now, before it eats me alive...
 }
+
+//———————————————————— Give cake (via Birthday Needle) ————————————————————
+talk Guest@Shy@GiveCake
+{
+	\i[16]Oh... cake for me? Um... thanks.
+}

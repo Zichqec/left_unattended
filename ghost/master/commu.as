@@ -40,6 +40,12 @@ talk OnJesNeedlePoke
 }
 
 
+//———————————————————— Give Jes cake (via Birthday Needle) ————————————————————
+talk OnJesGiveCake
+{
+	\s[eyeroll]\i[10]Yes, yes, the cake is delicious. \s[phone]Eat it and let me work here for a bit, okay?
+}
+
 //———————————————————— Spectre possession ————————————————————
 function OnSpectrePlugin@ConfirmCalibration
 {

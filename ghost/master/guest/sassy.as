@@ -81,3 +81,10 @@ talk Guest@Sassy@NeedleLeave
 {
 	Ugh, my skin is prickling from the atmosphere in here. I'm leaving.
 }
+
+
+//———————————————————— Give cake (via Birthday Needle) ————————————————————
+talk Guest@Sassy@GiveCake
+{
+	Hm... this cake appears to be rather cheap. No thank you.
+}

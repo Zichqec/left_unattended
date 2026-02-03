@@ -85,3 +85,10 @@ talk Guest@Cheery@NeedleLeave
 	
 	I'm gonna get going now, see you later Jes!
 }
+
+
+//———————————————————— Give cake (via Birthday Needle) ————————————————————
+talk Guest@Cheery@GiveCake
+{
+	\i[14]Yay! Cake!
+}

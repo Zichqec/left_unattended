@@ -20,6 +20,7 @@ class PartyThing
 		this.pos_init = false;
 		
 		this.needlepokes = 0;
+		this.cakesgiven = 0;
 	}
 	
 	function SurfaceRestore
@@ -244,6 +245,33 @@ class PartyDeco : PartyThing
 			return dialogue(this.special);
 		}
 	}
+	
+	//"give" cake... via BirthdayNeedle
+	function GiveCake
+	{
+		this.cakesgiven++;
+		
+		if (this.cakesgiven >= 3)
+		{
+			//I want to abstract these out but I'm not sure where to put them...
+			PartyClutter.Remove("{this.p}");
+			if (DecoCount() == 0) return "\t" + CloseStopCakingThingsTalk(this.p) + "\_w[1000]\-";
+			else
+			{
+				ResetCooldown();
+				
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@CakeClose");
+				if (dialogue.IsNull()) dialogue = Deco@Fallback@CakeClose;
+				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
+			}
+		}
+		else
+		{
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@GiveCake");
+			if (dialogue.IsNull()) dialogue = Deco@Fallback@GiveCake;
+			return dialogue(this.special);
+		}
+	}
 }
 
 //Common to all party guests
@@ -329,6 +357,15 @@ class PartyGuest : PartyThing
 			]);
 			return "\p[{this.p}]\s[{this.surface}]" + dialogue;
 		}
+	}
+	
+	//via Birthday Needle
+	function GiveCake
+	{
+		local dialogue = Reflection.Get("Guest@{Capitalize(this.personality)}@GiveCake");
+		if (dialogue.IsNull()) dialogue = Guest@Fallback@GiveCake;
+		
+		return "\p[{this.p}]\s[{this.surface}]" + dialogue();
 	}
 }
 

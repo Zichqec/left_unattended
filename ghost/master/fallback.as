@@ -145,3 +145,31 @@ talk Guest@Fallback@NeedleLeave
 {
 	...
 }
+
+
+//———————————————————— Cake smash (via Birthday Needle) ————————————————————
+talk Deco@Fallback@GiveCake
+{
+	\s[anger]Don't smear cake all over that!
+}
+
+talk Deco@Fallback@GiveCake
+{
+	\s[anger]Eat the cake, don't get it everywhere!
+}
+
+
+//———————————————————— Cake close (deco) ————————————————————
+talk Deco@Fallback@CakeClose(p)
+{
+	\s[annoyed]Great, now you've got frosting and crumbs all over this. \p[{p}]\s[-1]\0
+	
+	\s[eyeroll]\i[10]Whatever, I'll just set it to the side and \f[italic,1]you\f[italic,default] can clean it up later.
+}
+
+
+//———————————————————— Give cake (guests) ————————————————————
+talk Guest@Fallback@GiveCake
+{
+	\i[14]
+}

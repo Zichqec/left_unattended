@@ -148,6 +148,15 @@ talk CloseStopPokingThingsTalk(p)
 }
 
 
+//————— Cake-closed last item (via Birthday Needle) —————
+talk CloseStopCakingThingsTalk(p)
+{
+	\s[anger]Stop smashing cake into everything! \p[{p}]\s[-1]\0\s[shout]Stars above, what is with you and cake!?
+	
+	\s[eyeroll]\i[10]Whatever, I'm so out of here. \s[annoyed]Next time I won't get any cake, then you'll \f[italic,1]really\f[italic,default] be sad.
+}
+
+
 //————— Give up (close all/change) —————
 talk CloseDefeatTalk
 {
