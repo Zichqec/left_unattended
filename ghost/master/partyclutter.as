@@ -182,7 +182,7 @@ class PartyDeco : PartyThing
 		return m;
 	}
 	
-	function Vanish //TODO this stopped removing items properly
+	function Vanish
 	{
 		ResetCooldown();
 		
