@@ -140,7 +140,25 @@ talk OnDecoPhantaEepy(item, special)
 
 
 //———————————————————— Can toss ————————————————————
-talk OnCanToss
+function OnCanToss
+{
+	//TODO check later if this check is needed, I have an old version with me...
+	if (Shiori.Reference[0] == 0) return CanTossTalk;
+}
+
+talk CanTossTalk
 {
 	\s[anger]Um, I'm in the middle of a party. \s[eyeroll]\i[10]It's not my fault you decided to get groceries today. \s[phone]Put them away yourself.
+}
+
+talk CanTossTalk
+{
+	\s[eyeroll]\i[10]No, I'm not putting out your mysterious canned... \s[eyeroll]whatever that is. \s[phone]If you wanna help pick the party food next time, get involved before I start sending out invites.
+}
+
+talk CanTossTalk
+{
+	\s[anger]I'm a bit busy to be putting away \f[italic,1]your\f[italic,default] groceries, thanks.
+	
+	\s[eyeroll]\i[10]I don't want to hear about how it's "tomorrow's dinner" and how "that makes it mine too", or whatever. \s[phone]It's not my problem while I'm busy running a party.
 }
