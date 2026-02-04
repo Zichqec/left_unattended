@@ -39,12 +39,35 @@ talk OnJesNeedlePoke
 	\s[anger]Stop it.
 }
 
+talk OnJesNeedlePoke
+{
+	\s[anger]Don't poke me, I'm busy.
+}
+
+talk OnJesNeedlePoke
+{
+	\s[anger]Cut it out.
+}
+
 
 //———————————————————— Give Jes cake (via Birthday Needle) ————————————————————
 talk OnJesGiveCake
 {
 	\s[eyeroll]\i[10]Yes, yes, the cake is delicious. \s[phone]Eat it and let me work here for a bit, okay?
 }
+
+talk OnJesGiveCake
+{
+	\s[eyeroll]\i[10]Yes, I know, you like the cake. \s[phone]Go eat it then, I'll have some when I get a minute.
+}
+
+talk OnJesGiveCake
+{
+	\s[annoyed]... You and cake, I swear. 
+	
+	\s[away]Go and eat it somewhere over there, thanks. \s[phone]I'll have a slice with you later when I get a moment.
+}
+
 
 //———————————————————— Spectre possession ————————————————————
 function OnSpectrePlugin@ConfirmCalibration
@@ -64,15 +87,24 @@ function OnSpectrePlugin@Surface
 
 function OnSpectrePlugin@Possession
 {
-	if (Random.GetIndex(0,4) == 0)
-	{
-		return Reflection.Get("SpectreTalk");
-	}
+	if (Random.GetIndex(0,4) == 0) return Reflection.Get("SpectreTalk");
 }
 
 talk SpectreTalk
 {
 	\s[eyeroll]... Did someone just leave?
+}
+
+talk SpectreTalk
+{
+	\s[eyeroll]... I thought I heard someone come in. \s[away]Did I imagine it...?
+}
+
+talk SpectreTalk
+{
+	\s[away]Hmm... 
+	
+	\s[forward]Is your house haunted? \s[phone]I feel like it might be haunted.
 }
 
 
