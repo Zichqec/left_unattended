@@ -260,6 +260,7 @@ function FreeDeco
 		{surface: "60300", name: "SnackTable", variants: [
 			{surface: "60300", special: null},
 			{surface: "60301", special: null},
+			{surface: "60302", special: "salad bar"},
 		]},
 	];
 }

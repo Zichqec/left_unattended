@@ -378,7 +378,7 @@ surface60200
 	collision0,0,0,500,500,stroke
 }
 
-surface60300-60301
+surface60300-60302
 {
 	collision0,0,0,500,500,stroke
 }
