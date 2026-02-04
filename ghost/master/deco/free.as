@@ -2,6 +2,18 @@
 // {
 	// {narrator}temp{narratoroff}
 // }
+/*
+talk DecoFree@TEMP@Talk
+talk DecoFree@TEMP@MenuOpt
+talk DecoFree@TEMP@Close
+talk DecoFree@TEMP@Pet
+talk DecoFree@TEMP@PetClose
+talk DecoFree@TEMP@NeedlePoke
+talk DecoFree@TEMP@NeedleClose
+talk DecoFree@TEMP@GiveCake
+talk DecoFree@TEMP@CakeClose
+*/
+
 
 //——————————————— Cakes ———————————————
 talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk
@@ -41,6 +53,34 @@ talk DecoFree@TieredCake@PetClose, DecoFree@SlicedCake@PetClose(p)
 	\s[annoyed]Ew, ew ew ew! \s[anger]Nobody's going to want to eat this cake now that you've stuck your hands all over it!\p[{p}]\s[-1]\0
 	
 	\s[eyeroll]\i[10]I guess I'll have to get another one. Ugh...
+}
+
+
+talk DecoFree@TieredCake@GiveCake, DecoFree@SlicedCake@GiveCake
+{
+	\s[anger]Stop smooshing the cakes together, you're going to mix the flavors!
+}
+
+talk DecoFree@TieredCake@GiveCake, DecoFree@SlicedCake@GiveCake
+{
+	\s[anger]Cut it out, you have cake in your hands, don't mess up the one on the table!
+}
+
+talk DecoFree@TieredCake@GiveCake, DecoFree@SlicedCake@GiveCake
+{
+	\s[anger]Isn't one cake at a time enough for you!?
+}
+
+
+talk DecoFree@TieredCake@CakeClose, DecoFree@SlicedCake@CakeClose(p)
+{
+	\s[annoyed]Ughhh, now look what you've done! You've ruined this whole cake by smearing crumbs and frosting from a different cake all over it. I thought you \f[italic,1]liked\f[italic,default] cake!
+	
+	\s[eyeroll]\i[10]Whatever, we can't use this anymore, so I'll \p[{p}]\s[-1]\0put it in the kitchen for now...
+	
+	\s[away]... \w8\w8Unless... \s[eyeroll]this was your master plan all along, to make it so nobody but you would want to eat this cake...
+	
+	\s[annoyed]You really know no bounds when it comes to cake, do you. \s[anger]Weirdo.
 }
 
 
