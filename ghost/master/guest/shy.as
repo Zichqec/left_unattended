@@ -85,8 +85,35 @@ talk Guest@Shy@NeedleLeave
 	I think I'll go home now, before it eats me alive...
 }
 
+talk Guest@Shy@NeedleLeave
+{
+	Someone keeps poking me with something...
+	
+	Maybe I'll just go...
+}
+
+talk Guest@Shy@NeedleLeave
+{
+	Um, I think maybe I'm not wanted here...
+	
+	I'll get going...
+}
+
+
 //———————————————————— Give cake (via Birthday Needle) ————————————————————
 talk Guest@Shy@GiveCake
 {
 	\i[16]Oh... cake for me? Um... thanks.
+}
+
+talk Guest@Shy@GiveCake
+{
+	\i[16]Oh, um... Sure, I'll have some cake.
+	
+	... Thanks.
+}
+
+talk Guest@Shy@GiveCake
+{
+	\i[16]Oh, cake...? Um... thanks.
 }

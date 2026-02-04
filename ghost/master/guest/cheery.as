@@ -86,9 +86,33 @@ talk Guest@Cheery@NeedleLeave
 	I'm gonna get going now, see you later Jes!
 }
 
+talk Guest@Cheery@NeedleLeave
+{
+	Ow, what did I bump into...?
+	
+	Um, I'm gonna go get a bandaid, see you next time Jes!
+}
+
+talk Guest@Cheery@NeedleLeave
+{
+	Ouch! What was that!?
+	
+	... Well, I think I've probably overstayed my welcome. I'll see you all at the next party!
+}
+
 
 //———————————————————— Give cake (via Birthday Needle) ————————————————————
 talk Guest@Cheery@GiveCake
 {
 	\i[14]Yay! Cake!
+}
+
+talk Guest@Cheery@GiveCake
+{
+	Cake for me? \i[14]Hooray!
+}
+
+talk Guest@Cheery@GiveCake
+{
+	\i[14]Woohoo, sugar!
 }

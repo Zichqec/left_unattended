@@ -82,9 +82,33 @@ talk Guest@Sassy@NeedleLeave
 	Ugh, my skin is prickling from the atmosphere in here. I'm leaving.
 }
 
+talk Guest@Sassy@NeedleLeave
+{
+	It appears there is a pest of some kind in here.
+	
+	I'll take my leave until it has been sorted...
+}
+
+talk Guest@Sassy@NeedleLeave
+{
+	It is far too crowded in this place, I keep getting bumped and poked. I'm leaving.
+	
+	Next time, put a limit on the number of guests allowed in at one time, or I won't attend!
+}
+
 
 //———————————————————— Give cake (via Birthday Needle) ————————————————————
 talk Guest@Sassy@GiveCake
 {
 	Hm... this cake appears to be rather cheap. No thank you.
+}
+
+talk Guest@Sassy@GiveCake
+{
+	This cake looks sickeningly sweet... I'll pass.
+}
+
+talk Guest@Sassy@GiveCake
+{
+	This is clearly a cake made with a cheap box mix. Jes really has no taste whatsoever, does she?
 }
