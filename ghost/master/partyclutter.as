@@ -272,6 +272,11 @@ class PartyDeco : PartyThing
 			return dialogue(this.special);
 		}
 	}
+	
+	function PhantaEepy
+	{
+		return OnDecoPhantaEepy(this.specifictype, this.special);
+	}
 }
 
 //Common to all party guests
@@ -362,6 +367,15 @@ class PartyGuest : PartyThing
 		if (dialogue.IsNull()) dialogue = Guest@Fallback@GiveCake;
 		
 		return "\p[{this.p}]\s[{this.surface}]" + dialogue();
+	}
+	
+	function PhantaEepy
+	{
+		local dialogue = Random.Select([
+			"\i[12]",
+			"\i[13]",
+		]);
+		return "\p[{this.p}]\s[{this.surface}]" + dialogue;
 	}
 }
 

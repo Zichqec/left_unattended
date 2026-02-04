@@ -157,6 +157,16 @@ function OnNeedlePoke
 }
 
 
+//——————————————— Phanta overlap ———————————————
+function OnPhantaEepy
+{
+	local scope = Shiori.Reference[0];
+	
+	if (scope == 0) return OnJesPhantaEepy;
+	else return PartyClutter[scope].PhantaEepy();
+}
+
+
 //——————————————— Boot and close control ———————————————
 function OnBoot
 {

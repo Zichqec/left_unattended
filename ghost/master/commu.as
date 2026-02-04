@@ -105,6 +105,40 @@ function OnLoboHowlStart
 }
 
 
+//———————————————————— Phanta eepy ————————————————————
+//————— Overlapping Jes —————
+talk OnJesPhantaEepy
+{
+	\s[phone]I'm a little busy at the moment. \s[tongue]Go check out the rest of the party, okay?
+}
+
+talk OnJesPhantaEepy
+{
+	\s[phone]Can't talk right now, gotta order {morestreamers}.
+}
+
+talk OnJesPhantaEepy
+{
+	\s[away]If you need a nap, feel free to use the couch. \s[tongue]I pushed it into the kitchen to make room.
+}
+
+//————— Overlapping a deco —————
+talk OnDecoPhantaEepy(item, special)
+{
+	\s[tongue]Glad to see folks are having fun~
+}
+
+talk OnDecoPhantaEepy(item, special)
+{
+	\s[tongue]Just don't knock anything over, thanks~
+}
+
+talk OnDecoPhantaEepy(item, special)
+{
+	\s[tongue]Someone's getting into the party spirit~
+}
+
+
 //———————————————————— Can toss ————————————————————
 talk OnCanToss
 {
