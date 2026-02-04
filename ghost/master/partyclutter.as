@@ -350,10 +350,6 @@ class PartyGuest : PartyThing
 			local dialogue = Random.Select([
 				"\i[10]",
 				"\i[12]",
-				"\i[15]",
-				"\i[16]",
-				"\i[17]",
-				"\i[18]",
 			]);
 			return "\p[{this.p}]\s[{this.surface}]" + dialogue;
 		}
