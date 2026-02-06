@@ -1209,3 +1209,9 @@ char199.cursor
 	mouseup0,stroke,system:hand
 	mousedown0,stroke,system:grip
 }
+
+char200.cursor
+{
+	mouseup0,stroke,system:hand
+	mousedown0,stroke,system:grip
+}
