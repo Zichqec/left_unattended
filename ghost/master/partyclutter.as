@@ -163,15 +163,22 @@ class PartyDeco : PartyThing
 		this.special_funcname = this.special.ToString();
 		this.special_funcname = this.special_funcname.Replace(" ","_");
 		
-		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@Talk");
-		if (flavortext.IsNull()) flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
-		if (flavortext.IsNull()) flavortext = Reflection.Get("Deco@Fallback@Talk");
+		local flavortext = this.FindDialogue("Talk");
 		this.flavortext = flavortext(this.special); //Assign it to *one* output... hopefully
 		
-		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@MenuOpt");
-		if (specialmenu.IsNull()) specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@MenuOpt");
-		if (specialmenu.IsNull()) specialmenu = "";
+		local specialmenu = this.FindDialogue("MenuOpt");
 		this.specialmenu = specialmenu(this.special);
+	}
+	
+	//Run through dialogues from most to least specific until we get one
+	//Special variants > overall types > fallbacks
+	//returns a FUNCTION not a name or single baked output, because sometimes we want to call multiple options (well, I guess that's more for the guests) and sometimes we want to send it with arguments
+	function FindDialogue(type)
+	{
+		local funcname = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@{type}");
+		if (funcname.IsNull()) funcname = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{type}");
+		if (funcname.IsNull()) funcname = Reflection.Get("Deco@Fallback@{type}");
+		return funcname;
 	}
 	
 	function Menu
@@ -193,9 +200,7 @@ class PartyDeco : PartyThing
 		ResetCooldown();
 		
 		PartyClutter.Remove("{this.p}");
-		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@Close");
-		if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Close");
-		if (dialogue.IsNull()) dialogue = Deco@Fallback@Close;
+		local dialogue = this.FindDialogue("Close");
 		return "\p[{this.p}]" + dialogue(this.p, this.special);
 	}
 	
@@ -214,17 +219,13 @@ class PartyDeco : PartyThing
 			{
 				ResetCooldown();
 				
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@PetClose");
-				if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@PetClose");
-				if (dialogue.IsNull()) dialogue = Deco@Fallback@PetClose;
+				local dialogue = this.FindDialogue("PetClose");
 				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@Pet");
-			if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Pet");
-			if (dialogue.IsNull()) dialogue = Deco@Fallback@Pet;
+			local dialogue = this.FindDialogue("Pet");
 			return dialogue(this.special);
 		}
 	}
@@ -242,17 +243,13 @@ class PartyDeco : PartyThing
 			{
 				ResetCooldown();
 				
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@NeedleClose");
-				if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedleClose");
-				if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedleClose;
+				local dialogue = this.FindDialogue("NeedleClose");
 				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@NeedlePoke");
-			if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedleClose");
-			if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedlePoke;
+			local dialogue = this.FindDialogue("NeedlePoke");
 			return dialogue(this.special);
 		}
 	}
@@ -271,17 +268,13 @@ class PartyDeco : PartyThing
 			{
 				ResetCooldown();
 				
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@CakeClose");
-				if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@CakeClose");
-				if (dialogue.IsNull()) dialogue = Deco@Fallback@CakeClose;
+				local dialogue = this.FindDialogue("CakeClose");
 				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@GiveCake");
-			if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@GiveCake");
-			if (dialogue.IsNull()) dialogue = Deco@Fallback@GiveCake;
+			local dialogue = this.FindDialogue("GiveCake");
 			return dialogue(this.special);
 		}
 	}
@@ -328,6 +321,16 @@ class PartyGuest : PartyThing
 		if (!(debugspecial.IsNull() || debugspecial == "")) this.special = debugspecial; //Specific pick via debug
 	}
 	
+	//Run through dialogues from most to least specific until we get one
+	//Special variants > overall types > fallbacks
+	//returns a FUNCTION not a name or single baked output, because sometimes we want to call multiple options and sometimes we want to send it with arguments
+	function FindDialogue(type)
+	{
+		local funcname = Reflection.Get("Guest@{Capitalize(this.personality)}@{type}");
+		if (funcname.IsNull()) funcname = Reflection.Get("Guest@Fallback@{type}");
+		return funcname;
+	}
+	
 	//Not really a menu, probably should rename... idk, may add buttons, hmm
 	function Menu
 	{
@@ -340,8 +343,7 @@ class PartyGuest : PartyThing
 	
 	function Vanish
 	{
-		local dialogue = Reflection.Get("Guest@{Capitalize(this.personality)}@Leave");
-		if (dialogue.IsNull()) dialogue = Guest@Fallback@Leave;
+		local dialogue = this.FindDialogue("Leave");
 		
 		PartyClutter.Remove("{this.p}");
 		
@@ -359,8 +361,7 @@ class PartyGuest : PartyThing
 			
 			ResetCooldown();
 			
-			local dialogue = Reflection.Get("Guest@{Capitalize(this.personality)}@NeedleLeave");
-			if (dialogue.IsNull()) dialogue = Guest@Fallback@NeedleLeave;
+			local dialogue = this.FindDialogue("NeedleLeave");
 			return "\t\p[{this.p}]" + dialogue(this.special) + "\s[-1]";
 		}
 		else
@@ -376,8 +377,7 @@ class PartyGuest : PartyThing
 	//via Birthday Needle
 	function GiveCake
 	{
-		local dialogue = Reflection.Get("Guest@{Capitalize(this.personality)}@GiveCake");
-		if (dialogue.IsNull()) dialogue = Guest@Fallback@GiveCake;
+		local dialogue = this.FindDialogue("GiveCake");
 		
 		return "\p[{this.p}]\s[{this.surface}]" + dialogue();
 	}
