@@ -19,7 +19,7 @@ talk Guest@Cheery@Talk
 	Jes throws the best parties!
 }
 
-//Ambiguous stuff...
+//Ambiguous "stuff"...
 talk Guest@Cheery@Talk
 {
 	Wooow, look at all the stuff in here!
