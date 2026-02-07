@@ -1,7 +1,17 @@
-// talk DecoBottom@PartyBanner@Talk
+// talk DecoBottom@TEMP@Talk
 // {
 	// {narrator}temp{narratoroff}
 // }
+
+//DecoBottom@TEMP@Talk
+//DecoBottom@TEMP@MenuOpt
+//DecoBottom@TEMP@Close
+//DecoBottom@TEMP@Pet
+//DecoBottom@TEMP@PetClose
+//DecoBottom@TEMP@NeedlePoke
+//DecoBottom@TEMP@NeedleClose
+//DecoBottom@TEMP@GiveCake
+//DecoBottom@TEMP@CakeClose
 
 //——————————————— Balloons ———————————————
 talk DecoBottom@BottomBalloons@Talk
@@ -9,7 +19,27 @@ talk DecoBottom@BottomBalloons@Talk
 	{narrator}Elegant creatures, masters of the skies... Yet tethered to the earth. Tragic...{narratoroff}
 }
 
+//DecoBottom@BottomBalloons@MenuOpt
+//DecoBottom@BottomBalloons@Close
+//DecoBottom@BottomBalloons@Pet
+//DecoBottom@BottomBalloons@PetClose
+//DecoBottom@BottomBalloons@NeedlePoke
+//DecoBottom@BottomBalloons@NeedleClose
+//DecoBottom@BottomBalloons@GiveCake
+//DecoBottom@BottomBalloons@CakeClose
+
+
 //——————————————— Lights ———————————————
+//DecoBottom@TopLightString@Talk
+//DecoBottom@TopLightString@MenuOpt
+//DecoBottom@TopLightString@Close
+//DecoBottom@TopLightString@Pet
+//DecoBottom@TopLightString@PetClose
+//DecoBottom@TopLightString@NeedlePoke
+//DecoBottom@TopLightString@NeedleClose
+//DecoBottom@TopLightString@GiveCake
+//DecoBottom@TopLightString@CakeClose
+
 
 //——————————————— Drink bowls ———————————————
 talk DecoBottom@DrinkBowl@water_bowl@Talk
@@ -36,6 +66,16 @@ talk DecoBottom@DrinkBowl@Talk
 {
 	{narrator}Looks a bit sickly... did she get the ratio of drink mix to water correct?{narratoroff}
 }
+
+//DecoBottom@DrinkBowl@MenuOpt
+//DecoBottom@DrinkBowl@Close
+//DecoBottom@DrinkBowl@Pet
+//DecoBottom@DrinkBowl@PetClose
+//DecoBottom@DrinkBowl@NeedlePoke
+//DecoBottom@DrinkBowl@NeedleClose
+//DecoBottom@DrinkBowl@GiveCake
+//DecoBottom@DrinkBowl@CakeClose
+
 
 //——————————————— Food bowls ———————————————
 talk DecoBottom@FoodBowl@candy_bowl@MenuOpt
@@ -82,3 +122,10 @@ talk DecoBottom@FoodBowl@Pet
 {
 	\s[annoyed]Don't just stick your hands all over the food, gross.
 }
+
+//DecoBottom@FoodBowl@Close
+//DecoBottom@FoodBowl@PetClose
+//DecoBottom@FoodBowl@NeedlePoke
+//DecoBottom@FoodBowl@NeedleClose
+//DecoBottom@FoodBowl@GiveCake
+//DecoBottom@FoodBowl@CakeClose

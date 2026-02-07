@@ -1,19 +1,17 @@
-// talk DecoFree@happypartybanner@Talk
+// talk DecoFree@TEMP@Talk
 // {
 	// {narrator}temp{narratoroff}
 // }
-/*
-talk DecoFree@TEMP@Talk
-talk DecoFree@TEMP@MenuOpt
-talk DecoFree@TEMP@Close
-talk DecoFree@TEMP@Pet
-talk DecoFree@TEMP@PetClose
-talk DecoFree@TEMP@NeedlePoke
-talk DecoFree@TEMP@NeedleClose
-talk DecoFree@TEMP@GiveCake
-talk DecoFree@TEMP@CakeClose
-*/
 
+//DecoFree@TEMP@Talk
+//DecoFree@TEMP@MenuOpt
+//DecoFree@TEMP@Close
+//DecoFree@TEMP@Pet
+//DecoFree@TEMP@PetClose
+//DecoFree@TEMP@NeedlePoke
+//DecoFree@TEMP@NeedleClose
+//DecoFree@TEMP@GiveCake
+//DecoFree@TEMP@CakeClose
 
 //——————————————— Cakes ———————————————
 talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk
@@ -83,6 +81,11 @@ talk DecoFree@TieredCake@CakeClose, DecoFree@SlicedCake@CakeClose(p)
 	\s[annoyed]You really know no bounds when it comes to cake, do you. \s[anger]Weirdo.
 }
 
+//DecoFree@TieredCake@MenuOpt
+//DecoFree@TieredCake@Close
+//DecoFree@TieredCake@NeedlePoke
+//DecoFree@TieredCake@NeedleClose
+
 
 //——————————————— Bouncy castle ———————————————
 talk DecoFree@BouncyCastle@Talk
@@ -106,6 +109,13 @@ talk DecoFree@BouncyCastle@NeedleClose(p)
 	
 	\s[away]I'll have to get another one to replace it... \s[tongue]Maybe I'll get the bigger size this time.
 }
+
+//DecoFree@BouncyCastle@MenuOpt
+//DecoFree@BouncyCastle@Close
+//DecoFree@BouncyCastle@Pet
+//DecoFree@BouncyCastle@PetClose
+//DecoFree@BouncyCastle@GiveCake
+//DecoFree@BouncyCastle@CakeClose
 
 
 //——————————————— Snack tables ———————————————
@@ -131,13 +141,19 @@ talk DecoFree@SnackTable@Pet
 	\s[phone]Sheesh, it's common sense...
 }
 
-
 talk DecoFree@SnackTable@PetClose(p)
 {
 	\s[annoyed]Ugh, you've touched everything on there... \s[anger]Fine then, I'm putting this in the other room and you can have it all to yourself later.\p[{p}]\s[-1]\0
 	
 	\s[eyeroll]\i[10]The snacks are for everyone, so maybe think before you touch stuff, yeah?
 }
+
+//DecoFree@SnackTable@MenuOpt
+//DecoFree@SnackTable@Close
+//DecoFree@SnackTable@NeedlePoke
+//DecoFree@SnackTable@NeedleClose
+//DecoFree@SnackTable@GiveCake
+//DecoFree@SnackTable@CakeClose
 
 
 //——————————————— Plants ———————————————
@@ -160,3 +176,12 @@ talk DecoFree@PottedFern@Talk
 {
 	{narrator}... This one appears to be made of plastic.{narratoroff}
 }
+
+//DecoFree@PottedFern@MenuOpt
+//DecoFree@PottedFern@Close
+//DecoFree@PottedFern@Pet
+//DecoFree@PottedFern@PetClose
+//DecoFree@PottedFern@NeedlePoke
+//DecoFree@PottedFern@NeedleClose
+//DecoFree@PottedFern@GiveCake
+//DecoFree@PottedFern@CakeClose

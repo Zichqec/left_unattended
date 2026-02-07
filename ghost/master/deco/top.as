@@ -1,3 +1,18 @@
+// talk DecoTop@TEMP@Talk
+// {
+	// {narrator}temp{narratoroff}
+// }
+
+//DecoTop@TEMP@Talk
+//DecoTop@TEMP@MenuOpt
+//DecoTop@TEMP@Close
+//DecoTop@TEMP@Pet
+//DecoTop@TEMP@PetClose
+//DecoTop@TEMP@NeedlePoke
+//DecoTop@TEMP@NeedleClose
+//DecoTop@TEMP@GiveCake
+//DecoTop@TEMP@CakeClose
+
 //——————————————— Triangles ———————————————
 talk DecoTop@TriangleString@Talk
 {
@@ -13,6 +28,13 @@ talk DecoTop@TriangleString@Close
 {
 	\s[-1]\0\s[anger]Hey! Don't just pull my triangles down, they're a pain to put up there!
 }
+
+//DecoTop@TriangleString@MenuOpt
+//DecoTop@TriangleString@PetClose
+//DecoTop@TriangleString@NeedlePoke
+//DecoTop@TriangleString@NeedleClose
+//DecoTop@TriangleString@GiveCake
+//DecoTop@TriangleString@CakeClose
 
 
 //——————————————— Top banner ———————————————
@@ -31,6 +53,14 @@ talk DecoTop@TopBanner@Pet
 	\0\s[annoyed]Stop messing with that, it was hard to hang up.
 }
 
+//DecoTop@TopBanner@MenuOpt
+//DecoTop@TopBanner@Close
+//DecoTop@TopBanner@PetClose
+//DecoTop@TopBanner@NeedlePoke
+//DecoTop@TopBanner@NeedleClose
+//DecoTop@TopBanner@GiveCake
+//DecoTop@TopBanner@CakeClose
+
 
 //——————————————— Disco ball ———————————————
 talk DecoTop@DiscoBall@Talk
@@ -48,6 +78,14 @@ talk DecoTop@DiscoBall@Pet
 	\s[annoyed]Stop messing with that disco ball, I don't have time to clean it if you get it dirty!
 }
 
+//DecoTop@TriangleString@MenuOpt
+//DecoTop@TriangleString@Close
+//DecoTop@TriangleString@PetClose
+//DecoTop@TriangleString@NeedlePoke
+//DecoTop@TriangleString@NeedleClose
+//DecoTop@TriangleString@GiveCake
+//DecoTop@TriangleString@CakeClose
+
 
 //——————————————— Light string ———————————————
 talk DecoTop@TopLightString@Talk
@@ -64,3 +102,11 @@ talk DecoTop@TopLightString@Pet
 {
 	\s[anger]They zapped me when I put them up there. I hope they zap you too for messing with my hard work!
 }
+
+//DecoTop@TriangleString@MenuOpt
+//DecoTop@TriangleString@Close
+//DecoTop@TriangleString@PetClose
+//DecoTop@TriangleString@NeedlePoke
+//DecoTop@TriangleString@NeedleClose
+//DecoTop@TriangleString@GiveCake
+//DecoTop@TriangleString@CakeClose
