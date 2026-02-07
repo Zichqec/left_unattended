@@ -155,15 +155,21 @@ class PartyDeco : PartyThing
 			this.special = variantpick.special;
 		}
 		
+		
 		if (!(debugsurface.IsNull() || debugsurface == "")) this.surface = debugsurface; //Set via debug
 		if (!(debugspecial.IsNull() || debugspecial == "")) this.special = debugspecial; //Set via debug
 		if (!(debugspecifictype.IsNull() || debugspecifictype == "")) this.specifictype = debugspecifictype; //Set via debug
 		
-		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
+		this.special_funcname = this.special.ToString();
+		this.special_funcname = this.special_funcname.Replace(" ","_");
+		
+		local flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@Talk");
+		if (flavortext.IsNull()) flavortext = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Talk");
 		if (flavortext.IsNull()) flavortext = Reflection.Get("Deco@Fallback@Talk");
 		this.flavortext = flavortext(this.special); //Assign it to *one* output... hopefully
 		
-		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@MenuOpt");
+		local specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@MenuOpt");
+		if (specialmenu.IsNull()) specialmenu = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@MenuOpt");
 		if (specialmenu.IsNull()) specialmenu = "";
 		this.specialmenu = specialmenu(this.special);
 	}
@@ -187,7 +193,8 @@ class PartyDeco : PartyThing
 		ResetCooldown();
 		
 		PartyClutter.Remove("{this.p}");
-		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Close");
+		local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@Close");
+		if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Close");
 		if (dialogue.IsNull()) dialogue = Deco@Fallback@Close;
 		return "\p[{this.p}]" + dialogue(this.p, this.special);
 	}
@@ -207,14 +214,16 @@ class PartyDeco : PartyThing
 			{
 				ResetCooldown();
 				
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@PetClose");
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@PetClose");
+				if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@PetClose");
 				if (dialogue.IsNull()) dialogue = Deco@Fallback@PetClose;
 				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Pet");
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@Pet");
+			if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@Pet");
 			if (dialogue.IsNull()) dialogue = Deco@Fallback@Pet;
 			return dialogue(this.special);
 		}
@@ -233,14 +242,16 @@ class PartyDeco : PartyThing
 			{
 				ResetCooldown();
 				
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedleClose");
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@NeedleClose");
+				if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedleClose");
 				if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedleClose;
 				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedlePoke");
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@NeedlePoke");
+			if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@NeedleClose");
 			if (dialogue.IsNull()) dialogue = Deco@Fallback@NeedlePoke;
 			return dialogue(this.special);
 		}
@@ -260,14 +271,16 @@ class PartyDeco : PartyThing
 			{
 				ResetCooldown();
 				
-				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@CakeClose");
+				local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@CakeClose");
+				if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@CakeClose");
 				if (dialogue.IsNull()) dialogue = Deco@Fallback@CakeClose;
 				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
 			}
 		}
 		else
 		{
-			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@GiveCake");
+			local dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@GiveCake");
+			if (dialogue.IsNull()) dialogue = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@GiveCake");
 			if (dialogue.IsNull()) dialogue = Deco@Fallback@GiveCake;
 			return dialogue(this.special);
 		}
