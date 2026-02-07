@@ -7,9 +7,19 @@ talk Guest@Fallback@Talk
 	...
 }
 
-talk Guest@Fallback@Talk
+talk Guest@Fallback@Leave
 {
 	...
+}
+
+talk Guest@Fallback@NeedleLeave
+{
+	...
+}
+
+talk Guest@Fallback@GiveCake
+{
+	\i[14]
 }
 
 
@@ -121,7 +131,7 @@ talk Deco@Fallback@Pet
 }
 
 
-//———————————————————— Needle poke ————————————————————
+//———————————————————— Deco Needle poke ————————————————————
 talk Deco@Fallback@NeedlePoke
 {
 	\s[anger]Stop scratching up my stuff!
@@ -133,21 +143,14 @@ talk Deco@Fallback@NeedlePoke
 }
 
 
-//———————————————————— Needle poke close (deco) ————————————————————
+//———————————————————— Deco Needle poke close ————————————————————
 talk Deco@Fallback@NeedleClose(p)
 {
 	\s[anger]Now look what you've done, you've totally ruined this! \p[{p}]\s[-1]\0\s[phone]I'll have to get a new one...
 }
 
 
-//———————————————————— Needle poke leave (guests) ————————————————————
-talk Guest@Fallback@NeedleLeave
-{
-	...
-}
-
-
-//———————————————————— Cake smash (via Birthday Needle) ————————————————————
+//———————————————————— Deco cake smash (via Birthday Needle) ————————————————————
 talk Deco@Fallback@GiveCake
 {
 	\s[anger]Don't smear cake all over that!
@@ -159,17 +162,10 @@ talk Deco@Fallback@GiveCake
 }
 
 
-//———————————————————— Cake close (deco) ————————————————————
+//———————————————————— Deco cake close ————————————————————
 talk Deco@Fallback@CakeClose(p)
 {
 	\s[annoyed]Great, now you've got frosting and crumbs all over this. \p[{p}]\s[-1]\0
 	
 	\s[eyeroll]\i[10]Whatever, I'll just set it to the side and \f[italic,1]you\f[italic,default] can clean it up later.
-}
-
-
-//———————————————————— Give cake (guests) ————————————————————
-talk Guest@Fallback@GiveCake
-{
-	\i[14]
 }
