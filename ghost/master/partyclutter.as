@@ -304,8 +304,7 @@ class PartyGuest : PartyThing
 		//It varies based on normal spawning vs debug spawning....... sometimes it's null, sometimes it's not null but it is an empty string
 		if (!(debugpersonality.IsNull() || debugpersonality == "")) this.personality = debugpersonality; //Specific pick via debug
 		
-		this.flavortext = Reflection.Get("Guest@{Capitalize(this.personality)}@Talk");
-		if (this.flavortext.IsNull()) this.flavortext = Guest@Fallback@Talk;
+		this.flavortext = this.FindDialogue("Talk");
 		
 		//Copied from partydeco but i don't think i can make this be in the PartyThing class...
 		this.special = null;
