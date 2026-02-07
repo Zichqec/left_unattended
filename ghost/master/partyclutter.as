@@ -392,14 +392,5 @@ class PartyGuest : PartyThing
 	}
 }
 
-function GuestPersonalities
-{
-	return [
-		"cheery",
-		"sassy",
-		"shy",
-	];
-}
-
 //TODO i tried to set these up so that I didn't have to send the p number, but unfortunately Aosora's head setting was getting in the way even when i turned it off...? May need to follow up on this one. Perhaps update the Aosora dll on another ghost and see if behavior changes...
 //I put in a bandaid patch with OnTranslate because it seems this is a very difficult issue...

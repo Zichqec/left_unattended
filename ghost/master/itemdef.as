@@ -1,3 +1,12 @@
+function GuestPersonalities
+{
+	return [
+		"cheery",
+		"sassy",
+		"shy",
+	];
+}
+
 function GuestTypes
 {
 	return [
