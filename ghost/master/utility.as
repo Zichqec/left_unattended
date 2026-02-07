@@ -191,6 +191,11 @@ function ResetCooldown
 	CooldownTime = Time.GetNowUnixEpoch();
 }
 
+function emdash
+{
+	return "\f[name,calibri]—\f[name,default]";
+}
+
 
 //——————————————— Pure functions ———————————————
 //Absolute
