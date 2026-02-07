@@ -4,6 +4,7 @@ function GuestPersonalities
 		"cheery",
 		"sassy",
 		"shy",
+		"merchant",
 	];
 }
 

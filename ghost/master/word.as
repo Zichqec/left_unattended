@@ -195,6 +195,16 @@ function vanilla
 	]);
 }
 
+function warmandinviting
+{
+	return Random.Select([
+		"warm and inviting",
+		"thematic",
+		"cool and hip",
+		"stylish",
+	]);
+}
+
 function TodaysHoliday
 {
 	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";
