@@ -29,30 +29,39 @@ talk Guest@Merchant@Talk
 	... But if you want to up your game and achieve the PERFECT party, I could help with that...
 }
 
-// talk Guest@Merchant@Talk
-// {
+talk Guest@Merchant@Talk
+{
+	Gasp! Did you pay \f[italic,1]this\f[italic,default] much for {thesestreamers}? You've been had, this simply won't do!
 	
-// }
+	I could set you up with good quality party supplies at a \f[italic,1]fraction\f[italic,default] of the cost, if you're interested...
+}
 
-// talk Guest@Merchant@Talk
-// {
+talk Guest@Merchant@Talk
+{
+	Stunning work all around, this party is truly vibrant! I hope you've not paid too much out of pocket on the decorations...?
 	
-// }
+	You know, I can find you some great deals to keep the cost of future parties low. We even offer financing; party today, pay tomorrow!
+}
 
-// talk Guest@Merchant@Talk
-// {
-	
-// }
+talk Guest@Merchant@Talk
+{
+	%{ local pick = punch(); }
+	Oh my, am I seeing store brand {pick}? You know, I could hook you up with a supplier that will get you name brand {pick} at store brand prices!
+}
 
-// talk Guest@Merchant@Talk
-// {
+talk Guest@Merchant@Talk
+{
+	What a wonderful party this is! Truly, the only thing holding it back is {thesecheapnapkins}.
 	
-// }
+	Of course, that's nothing a little coin can't fix...
+}
 
-// talk Guest@Merchant@Talk
-// {
+talk Guest@Merchant@Talk
+{
+	Is there anything more enriching than a party? I think not! Host parties often to get the most out of life!
 	
-// }
+	Of course, such a thing \f[italic,1]can\f[italic,default] be costly, but not if you have the right contacts...
+}
 
 
 //——————————————— Leaving ———————————————

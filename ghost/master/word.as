@@ -205,6 +205,48 @@ function warmandinviting
 	]);
 }
 
+function thesestreamers
+{
+	return Random.Select([
+		"these streamers",
+		"these balloons",
+		"a box cake mix",
+		"that sorry-looking potted plant",
+		"that rug",
+		"these plastic cups",
+		"these napkins",
+		"these individually wrapped plastic cutlery sets",
+		"these festive toothpicks",
+	]);
+}
+
+function punch
+{
+	return Random.Select([
+		"punch",
+		"jello",
+		"pudding",
+		"cake",
+		"ice cream",
+		"bread",
+		"cupcakes",
+		"napkins",
+		"cups",
+	]);
+}
+
+function thesecheapnapkins
+{
+	return Random.Select([
+		"these cheap napkins",
+		"a slight deficiency of {punch}",
+		"an insufficient variety of balloon colors",
+		"a lack of {plushsushi}",
+		"the choice of plastic cups",
+		"the lack of colorful lighting choices",
+	]);
+}
+
 function TodaysHoliday
 {
 	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";
