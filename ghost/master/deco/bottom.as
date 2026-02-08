@@ -30,15 +30,15 @@ talk DecoBottom@BottomBalloons@Talk
 
 
 //——————————————— Lights ———————————————
-//DecoBottom@TopLightString@Talk
-//DecoBottom@TopLightString@MenuOpt
-//DecoBottom@TopLightString@Close
-//DecoBottom@TopLightString@Pet
-//DecoBottom@TopLightString@PetClose
-//DecoBottom@TopLightString@NeedlePoke
-//DecoBottom@TopLightString@NeedleClose
-//DecoBottom@TopLightString@GiveCake
-//DecoBottom@TopLightString@CakeClose
+//DecoBottom@SpotLights@Talk
+//DecoBottom@SpotLights@MenuOpt
+//DecoBottom@SpotLights@Close
+//DecoBottom@SpotLights@Pet
+//DecoBottom@SpotLights@PetClose
+//DecoBottom@SpotLights@NeedlePoke
+//DecoBottom@SpotLights@NeedleClose
+//DecoBottom@SpotLights@GiveCake
+//DecoBottom@SpotLights@CakeClose
 
 
 //——————————————— Drink bowls ———————————————

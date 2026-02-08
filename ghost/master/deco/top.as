@@ -103,10 +103,23 @@ talk DecoTop@TopLightString@Pet
 	\s[anger]They zapped me when I put them up there. I hope they zap you too for messing with my hard work!
 }
 
-//DecoTop@TriangleString@MenuOpt
-//DecoTop@TriangleString@Close
-//DecoTop@TriangleString@PetClose
-//DecoTop@TriangleString@NeedlePoke
-//DecoTop@TriangleString@NeedleClose
-//DecoTop@TriangleString@GiveCake
-//DecoTop@TriangleString@CakeClose
+//DecoTop@TopLightString@MenuOpt
+//DecoTop@TopLightString@Close
+//DecoTop@TopLightString@PetClose
+//DecoTop@TopLightString@NeedlePoke
+//DecoTop@TopLightString@NeedleClose
+//DecoTop@TopLightString@GiveCake
+//DecoTop@TopLightString@CakeClose
+
+
+//——————————————— Speaker ———————————————
+
+//DecoTop@TopSpeaker@Talk
+//DecoTop@TopSpeaker@MenuOpt
+//DecoTop@TopSpeaker@Close
+//DecoTop@TopSpeaker@Pet
+//DecoTop@TopSpeaker@PetClose
+//DecoTop@TopSpeaker@NeedlePoke
+//DecoTop@TopSpeaker@NeedleClose
+//DecoTop@TopSpeaker@GiveCake
+//DecoTop@TopSpeaker@CakeClose

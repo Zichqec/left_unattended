@@ -87,6 +87,37 @@ talk DecoFree@TieredCake@CakeClose, DecoFree@SlicedCake@CakeClose(p)
 //DecoFree@TieredCake@NeedleClose
 
 
+//——————————————— Plants ———————————————
+talk DecoFree@PottedFern@Talk
+{
+	{narrator}Fresh greenery.{narratoroff}
+}
+
+talk DecoFree@PottedFern@Talk
+{
+	{narrator}A splash of green in a room of sickly colors...{narratoroff}
+}
+
+talk DecoFree@PottedFern@Talk
+{
+	{narrator}Dutifully replenishing the room's oxygen supply.{narratoroff}
+}
+
+talk DecoFree@PottedFern@Talk
+{
+	{narrator}... This one appears to be made of plastic.{narratoroff}
+}
+
+//DecoFree@PottedFern@MenuOpt
+//DecoFree@PottedFern@Close
+//DecoFree@PottedFern@Pet
+//DecoFree@PottedFern@PetClose
+//DecoFree@PottedFern@NeedlePoke
+//DecoFree@PottedFern@NeedleClose
+//DecoFree@PottedFern@GiveCake
+//DecoFree@PottedFern@CakeClose
+
+
 //——————————————— Bouncy castle ———————————————
 talk DecoFree@BouncyCastle@Talk
 {
@@ -154,34 +185,3 @@ talk DecoFree@SnackTable@PetClose(p)
 //DecoFree@SnackTable@NeedleClose
 //DecoFree@SnackTable@GiveCake
 //DecoFree@SnackTable@CakeClose
-
-
-//——————————————— Plants ———————————————
-talk DecoFree@PottedFern@Talk
-{
-	{narrator}Fresh greenery.{narratoroff}
-}
-
-talk DecoFree@PottedFern@Talk
-{
-	{narrator}A splash of green in a room of sickly colors...{narratoroff}
-}
-
-talk DecoFree@PottedFern@Talk
-{
-	{narrator}Dutifully replenishing the room's oxygen supply.{narratoroff}
-}
-
-talk DecoFree@PottedFern@Talk
-{
-	{narrator}... This one appears to be made of plastic.{narratoroff}
-}
-
-//DecoFree@PottedFern@MenuOpt
-//DecoFree@PottedFern@Close
-//DecoFree@PottedFern@Pet
-//DecoFree@PottedFern@PetClose
-//DecoFree@PottedFern@NeedlePoke
-//DecoFree@PottedFern@NeedleClose
-//DecoFree@PottedFern@GiveCake
-//DecoFree@PottedFern@CakeClose
