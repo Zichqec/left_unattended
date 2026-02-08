@@ -5,6 +5,7 @@ function GuestPersonalities
 		"sassy",
 		"shy",
 		"merchant",
+		"butterfly",
 	];
 }
 
