@@ -74,7 +74,7 @@ talk DecoLeft@SideBanner@NeedlePoke, DecoRight@SideBanner@NeedlePoke
 
 talk DecoLeft@SideBanner@NeedleClose, DecoRight@SideBanner@NeedleClose(p)
 {
-	\s[anger]Great, now what am I supposed to do with this? \s[eyeroll]\i[10]What good is a banner if it's peppered with holes? \p[{p}]\0
+	\s[anger]Great, now what am I supposed to do with this? \s[eyeroll]\i[10]What good is a banner if it's peppered with holes? \p[{p}]\s[-1]\0
 	
 	\s[phone]Whatever, I'll order another one. \s[annoyed]Don't destroy it this time. \s[anger]Also, you're paying for the replacement.
 }
@@ -93,7 +93,7 @@ talk DecoLeft@SideBanner@CAKE_TIME@GiveCake,  DecoRight@SideBanner@CAKE_TIME@Giv
 
 talk DecoLeft@SideBanner@CAKE_TIME@CakeClose,  DecoRight@SideBanner@CAKE_TIME@CakeClose(p)
 {
-	\s[annoyed]You have got to be kidding me. \s[eyeroll]I went to all the effort of getting a banner \i[10]\f[italic,1]specifically\f[italic,default] to placate you and bring you enjoyment, and you made a mess of it. \p[{p}]\0
+	\s[annoyed]You have got to be kidding me. \s[eyeroll]I went to all the effort of getting a banner \i[10]\f[italic,1]specifically\f[italic,default] to placate you and bring you enjoyment, and you made a mess of it. \p[{p}]\s[-1]\0
 	
 	\s[annoyed]Fine, whatever. This is going in your room, it's my gift to you. \s[anger]I hope you get ants.
 }
