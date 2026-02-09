@@ -17,9 +17,9 @@ guest/shy.as
 guest/merchant.as
 guest/butterfly.as
 
+deco/left.as
 deco/top.as
 deco/right.as
-deco/left.as
 deco/bottom.as
 deco/free.as
 deco/multi.as
