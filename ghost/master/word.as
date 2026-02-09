@@ -247,6 +247,22 @@ function thesecheapnapkins
 	]);
 }
 
+//used in combination with a fruit flavor
+function jello
+{
+	return Random.Select([
+		"jello",
+		"pie",
+		"cheesecake",
+		"pudding",
+		"ice cream",
+		"frozen yogurt",
+		"ice pops",
+		"tarts",
+		"candies",
+	]);
+}
+
 function TodaysHoliday
 {
 	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";

@@ -6,6 +6,8 @@ function GuestPersonalities
 		"shy",
 		"merchant",
 		"butterfly",
+		"restrained",
+		"uninvited",
 	];
 }
 
