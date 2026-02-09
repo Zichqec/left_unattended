@@ -25,18 +25,30 @@ class PartyThing
 	
 	function SurfaceRestore
 	{
+		local restore = "\p[{this.p}]";
 		if (!this.pos_init)
 		{
 			this.pos_init = true;
 			
 			//The solution to items appearing off the right side (and possibly bottom) was to add a little pause before the property command... odd. I also tried putting the property command in an embed tag but it seems that wasn't necessary, so I removed it.
-			return "\p[{this.p}]\![set,alpha,0]\s[{this.surface}]\_w[50]\![get,property,OnGetRect,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]\![embed,OnInitializePos,{this.type},{this.alignment}]\![set,alpha,100]";
-			
+			//Split this across multiple lines for readability
+			restore += "\![set,alpha,0]\s[{this.surface}]\_w[50]";
+			restore += "\![get,property,OnGetRect,currentghost.scope({this.p}).rect]\![set,alignmenttodesktop,{this.alignment}]";
+			restore += "\![embed,OnInitializePos,{this.type},{this.alignment}]";
 		}
 		else
 		{
-			return "\p[{this.p}]\s[{this.surface}]\![set,alpha,100]";
+			restore += "\p[{this.p}]\s[{this.surface}]";
 		}
+		
+		restore += "\![set,alpha,100]";
+		
+		//I'm really surprised I can check for this.personality here without it erroring, since this variable doesn't exist for deco... but it's working, so...
+		//Disabled for now because it doesn't work while dragging. May be replaced later depending on how certain things are resolved
+		//if (this.personality == "restrained") restore += "\![lock,repaint,manual]";
+		//else restore += "\![unlock,repaint]";
+		
+		return restore;
 	}
 }
 
