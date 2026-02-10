@@ -201,7 +201,7 @@ class PartyDeco : PartyThing
 		m += this.flavortext; //I had the argument here, but I moved it up because I made it so that it saves one output and always displays that for a deco...
 		m += "\n\n";
 		m += this.specialmenu;
-		m += "\![*]\__q[OnDismissItem,{this.p}]Remove item\__q\n\n";
+		m += "\![*]\__q[OnDismissItem,{this.p}]Remove item\__q    ";
 		m += "\![*]\__q[OnBlank]Cancel\__q";
 		
 		return m;
