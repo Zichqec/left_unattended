@@ -303,7 +303,7 @@ talk DecoFree@SnackTable@bread@Pet
 
 talk DecoFree@SnackTable@drink_cups@Pet
 {
-	\s[annoyed]Those are not stacking cups, stop playing with them!
+	\s[annoyed]Those are \f[italic,1]not\f[italic,default] stacking cups, stop playing with them!
 }
 
 talk DecoFree@SnackTable@drink_cups@Pet
@@ -410,7 +410,7 @@ talk DecoFree@SnackTable@drink_cups@GiveCake
 	\s[annoyed]That is \f[italic,1]not\f[italic,default] how you make cupcakes!
 }
 
-talk DecoFree@SnackTable@GiveCake
+talk DecoFree@SnackTable@drink_cups@GiveCake
 {
 	\s[annoyed]Stop filling the cups with cake, that's not a thing! Nobody wants to eat smashed up cake in a cup!!
 }

@@ -128,7 +128,7 @@ talk DecoBottom@DrinkBowl@Pet
 }
 
 
-talk DecoBottom@DrinkBowl@PetClose, DecoBottom@DrinkBowl@NeedleClose(p)
+talk DecoBottom@DrinkBowl@PetClose, DecoBottom@DrinkBowl@NeedleClose, DecoBottom@FoodBowl@noodle_bowl@PetClose, DecoBottom@FoodBowl@noodle_bowl@NeedleClose(p)
 {
 	\s[anger]Yuck, it's full of germs now. \s[eyeroll]Is it so hard to follow basic hygeine practices? \i[10]I provided a ladle and everything. \p[{p}]\s[-1]\0
 	
@@ -231,6 +231,7 @@ talk DecoBottom@FoodBowl@mashed_potato_bowl@Pet
 }
 
 
+//Pet close for these is with the drink bowls
 talk DecoBottom@FoodBowl@noodle_bowl@Pet
 {
 	\s[annoyed]... Seriously? \s[anger]Don't stick your hands in the noodle soup, use the \s[eyeroll]\i[10]\f[italic,1]ladle\f[italic,default] like a civilized person.
@@ -271,6 +272,7 @@ talk DecoBottom@FoodBowl@NeedlePoke
 	\s[annoyed]Don't hide pointy things in the food, someone's going to get hurt!
 }
 
+
 talk DecoBottom@FoodBowl@NeedleClose(p)
 {
 	\s[annoyed]No, enough of that. \p[{p}]\s[-1]\0That's dangerous.
@@ -294,7 +296,7 @@ talk DecoBottom@FoodBowl@candy_bowl@GiveCake
 
 talk DecoBottom@FoodBowl@GiveCake
 {
-	\s[annoyed]Yuck, don't stick your cake in there! Nobody is going to want to eat that if it's got smashed up cake all over it.
+	\s[annoyed]Yuck, don't stick your cake in there! Nobody is going to want to eat that if it's got smashed up cake all through it.
 }
 
 talk DecoBottom@FoodBowl@GiveCake
