@@ -193,14 +193,71 @@ talk DecoLeft@SideSpeaker@Talk,  DecoRight@SideSpeaker@Talk, DecoTop@TopSpeaker@
 	{narrator}Why does party music have to drone so loudly...{narratoroff}
 }
 
+
+talk DecoLeft@SideSpeaker@NeedlePoke, DecoRight@SideSpeaker@NeedlePoke, DecoTop@TopSpeaker@NeedlePoke
+{
+	\s[annoyed]Don't poke stuff into the speaker! You're going to ruin it!
+}
+
+talk DecoLeft@SideSpeaker@NeedlePoke, DecoRight@SideSpeaker@NeedlePoke, DecoTop@TopSpeaker@NeedlePoke
+{
+	\s[annoyed]Cut that out, you'll ruin the sound!
+}
+
+talk DecoLeft@SideSpeaker@NeedlePoke, DecoRight@SideSpeaker@NeedlePoke, DecoTop@TopSpeaker@NeedlePoke
+{
+	\s[annoyed]Stop that, speakers are \f[italic,1]delicate!\f[italic,default]
+}
+
+
+talk DecoLeft@SideSpeaker@NeedleClose, DecoRight@SideSpeaker@NeedleClose, DecoTop@TopSpeaker@NeedleClose(p)
+{
+	\s[anger]Great, you've ruined it! \s[eyeroll]\i[10]Speakers don't work if you poke holes in them, you know! \p[{p}]\s[-1]\0
+	
+	\s[annoyed]You probably did know that. \s[anger]You owe me a new speaker after this party wraps up.
+}
+
+
+talk DecoLeft@SideSpeaker@GiveCake, DecoRight@SideSpeaker@GiveCake, DecoTop@TopSpeaker@GiveCake
+{
+	\s[annoyed]Don't shove cake in there, gross!
+}
+
+talk DecoLeft@SideSpeaker@GiveCake, DecoRight@SideSpeaker@GiveCake, DecoTop@TopSpeaker@GiveCake
+{
+	\s[annoyed]Stop that, don't get frosting in the speaker! Nasty!
+}
+
+talk DecoLeft@SideSpeaker@GiveCake, DecoRight@SideSpeaker@GiveCake, DecoTop@TopSpeaker@GiveCake
+{
+	\s[annoyed]Don't do that, you're going to ruin the sound!
+}
+
+talk DecoLeft@SideSpeaker@GiveCake, DecoRight@SideSpeaker@GiveCake, DecoTop@TopSpeaker@GiveCake
+{
+	\s[annoyed]Ew, don't ruin my speakers!
+}
+
+
+talk DecoLeft@SideSpeaker@CakeClose, DecoRight@SideSpeaker@CakeClose, DecoTop@TopSpeaker@CakeClose(p)
+{
+	\s[annoyed]Yuck! You've gotten cake all through there! \p[{p}]\s[-1]\0
+	
+	\s[anger]Cake and speakers don't mix. Stop making a mess!
+}
+
+talk DecoLeft@SideSpeaker@CakeClose, DecoRight@SideSpeaker@CakeClose, DecoTop@TopSpeaker@CakeClose(p)
+{
+	\s[annoyed]Now look what you've done, that speaker is ruined! \p[{p}]\s[-1]\0
+	
+	\s[anger]Disgusting, you're the worst. \s[phone]I'm going to order a new speaker and put it on \f[italic,1]your\f[italic,default] credit card.
+}
+
+
 //DecoLeft@SideSpeaker@MenuOpt
 //DecoLeft@SideSpeaker@Close
 //DecoLeft@SideSpeaker@Pet
 //DecoLeft@SideSpeaker@PetClose
-//DecoLeft@SideSpeaker@NeedlePoke
-//DecoLeft@SideSpeaker@NeedleClose
-//DecoLeft@SideSpeaker@GiveCake
-//DecoLeft@SideSpeaker@CakeClose
 
 
 
@@ -210,16 +267,89 @@ talk DecoLeft@SideDartboard@Talk,  DecoRight@SideDartboard@Talk
 	{narrator}Someone's done quite well at this.{narratoroff}
 }
 
+talk DecoLeft@SideDartboard@Talk,  DecoRight@SideDartboard@Talk
+{
+	{narrator}Is anyone actually playing, or did she set up the darts in a pre-determined pattern for the "aesthetic"...?{narratoroff}
+}
+
+talk DecoLeft@SideDartboard@Talk,  DecoRight@SideDartboard@Talk
+{
+	{narrator}The darts appear to be glued in place.{narratoroff}
+}
+
+
+talk DecoLeft@SideDartboard@MenuOpt,  DecoRight@SideDartboard@MenuOpt
+{
+	\![*]\__q[OnDartboard@ThrowDart]Throw a dart\__q\n\n
+}
+
+talk OnDartboard@ThrowDart
+{
+	\s[tongue]Nice throw.
+}
+
+talk OnDartboard@ThrowDart
+{
+	\s[tongue]Not bad.
+}
+
+talk OnDartboard@ThrowDart
+{
+	\s[tongue]That's the way to do it.
+}
+
+talk OnDartboard@ThrowDart
+{
+	\s[tongue]Yeah, keep playing with that. \s[laugh]See? My parties are fun.
+}
+
+
 talk DecoLeft@SideDartboard@Pet,  DecoRight@SideDartboard@Pet
 {
-	\0\s[annoyed]Keep messing with that and we'll start using your \f[italic,1]face\f[italic,default] as a target.
+	\s[annoyed]Keep messing with that and we'll start using your \f[italic,1]face\f[italic,default] as a target.
 }
+
+talk DecoLeft@SideDartboard@Pet,  DecoRight@SideDartboard@Pet
+{
+	\s[annoyed]Don't mess up someone else's game of darts! \s[eyeroll]\i[10]\f[italic,1]So\f[italic,default] rude.
+}
+
+
+talk DecoLeft@SideDartboard@PetClose,  DecoRight@SideDartboard@PetClose(p)
+{
+	\s[annoyed]Great, how can anyone continue this game now? You've shuffled all the darts up! \p[{p}]\s[-1]\0
+	
+	\s[eyeroll]\i[10]Whatever, I'll just put it in the kitchen until someone else wants to play. \s[anger]Next time be considerate of other people.
+}
+
+
+talk DecoLeft@SideDartboard@NeedlePoke,  DecoRight@SideDartboard@NeedlePoke
+{
+	\s[annoyed]That's not a dart, stop doing that!
+}
+
+talk DecoLeft@SideDartboard@NeedlePoke,  DecoRight@SideDartboard@NeedlePoke
+{
+	\s[annoyed]You can't just walk up to the dartboard and shove something pointy in, that's not how darts is played!
+}
+
+talk DecoLeft@SideDartboard@NeedlePoke,  DecoRight@SideDartboard@NeedlePoke
+{
+	\s[annoyed]That's cheating, you have to throw your dart from a distance if you want it to count!
+	
+	\s[eyeroll]It has to be an actual \f[italic,1]dart\f[italic,default] too, \i[10]not just some pointy thing you found.
+}
+
+
+talk DecoLeft@SideDartboard@NeedleClose,  DecoRight@SideDartboard@NeedleClose(p)
+{
+	\s[annoyed]Enough, if you're just going to cheat then I'm taking this down! \p[{p}]\s[-1]\0
+	
+	\s[anger]I hope you're happy, you've ruined the game for everyone.
+}
+
 
 //DecoLeft@SideDartboard@MenuOpt
 //DecoLeft@SideDartboard@Close
-//DecoLeft@SideDartboard@Pet
-//DecoLeft@SideDartboard@PetClose
-//DecoLeft@SideDartboard@NeedlePoke
-//DecoLeft@SideDartboard@NeedleClose
 //DecoLeft@SideDartboard@GiveCake
 //DecoLeft@SideDartboard@CakeClose
