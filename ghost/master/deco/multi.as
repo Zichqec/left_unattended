@@ -87,7 +87,7 @@ talk DecoLeft@SideBanner@CAKE_TIME@GiveCake,  DecoRight@SideBanner@CAKE_TIME@Giv
 
 talk DecoLeft@SideBanner@CAKE_TIME@GiveCake,  DecoRight@SideBanner@CAKE_TIME@GiveCake
 {
-	\s[annoyed]"Cake time" as in \f[italic,1]eat some cake at the party,\f[italic,default] not as in \f[italic,1]smear some cake on this banner.\f[italic,default]
+	\s[annoyed]"Cake time" as in \f[italic,1]eat some cake at the party\f[italic,default], not as in \f[italic,1]smear some cake on this banner.\f[italic,default]
 }
 
 
@@ -165,7 +165,7 @@ talk DecoLeft@SideBalloons@NeedlePoke, DecoRight@SideBalloons@NeedlePoke, DecoBo
 //I wouldn't usually comment on real world events like the helium shortage in ghost dialogue, but... the sheer terribleness of this comment was too good to pass up lol
 talk DecoLeft@SideBalloons@NeedleClose, DecoRight@SideBalloons@NeedleClose, DecoBottom@BottomBalloons@NeedleClose(p)
 {
-	\s[away]\p[{p}]\s[-1]\f[italic,1]Pop.\f[italic,default]\w8\w8\0.\w8.\w8. \w8\w8\s[annoyed]What did I tell you. \s[anger]Thanks for that, now I'll have to get some more.
+	\s[away]\p[{p}]\s[-1]\f[italic,1]Pop! \f[italic,default]\w8\w8\0.\w8.\w8. \w8\w8\s[annoyed]What did I tell you. \s[anger]Thanks for that, now I'll have to get some more.
 	
 	\s[eyeroll]\i[10]Sheesh, there's a helium shortage and everything, and this is what you do.
 }

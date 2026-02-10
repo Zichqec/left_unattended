@@ -281,7 +281,7 @@ talk DecoBottom@FoodBowl@NeedleClose(p)
 
 talk DecoBottom@FoodBowl@candy_bowl@GiveCake
 {
-	\s[annoyed]No, no, no. That's \f[italic,1]candy,\f[italic,default] cake isn't candy. \s[eyeroll]\i[10]Don't try to mix the two.
+	\s[annoyed]No, no, no. That's \f[italic,1]candy\f[italic,default], cake isn't candy. \s[eyeroll]\i[10]Don't try to mix the two.
 }
 
 talk DecoBottom@FoodBowl@candy_bowl@GiveCake
