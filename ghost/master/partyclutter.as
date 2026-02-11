@@ -215,6 +215,20 @@ class PartyDeco : PartyThing
 		return output;
 	}
 	
+	//Finally found a good way to abstract out this function! Yay!
+	function TakeDownItem(type)
+	{
+		PartyClutter.Remove("{this.p}");
+		if (DecoCount() == 0) return this.SpecialClose("{type}");
+		else
+		{
+			ResetCooldown();
+			
+			local dialogue = this.FindDialogue("{type}");
+			return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
+		}
+	}
+	
 	function Menu
 	{
 		local m = "";
@@ -246,15 +260,7 @@ class PartyDeco : PartyThing
 		
 		if (this.pets >= 3)
 		{
-			PartyClutter.Remove("{this.p}");
-			if (DecoCount() == 0) return this.SpecialClose("PetClose");
-			else
-			{
-				ResetCooldown();
-				
-				local dialogue = this.FindDialogue("PetClose");
-				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
-			}
+			return this.TakeDownItem("PetClose");
 		}
 		else
 		{
@@ -269,15 +275,7 @@ class PartyDeco : PartyThing
 		
 		if (this.needlepokes >= 3)
 		{
-			PartyClutter.Remove("{this.p}");
-			if (DecoCount() == 0) return this.SpecialClose("NeedleClose");
-			else
-			{
-				ResetCooldown();
-				
-				local dialogue = this.FindDialogue("NeedleClose");
-				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
-			}
+			return this.TakeDownItem("NeedleClose");
 		}
 		else
 		{
@@ -293,15 +291,7 @@ class PartyDeco : PartyThing
 		
 		if (this.cakesgiven >= 3)
 		{
-			PartyClutter.Remove("{this.p}");
-			if (DecoCount() == 0) return this.SpecialClose("CakeClose");
-			else
-			{
-				ResetCooldown();
-				
-				local dialogue = this.FindDialogue("CakeClose");
-				return "\t\![enter,nouserbreakmode]" + dialogue(this.p, this.special) + "\![leave,nouserbreakmode]";
-			}
+			return this.TakeDownItem("CakeClose");
 		}
 		else
 		{
@@ -386,7 +376,6 @@ class PartyGuest : PartyThing
 		
 		if (this.needlepokes >= 3)
 		{
-			//I want to abstract these out but I'm not sure where to put them...
 			PartyClutter.Remove("{this.p}");
 			
 			ResetCooldown();
