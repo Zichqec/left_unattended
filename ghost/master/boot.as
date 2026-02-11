@@ -122,16 +122,16 @@ talk CloseCleanedUpTalk
 
 
 //————— Pet-closed last item —————
-talk CloseStopTouchingThingsTalk(p)
+talk SpecialClose@PetClose(p)
 {
 	\s[anger]Stop putting your hands all over my stuff! \p[{p}]\s[-1]\0\s[shout]Ugh, I can't deal with this anymore! If you're gonna mess everything up, then I'm leaving!!
 }
 
-talk CloseStopTouchingThingsTalk(p)
+talk SpecialClose@PetClose(p)
 {
 	\s[anger]Yuck, yuck, yuck! \s[shout]Stop \f[italic,1]doing\f[italic,default] that!! \p[{p}]\s[-1]\0\s[shout]I can't stand this anymore. \s[anger]If you're gonna get all my party decorations nasty then me and my friends are going somewhere else to party!
 }
-talk CloseStopTouchingThingsTalk(p)
+talk SpecialClose@PetClose(p)
 {
 	\s[anger]Stop \f[italic,1]doing\f[italic,default] that! That's not yours, stop putting your nasty, oily hands all over it! \p[{p}]\s[-1]\0\s[shout]Ugh, that's it, enough is enough!
 	
@@ -140,7 +140,7 @@ talk CloseStopTouchingThingsTalk(p)
 
 
 //————— Needle-closed last item —————
-talk CloseStopPokingThingsTalk(p)
+talk SpecialClose@NeedleClose(p)
 {
 	\s[anger]Stop scratching everything up! \p[{p}]\s[-1]\0\s[shout]Ugh, I've had it! What kind of roommate are you anyway, destroying my stuff!?
 	
@@ -149,11 +149,36 @@ talk CloseStopPokingThingsTalk(p)
 
 
 //————— Cake-closed last item (via Birthday Needle) —————
-talk CloseStopCakingThingsTalk(p)
+talk SpecialClose@CakeClose(p)
 {
 	\s[anger]Stop smashing cake into everything! \p[{p}]\s[-1]\0\s[shout]Stars above, what is with you and cake!?
 	
 	\s[eyeroll]\i[10]Whatever, I'm so out of here. \s[annoyed]Next time I won't get any cake, then you'll \f[italic,1]really\f[italic,default] be sad.
+}
+
+
+//————— Continuation of item-specific special closes —————
+//This bridges them from an individual item close to a full ghost close
+//These start with \x on the object side. Item is also already closed.
+talk SpecialClose@Continuation
+{
+	\s[away]... \s[annoyed]You know what, enough is enough. \s[anger]If you're just going to ruin everything, then I'm leaving. \s[shout]I've had it with you wrecking my party!
+	
+	\s[anger]Enjoy your boring, party-free night. I'm going to go eat cake without you.
+}
+
+talk SpecialClose@Continuation
+{
+	\s[annoyed]... You know what, I'm so done with this. \s[eyeroll]\i[10]You win, the party is \f[italic,1]over\f[italic,default].
+	
+	\s[anger]Hope that makes you happy. \s[shout]Have fun cleaning up by yourself!!
+}
+
+talk SpecialClose@Continuation
+{
+	\s[annoyed]... I don't have to take this. \s[away]You've put away or ruined all the party supplies I bought, \s[eyeroll]you're being a general nuisance... \s[shout]and I'm \f[italic,1]done\f[italic,default] putting up with it!
+	
+	\s[annoyed]I'm going to go set up my party somewhere else, and me and my friends will enjoy cake without you. \s[anger]Think of us while you spend the night here all alone, cleaning up the mess you've made.
 }
 
 

@@ -193,6 +193,28 @@ class PartyDeco : PartyThing
 		return funcname;
 	}
 	
+	//Like the above but for handling special close conditions
+	function SpecialClose(type)
+	{
+		local output = "";
+		local funcname = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{this.special_funcname}@{type}");
+		if (funcname.IsNull()) funcname = Reflection.Get("Deco{Capitalize(this.alignment)}@{this.specifictype}@{type}");
+		//No fallback here because if it falls back we want to go to the overall dialogues, with different behavior...
+		
+		if (!funcname.IsNull())
+		{
+			output += funcname(this.p) + "\x";
+		
+			output += "\t" + SpecialClose@Continuation(this.p);
+		}
+		else
+		{
+			output += "\t" + Reflection.Get("SpecialClose@{type}")(this.p);
+		}
+		output += "\_w[1000]\-";
+		return output;
+	}
+	
 	function Menu
 	{
 		local m = "";
@@ -224,9 +246,8 @@ class PartyDeco : PartyThing
 		
 		if (this.pets >= 3)
 		{
-			//I want to abstract these out but I'm not sure where to put them...
 			PartyClutter.Remove("{this.p}");
-			if (DecoCount() == 0) return "\t" + CloseStopTouchingThingsTalk(this.p) + "\_w[1000]\-";
+			if (DecoCount() == 0) return this.SpecialClose("PetClose");
 			else
 			{
 				ResetCooldown();
@@ -248,9 +269,8 @@ class PartyDeco : PartyThing
 		
 		if (this.needlepokes >= 3)
 		{
-			//I want to abstract these out but I'm not sure where to put them...
 			PartyClutter.Remove("{this.p}");
-			if (DecoCount() == 0) return "\t" + CloseStopPokingThingsTalk(this.p) + "\_w[1000]\-";
+			if (DecoCount() == 0) return this.SpecialClose("NeedleClose");
 			else
 			{
 				ResetCooldown();
@@ -273,9 +293,8 @@ class PartyDeco : PartyThing
 		
 		if (this.cakesgiven >= 3)
 		{
-			//I want to abstract these out but I'm not sure where to put them...
 			PartyClutter.Remove("{this.p}");
-			if (DecoCount() == 0) return "\t" + CloseStopCakingThingsTalk(this.p) + "\_w[1000]\-";
+			if (DecoCount() == 0) return this.SpecialClose("CakeClose");
 			else
 			{
 				ResetCooldown();
