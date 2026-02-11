@@ -256,7 +256,7 @@ talk DecoBottom@FoodBowl@Pet
 
 talk DecoBottom@FoodBowl@PetClose(p)
 {
-	\s[annoyed]Great. You've got your finger oils all through the food. \s[anger]Are you happy now? \p[{p}]\s[-1]\0
+	\s[annoyed]Great. Your finger oils are all through the food. \s[anger]Are you happy now? \p[{p}]\s[-1]\0
 	
 	\s[eyeroll]\i[10]Whatever, I'll just toss that and get some more.
 }

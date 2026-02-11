@@ -14,6 +14,7 @@
 //DecoLeft@TEMP@GiveCake
 //DecoLeft@TEMP@CakeClose
 
+
 //——————————————— Banners ———————————————
 talk DecoLeft@SideBanner@Talk,  DecoRight@SideBanner@Talk(text)
 {
@@ -98,6 +99,7 @@ talk DecoLeft@SideBanner@CAKE_TIME@CakeClose,  DecoRight@SideBanner@CAKE_TIME@Ca
 	\s[annoyed]Fine, whatever. This is going in your room, it's my gift to you. \s[anger]I hope you get ants.
 }
 
+
 //DecoLeft@SideBanner@MenuOpt
 //DecoLeft@SideBanner@Pet
 //DecoLeft@SideBanner@PetClose
@@ -170,11 +172,11 @@ talk DecoLeft@SideBalloons@NeedleClose, DecoRight@SideBalloons@NeedleClose, Deco
 	\s[eyeroll]\i[10]Sheesh, there's a helium shortage and everything, and this is what you do.
 }
 
+
 //DecoLeft@SideBalloons@MenuOpt
 //DecoLeft@SideBalloons@Close
 //DecoLeft@SideBalloons@GiveCake
 //DecoLeft@SideBalloons@CakeClose
-
 
 
 //——————————————— Speakers ———————————————
@@ -258,7 +260,6 @@ talk DecoLeft@SideSpeaker@CakeClose, DecoRight@SideSpeaker@CakeClose, DecoTop@To
 //DecoLeft@SideSpeaker@Close
 //DecoLeft@SideSpeaker@Pet
 //DecoLeft@SideSpeaker@PetClose
-
 
 
 //——————————————— Dart boards ———————————————
