@@ -118,6 +118,76 @@ talk RandomTalk
 	\i[10]Oh well, I guess we'll just have to keep footing the bill for the greater good.
 }
 
+talk RandomTalk
+{
+	\s[eyeroll]\i[10]Ugh, I bought a bunch of {bagsofglitter} from this little shop for last week's party, and for some reason they're out of stock now!
+	
+	\s[away]Maybe my party popularized the place, and now everyone wants to buy from them...
+	
+	\s[tongue]That's gotta be it. Heh, another good deed~
+}
+
+talk RandomTalk
+{
+	\s[phone]Wow. This party supplier doesn't have {balloons} for sale. \s[eyeroll]\i[10]Why even run a party store, then.
+}
+
+talk RandomTalk
+{
+	\s[phone]Hmm... \s[away]their color variety is really poor. \s[eyeroll]But maybe if I got some spray paint, I could DIY a solution...
+}
+
+talk RandomTalk
+{
+	\s[away]You should really repaint the livingroom. \s[eyeroll]A more vibrant color would liven the place up a lot.
+	
+	\s[tongue]I'll help you pick out the color~
+}
+
+talk RandomTalk
+{
+	\s[away]Hm... to order more {jello} or not...
+	
+	\s[tongue]I guess leftovers wouldn't hurt, we can pawn them off on the neighbors again.
+}
+
+talk RandomTalk
+{
+	\s[phone]Tch, why is my credit score so low? \s[annoyed]I bet you have something to do with this, don't you? 
+	
+	\s[away]... \s[eyeroll]Okay, fine, maybe it's because this is the third new card I've tried to open this month. \i[10]But I wouldn't put it past you to interfere somehow.
+}
+
+talk RandomTalk
+{
+	\s[tongue]Score, got into a new group chat. Invite~
+}
+
+talk RandomTalk
+{
+	%{
+		local text1 = partytext();
+		local text2 = partytext();
+		while (text1 == text2) {text2 = partytext();}
+	}
+	\s[tongue]Come party... at my place... {text1} {text2} 
+	
+	\s[laugh]And sent! That ought to bring in a few new faces.
+}
+
+talk RandomTalk
+{
+	\s[away]I wonder if there's another party nearby that's impacting mine...
+	
+	\s[phone]I'll have to scour the local party groups and see who it could be. \s[tongue]Maybe I'll have a job for you.
+}
+
+talk RandomTalk
+{
+	\s[annoyed]I hit the data limit again. Can we \s[eyeroll]\i[10]\f[italic,1]please\f[italic,default] switch to a limitless plan already? \s[away]This is so miserable.
+}
+
+
 //———————————————————— Conditional dialogues ————————————————————
 //Done carefully to avoid upsetting nonoverlap... although this is kind of a bad method if I add more than one. Hm! There's probably a better way I'm forgetting, I am just tired... work on this later perhaps.
 talk RandomTalk

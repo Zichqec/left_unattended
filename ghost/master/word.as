@@ -263,6 +263,40 @@ function jello
 	]);
 }
 
+function balloons
+{
+	return Random.Select([
+		"balloons",
+		"confetti",
+		"cake",
+		"cupcakes",
+		"ice cream",
+		"party hats",
+		"plastic cups",
+		"paper plates",
+		"plastic cutlery",
+	]);
+}
+
+function partytext
+{
+	return Random.Select([
+		"don't mind... my roommate...",
+		"we have snacks... and games...",
+		"there is cake... and more on the way...",
+		"free drinks... and cups...",
+		"stay all night... no noise limit...",
+		"no admission fee... (but donations appreciated...)\w8\w8",
+		"bring your own... party hat...",
+		"costumes okay... but not required...",
+		"bring your friends... and their friends...",
+		"loud music... requests welcome...",
+		"lots of floor space... if you get tired...",
+		"make new friends... and enemies...",
+		"lots of activities... fun for all...",
+	]);
+}
+
 function TodaysHoliday
 {
 	local date = "{Time.GetNowMonth()}/{Time.GetNowDate()}";
