@@ -21,6 +21,8 @@ class PartyThing
 		
 		this.needlepokes = 0;
 		this.cakesgiven = 0;
+		
+		this.slicesleft = Random.GetIndex(5,10);
 	}
 	
 	function SurfaceRestore
@@ -179,7 +181,7 @@ class PartyDeco : PartyThing
 		this.flavortext = flavortext(this.special); //Assign it to *one* output... hopefully
 		
 		local specialmenu = this.FindDialogue("MenuOpt");
-		this.specialmenu = specialmenu(this.special);
+		this.specialmenu = specialmenu(this.p,this.special);
 	}
 	
 	//Run through dialogues from most to least specific until we get one

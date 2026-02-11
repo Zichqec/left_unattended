@@ -30,6 +30,185 @@ talk DecoFree@TieredCake@Talk, DecoFree@SlicedCake@Talk
 }
 
 
+talk DecoFree@TieredCake@MenuOpt, DecoFree@SlicedCake@MenuOpt(p)
+{
+	\![*]\__q[OnCakeAction@AdmireFrosting,{p}]Admire the frosting\__q\n\n
+}
+
+talk OnCakeAction@AdmireFrosting
+{
+	\p[{Shiori.Reference[0]}]{narrator}So smooth...{narratoroff}
+}
+
+talk OnCakeAction@AdmireFrosting
+{
+	\p[{Shiori.Reference[0]}]{narrator}Looks sweet...{narratoroff}
+}
+
+talk OnCakeAction@AdmireFrosting
+{
+	\p[{Shiori.Reference[0]}]{narrator}Unbearably tasty-looking...{narratoroff}
+}
+
+talk OnCakeAction@AdmireFrosting
+{
+	\p[{Shiori.Reference[0]}]{narrator}Pretty colors...{narratoroff}
+}
+
+
+talk DecoFree@TieredCake@MenuOpt, DecoFree@SlicedCake@MenuOpt(p)
+{
+	\![*]\__q[OnCakeAction@EatSlice,{p}]Eat a slice\__q\n\n
+}
+
+
+function OnCakeAction@EatSlice
+{
+	local pick = Shiori.Reference[0];
+	PartyClutter[pick].slicesleft--; //This is the moment I realized you don't have to be inside the object to manipulate the variables of each instance... all for some cake lol
+	
+	if (PartyClutter[pick].slicesleft < 0)
+	{
+		PartyClutter.Remove["{pick}"];
+		
+		local output = "\p[{pick}]\s[-1]";
+		output += OnCakeAction@EatSlice@Nom(pick) + "\n\n[half]\w8\w8\w8\w8\0";
+		output += OnCakeAction@EatSlice@AllGone(pick);
+		
+		return output;
+	}
+	else return OnCakeAction@EatSlice@Nom(pick);
+}
+
+talk OnCakeAction@EatSlice@AllGone
+{
+	\s[away].\w8.\w8. \s[annoyed]Did you just eat... that \f[italic,1]whole\f[italic,default] cake??\n\n[half]\w8\w8\p[{Shiori.Reference[0]}]{narrator}Oops... {narratoroff}\0\s[anger]I can't believe you. Now what is everyone else supposed to eat! \s[eyeroll]\i[10]Ugh, I'll have to order something else...
+}
+
+talk OnCakeAction@EatSlice@AllGone
+{
+	\s[annoyed]Did you just eat an entire cake \f[italic,1]yourself?\f[italic,default]\w8\w8\n\n[half]\p[{Shiori.Reference[0]}]{narrator}Uh oh... {narratoroff}\0\s[anger]Come on, save some for later at least! \s[eyeroll]\i[10]You're going to eat us out of house and home!
+}
+
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Yum...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Delicious...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Sugary goodness...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Maybe the parties are worth it...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Incredibly good...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Sweet and soft...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Amazingly tasty...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Heavenly...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Indescribably satisfying...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}The perfect dessert experience...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Even better than it looks, and it looks great...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Phenomenal...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Good flavor... good texture...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Unrivaled dessert king...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}So good...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}Excellent balance of frosting and cake...{narratoroff}
+}
+
+talk OnCakeAction@EatSlice@Nom
+{
+	\p[{Shiori.Reference[0]}]{narrator}How can anyone possibly resist...{narratoroff}
+}
+
+
+talk DecoFree@TieredCake@MenuOpt, DecoFree@SlicedCake@MenuOpt(p)
+{
+	\![*]\__q[OnCakeAction@BlowOutCandles,{p}]Blow out the candles\__q\n\n
+}
+
+talk OnCakeAction@BlowOutCandles
+{
+	\s[forward]They're fake. \s[eyeroll]\i[10]I figured you'd probably do that and try to ruin the lit candle aesthetic I have going on. \p[{Shiori.Reference[0]}]{narrator}Criminal...{narratoroff}
+}
+
+
+talk DecoFree@TieredCake@MenuOpt, DecoFree@SlicedCake@MenuOpt(p)
+{
+	\![*]\__q[OnCakeAction@TakePicture,{p}]Take a picture\__q\n\n
+}
+
+talk OnCakeAction@TakePicture
+{
+	\p[{Shiori.Reference[0]}]{narrator}Who says you can't have your cake and eat it too...{narratoroff}
+}
+
+talk OnCakeAction@TakePicture
+{
+	\p[{Shiori.Reference[0]}]{narrator}This will be great to frame and hang on the wall later...{narratoroff}
+}
+
+talk OnCakeAction@TakePicture
+{
+	\p[{Shiori.Reference[0]}]{narrator}Too perfect not to save...{narratoroff}
+}
+
+
 //TODO This one is in an awkward format for now because the scope switch line breaks aren't playing nice with the \p[] tags for some reason. Change later if this gets adjusted
 talk DecoFree@TieredCake@Close, DecoFree@SlicedCake@Close(p)
 {
@@ -126,9 +305,6 @@ talk DecoFree@TieredCake@CakeClose, DecoFree@SlicedCake@CakeClose(p)
 	
 	\s[annoyed]You really know no bounds when it comes to cake, do you. \s[anger]Weirdo.
 }
-
-//Really ought to add a special option I'm just not sure what'd be good right now...
-//DecoFree@TieredCake@MenuOpt
 
 
 //——————————————— Plants ———————————————
