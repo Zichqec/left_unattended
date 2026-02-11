@@ -73,8 +73,6 @@ function OnAosoraLoad
 
 function OnInitialize
 {
-	//I want it to initialize some of them for me on reloading, but I can't do that without it not knowing what coords to put them at... do I care? hm
-	//It seems like it places them at the coordinates where they were last...? in which case, shrug. Debug annoyance but whatever...
 	if (Shiori.Reference[0] == "reload")
 	{
 		InitializeItem(3);
