@@ -294,7 +294,54 @@ function partytext
 		"lots of floor space... if you get tired...",
 		"make new friends... and enemies...",
 		"lots of activities... fun for all...",
+		"dance shoes encouraged... but not required...",
+		"photos with me... and autographs...",
+		"complementary boxes... take one when you leave...",
+		"fast wifi... password: {password}...",
+		"limitless... water bar...",
+		"nap anywhere... anytime...",
+		"no bugs... unless they're cute...",
 	]);
+}
+
+//If your password at all resembles this, *change it*. Learn good password practices.
+function password, OnT
+{
+	local output = Random.Select([
+		"C4keC4keC4ke",
+		"c4keT1me",
+		"Frosting4dayz",
+		"Sug4ryG00dness",
+		"Lord0fC4ke",
+		"icing2meetU",
+		"Fr3shB4ked",
+		"NoFakeC4kesAllowed",
+		"SuperC4ke",
+		"EveryDay1sSomeonesB1rthday",
+		"H0ldMySl1ce",
+	]);
+	
+	//These make too many numbers...
+	//output = output.Replace("a","4");
+	//output = output.Replace("e","3");
+	//output = output.Replace("s","5");
+	//output = output.Replace("i","1");
+	//output = output.Replace("t","7");
+	//output = output.Replace("o","0");
+	
+	output += Random.GetIndex(0,10);
+	output += Random.Select([
+		"!",
+		"@",
+		"#",
+		"$",
+		"%",
+		"&",
+		"*",
+		"+",
+	]);
+	
+	return output;
 }
 
 function TodaysHoliday
