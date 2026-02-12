@@ -254,7 +254,7 @@ function OnSecondChange
 	if (IsDebugMode && Save.Data.SpawningEnabled == 0) return;
 	
 	local epoch = Time.GetNowUnixEpoch();
-	if (CanTalk() && epoch - CooldownTime >= 10) //I could use reference3 instead of CanTalk, but...
+	if (CanTalk() && epoch - CooldownTime >= 5) //I could use reference3 instead of CanTalk, but...
 	{
 		local since = epoch - LastItemSpawn;
 		local nextitem = LastItemSpawn + ItemSpawnTime();
