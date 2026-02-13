@@ -297,7 +297,7 @@ function OnSecondChange
 		
 		if (output != "")
 		{
-			if (BalloonIsOpen()) output = "\C" + output;
+			if (BalloonIsOpen()) output = "\C" + output + "\b[-1]";
 			return output;
 		}
 	}
