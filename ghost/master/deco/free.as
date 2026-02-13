@@ -210,17 +210,17 @@ talk OnCakeAction@TakePicture
 
 
 //TODO This one is in an awkward format for now because the scope switch line breaks aren't playing nice with the \p[] tags for some reason. Change later if this gets adjusted
-talk DecoFree@TieredCake@Close, DecoFree@SlicedCake@Close
+talk DecoFree@TieredCake@Close, DecoFree@SlicedCake@Close(p)
 {
 	{narrator}Save that for later... \n\n\0\s[anger]Hey! Where are you carting that cake off to!? \n\n\p[{p}]Oops... {narratoroff}\0\s[eyeroll]\i[10]Ugh, I should have known. \s[phone]Whatever.
 }
 
-talk DecoFree@TieredCake@Close, DecoFree@SlicedCake@Close
+talk DecoFree@TieredCake@Close, DecoFree@SlicedCake@Close(p)
 {
 	{narrator}Just set that off to the side... \n\n\0\s[annoyed]... I knew you'd do that. \n\n\p[{p}]Whoops... {narratoroff}\0\s[eyeroll]\i[10]You and your cake. \s[phone]Whatever.
 }
 
-talk DecoFree@TieredCake@Close, DecoFree@SlicedCake@Close
+talk DecoFree@TieredCake@Close, DecoFree@SlicedCake@Close(p)
 {
 	{narrator}Slide that into the kitchen, nobody will notice... \n\n\0\s[annoyed]... \n\n\p[{p}]... Someone noticed. {narratoroff}\0\s[eyeroll]\i[10]Should I even dignify this with a comment.
 }
