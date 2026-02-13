@@ -369,7 +369,7 @@ class PartyGuest : PartyThing
 		
 		PartyClutter.Remove("{this.p}");
 		
-		local output = "\p[{this.p}]";
+		local output = "\p[{this.p}]\s[{this.surface}]"; //I shouldn't need to call the surface here, but for some reason some of them are disappearing at the start of their dialogue and not the end...? I'm unfortunately not in a good head space to figure that out right now, so... | It might be an SSP issue? They might be invisible entirely until the surface is initialized via surface test???
 		if (Random.GetIndex(0,3) == 0) //1/3 I think?
 		{
 			output = "\t" + output;
