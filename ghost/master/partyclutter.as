@@ -251,7 +251,7 @@ class PartyDeco : PartyThing
 		
 		PartyClutter.Remove("{this.p}");
 		local dialogue = this.FindDialogue("Close");
-		return "\p[{this.p}]" + dialogue(this.p, this.special);
+		return "\p[{this.p}]\s[-1]" + dialogue(this.p, this.special);
 	}
 	
 	//Petting and poking have HER as the default talker, while other things have the individual item as the default.
