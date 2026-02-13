@@ -369,7 +369,19 @@ class PartyGuest : PartyThing
 		
 		PartyClutter.Remove("{this.p}");
 		
-		return "\t\p[{this.p}]" + dialogue() + "\s[-1]";
+		local output = "\p[{this.p}]";
+		if (Random.GetIndex(0,3) == 0) //1/3 I think?
+		{
+			output = "\t" + output;
+			output += dialogue();
+			//return "\t\p[{this.p}]" + dialogue() + "\s[-1]";
+		}
+		else
+		{
+			if (BalloonIsOpen()) output = "\C" + output;
+		}
+		output += "\s[-1]";
+		return output;
 	}
 	
 	function NeedlePoke
