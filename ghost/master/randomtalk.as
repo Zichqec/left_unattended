@@ -253,14 +253,14 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	\s[away]Hm, I wonder if I should come up with a new message to print on the next banners...
+	\s[away]Hm, I wonder if I should come up with a new message to print on the next round of banners...
 	
 	\s[tongue]Then again, why change what works?
 }
 
 talk RandomTalk
 {
-	\s[eyeroll]Ugh, they sell these as random colors rather than letting you choose, \i[10]go figure. \s[phone]I'll have to just order a bunch to make sure I get the colors I need.
+	\s[eyeroll]Ugh, they sell these as random colors rather than letting you choose, \i[10]go figure. \s[phone]I'll just have to order a bunch to make sure I get the colors I need.
 }
 
 talk RandomTalk
@@ -282,14 +282,14 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	\s[phone]Eyes on the prize, don't get distracted by... \s[tongue]Ooh, okay, maybe get distracted a little. These {tinysugarcookies} are cute~
+	\s[phone]Eyes on the prize, don't get distracted by... \w8\w8\s[tongue]Ooh, okay, maybe get distracted a little. These {tinysugarcookies} are cute~
 }
 
 talk RandomTalk
 {
 	\s[phone]Come on... \w8 come onnn...\w8\w8\w8 No! 
 	
-	\s[annoyed]Someone bought the last {trayofcookies} from this listing I was looking at. \s[away]If my phone was a little faster, I might have gotten it first. \s[eyeroll]\i[10]Now I'll have to find another listing, which will probably be at a higher price...
+	\s[away]Someone bought the last {trayofcookies} from this listing I was looking at. \s[annoyed]If my phone was a little \f[italic,1]faster,\f[italic,default] I might have gotten it first. \s[eyeroll]\i[10]Now I'll have to find another listing, which will probably be at a higher price...
 }
 
 talk RandomTalk
