@@ -305,7 +305,7 @@ function partytext
 	]);
 }
 
-//If your password at all resembles this, *change it*. Learn good password practices.
+//This is not password advice lol
 function password, OnT
 {
 	local output = Random.Select([
@@ -343,6 +343,55 @@ function password, OnT
 	]);
 	
 	return output;
+}
+
+function trayofcookies
+{
+	return Random.Select([
+		"tray of cookies",
+		"cake",
+		"bottle of ketchup",
+		"bottle of mustard",
+		"punch bowl",
+		"bouncy castle fan",
+		"spool of balloon string",
+		"helium tank",
+		"bag of balloons",
+		"box of candles",
+		"ladle",
+	]);
+}
+
+function surroundsoundsystem
+{
+	return Random.Select([
+		"surround sound system",
+		"chocolate fountain",
+		"laser star projector",
+		"drone with party lights",
+		"jumbo pack of 10,000 ultra-brite glowsticks",
+		"inflatable plastic pool",
+		"cotton candy machine",
+		"giant cake poster",
+		"gigantic solid-chocolate bunny",
+		"custom programmable outdoor LED sign",
+	]);
+}
+
+function tinysugarcookies
+{
+	return Random.Select([
+		"tiny sugar cookies with chocolate faces",
+		"tiny fruit sticks",
+		"tiny fruit-shaped candies",
+		"cat-shaped cookies",
+		"teeny little party hats",
+		"sparkly balloon stickers",
+		"cake-shaped birthday candles",
+		"fruit-shaped balloons",
+		"little tarts with animal faces on them",
+		"teeny tiny cinnamon rolls",
+	]);
 }
 
 function TodaysHoliday

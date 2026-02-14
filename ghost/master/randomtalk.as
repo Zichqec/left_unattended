@@ -187,6 +187,118 @@ talk RandomTalk
 	\s[annoyed]I hit the data limit again. Can we \s[eyeroll]\i[10]\f[italic,1]please\f[italic,default] switch to a limitless plan already? \s[away]This is so miserable.
 }
 
+talk RandomTalk
+{
+	\s[away]This party might call for my secret weapon... 
+	
+	\s[eyeroll]Hmm, no, not yet. \s[phone]I need to save it for when it will have maximum impact.
+}
+
+talk RandomTalk
+{
+	\s[tongue]Nice, got a discount for being a loyal customer~ \w8\w8\s[laugh]Hosting parties often has its perks.
+}
+
+talk RandomTalk
+{
+	\s[phone]Another expired coupon code. \s[annoyed]I'm \f[italic,1]trying\f[italic,default] to be frugal, but they make it difficult.
+}
+
+talk RandomTalk
+{
+	\s[forward]You know, when I order from your favorite cake shop they always give me a much better deal than I can find elsewhere. \s[annoyed]I'm not sure how to feel about that.
+}
+
+talk RandomTalk
+{
+	\s[phone]... Ooh. \s[tongue]I accidentally tapped on an ad, but the product actually looks kinda perfect...
+}
+
+talk RandomTalk
+{
+	\s[phone]... 
+	
+	... 
+	
+	... 
+	
+	\s[tongue]Nice, I got a new high score in CakeTapper2000™. \s[laugh]I'll beat yours eventually~
+}
+
+talk RandomTalk
+{
+	%{ local pick = trayofcookies() }
+	\s[away]Do we need a backup {pick}? \w8\s[forward].\w8.\w8. \w8\w8\s[phone]We need a backup {pick}.
+}
+
+talk RandomTalk
+{
+	\s[away]Some days, I really wish your livingroom was a few feet wider... \s[forward]I'll convince you to move the kitchen upstairs eventually.
+}
+
+talk RandomTalk
+{
+	\s[tongue]Haha, I got a few folks to spread the party invitation out to their friends too. \s[laugh]We should be seeing some new arrivals soon~!
+}
+
+talk RandomTalk
+{
+	\s[away]I should get more songs for the party playlist. \s[tongue]Let's see, hottest party music in {Time.GetNowYear()}...
+}
+
+talk RandomTalk
+{
+	\s[phone]Another sale on cakes, {Random.GetIndex(4,8)}0% off... \w8\w8\s[annoyed]Sometimes I wonder if you have some elaborate scheme set up that causes this to happen whenever I have a party.
+}
+
+talk RandomTalk
+{
+	\s[away]Hm, I wonder if I should come up with a new message to print on the next banners...
+	
+	\s[tongue]Then again, why change what works?
+}
+
+talk RandomTalk
+{
+	\s[eyeroll]Ugh, they sell these as random colors rather than letting you choose, \i[10]go figure. \s[phone]I'll have to just order a bunch to make sure I get the colors I need.
+}
+
+talk RandomTalk
+{
+	\s[away]One of these days I \f[italic,1]should\f[italic,default] have a costume party. \s[tongue]Maybe I'll get you a cake costume.
+}
+
+talk RandomTalk
+{
+	\s[phone]{Capitalize(surroundsoundsystem)}... \s[tongue]Uh, yeah, of \f[italic,1]course\f[italic,default] we need one of those~
+}
+
+talk RandomTalk
+{
+	\s[forward]Sometimes people tell me I should try having themed parties. \s[annoyed]Those are such a pain though. \s[eyeroll]\i[10]I already have enough trouble finding suppliers that have the basic goods I need in stock, and they want me to limit my selection by a specific theme too?
+	
+	\s[phone]Yeah, right. That's not happening.
+}
+
+talk RandomTalk
+{
+	\s[phone]Eyes on the prize, don't get distracted by... \s[tongue]Ooh, okay, maybe get distracted a little. These {tinysugarcookies} are cute~
+}
+
+talk RandomTalk
+{
+	\s[phone]Come on... \w8 come onnn...\w8\w8\w8 No! 
+	
+	\s[annoyed]Someone bought the last {trayofcookies} from this listing I was looking at. \s[away]If my phone was a little faster, I might have gotten it first. \s[eyeroll]\i[10]Now I'll have to find another listing, which will probably be at a higher price...
+}
+
+talk RandomTalk
+{
+	\s[phone]Ugh, I hate it when I can't find what I need within the city. \s[annoyed]If I have to order it from somewhere else, it'll never get here in time for today's party.
+	
+	\s[eyeroll]\i[10]Yeah, I'm planning another party tomorrow, but what if I don't \f[italic,1]need\f[italic,default] it then? \s[away]I'd have to go through the hassle of returning it, who wants to do \f[italic,1]that\f[italic,default].
+}
+
 
 //———————————————————— Conditional dialogues ————————————————————
 //Done carefully to avoid upsetting nonoverlap... although this is kind of a bad method if I add more than one. Hm! There's probably a better way I'm forgetting, I am just tired... work on this later perhaps.
