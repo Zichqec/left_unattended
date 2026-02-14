@@ -73,19 +73,19 @@ talk CloseStillPartyingTalk
 //{InitItemPos} to show the items
 talk CloseNotYetTalk
 {
-	\s[annoyed]... \w8\s[tongue]Oh, look what just showed up. {InitItemPos}\s[laugh]The party's still going!
+	\s[annoyed]... \w8\s[tongue]Oh, look what just showed up. {InitItemPos}\0\s[laugh]The party's still going!
 	
 	\s[anger]Stop trying to ruin it, thanks.
 }
 
 talk CloseNotYetTalk
 {
-	\s[away]... \w8\s[tongue]Not so fast, look what just got here~ {InitItemPos}\s[laugh]Perfect timing!
+	\s[away]... \w8\s[tongue]Not so fast, look what just got here~ {InitItemPos}\0\s[laugh]Perfect timing!
 }
 
 talk CloseNotYetTalk
 {
-	\s[anger]... \w8\s[annoyed]... \w8\s[away]... \w8\s[tongue] Not quite, check it out~ {InitItemPos}\s[laugh]My delivery got here just in time to keep the party dream alive!
+	\s[anger]... \w8\s[annoyed]... \w8\s[away]... \w8\s[tongue] Not quite, check it out~ {InitItemPos}\0\s[laugh]My delivery got here just in time to keep the party dream alive!
 }
 
 
