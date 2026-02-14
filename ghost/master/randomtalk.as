@@ -227,7 +227,7 @@ talk RandomTalk
 
 talk RandomTalk
 {
-	%{ local pick = trayofcookies() }
+	%{ local pick = trayofcookies(); }
 	\s[away]Do we need a backup {pick}? \w8\s[forward].\w8.\w8. \w8\w8\s[phone]We need a backup {pick}.
 }
 
