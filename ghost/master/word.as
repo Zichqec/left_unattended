@@ -140,8 +140,9 @@ function muchcake
 		"many party favors",
 		"much glitter",
 		"many streamers",
-		"many guests",
+		//"many guests", //Commenting this because it makes merchant's one dialogue weird lol, and I don't think it adds *that* much...
 		"many napkins",
+		"many balloons",
 	]);
 }
 
