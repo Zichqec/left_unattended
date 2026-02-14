@@ -452,5 +452,6 @@ function sakura@recommendsites
 		{name: "Zi's Ukagaka Space", url: "https://ukagaka.zichqec.com/"},
 		{name: "Galla's Ghosts", url: "https://gallathegalla.github.io/gtg-ghosts/"},
 		{name: "Aosora SHIORI", url: "https://github.com/kanadelab/aosora-shiori"},
+		{name: "Leave a review!", url: "https://docs.google.com/forms/d/e/1FAIpQLScnAmyny10nWvWHBGOfbarvjhjLyyzI6ZIfz0mT7fvvW3HLEw/viewform"},
 	]);
 }
