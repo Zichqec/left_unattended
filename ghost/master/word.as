@@ -306,7 +306,7 @@ function partytext
 }
 
 //This is not password advice lol
-function password, OnT
+function password
 {
 	local output = Random.Select([
 		"C4keC4keC4ke",
